@@ -43,7 +43,7 @@ alias pad="pnpm add -D"
 alias y="yarn"
 alias ya="yarn add"
 alias yr="yarn remove"
-alias yrd="yarn add -D"
+alias yad="yarn add -D"
 
 # cargo aliases
 alias cr="cargo run"

@@ -25,6 +25,7 @@ alias c='clear'
 alias l='exa -la'
 alias vim='nvim'
 alias brew='arch -arm64e /opt/homebrew/bin/brew'
+alias yolo="git push origin master --force --no-verify"
 
 # npm aliases
 alias nci="npm ci"

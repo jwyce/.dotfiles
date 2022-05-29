@@ -11,20 +11,10 @@ chsh -s /opt/homebrew/bin/fish
 fish
 set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
 
-echo "🥥 Installing brew casks"
-brew install --cask iterm2 warp hyper fig brave-browser rectangle stats alfred visual-studio-code tableplus datagrip docker notion spotify pictogram keycastr rustdesk
-# brew install --cask spacedrive
-
 echo "📦 Installing brew packages"
-# rust core utils
-brew install ripgrep atuin sd bat teeldear fd fzf exa fnm
+brew bundle
 
-# other utils
-brew install git htop starship thefuck pnpm yarn tmux neovim
-brew tap helix-editor/helix
-brew install helix
-
-echo "🔥 Setting up neovim and oh-my-tmux"
+echo "🔥 Setting up neovim plugins and oh-my-tmux"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 git clone https://github.com/gpakosz/.tmux.git

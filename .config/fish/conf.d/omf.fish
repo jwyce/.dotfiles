@@ -23,14 +23,32 @@ alias dotfiles='cd ~/.config/'
 alias rimraf='rm -rf'
 alias c='clear'
 alias l='exa -la'
-alias nci="npm ci"
-alias nid="npm install --save-dev"
-alias ni="npm install"
-alias ns="npm start"
-alias nr="npm run"
 alias vim='nvim'
 alias brew='arch -arm64e /opt/homebrew/bin/brew'
 
+# npm aliases
+alias nci="npm ci"
+alias nid="npm install --save-dev"
+alias ni="npm install"
+alias nr="npm run"
+
+# pnpm aliases
+alias p="pnpm"
+alias pi="pnpm install"
+alias pa="pnpm add"
+alias pr="pnpm remove"
+alias pad="pnpm add -D"
+
+# yarn aliases
+alias y="yarn"
+alias ya="yarn add"
+alias yr="yarn remove"
+alias yrd="yarn add -D"
+
+# cargo aliases
+alias cr="cargo run"
+alias cn="cargo new"
+alias ct="cargo test"
 
 # functions
 function on_exit --on-event fish_exit

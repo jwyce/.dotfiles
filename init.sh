@@ -40,6 +40,7 @@ cp .tmux.conf ~
 cp .hyper.js ~
 cp .vimrc ~
 cp .ideavimrc ~
+cp .gitconfig ~
 cp -r .config/* ~
 
 echo "🎉 Done!"

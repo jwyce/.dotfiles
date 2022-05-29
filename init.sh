@@ -26,7 +26,8 @@ brew install --cask datagrip
 brew install --cask docker
 brew install --cask notion
 brew install --cask spotify
-brew install --cask pictogram brew install --cask keycastr
+brew install --cask pictogram 
+brew install --cask keycastr
 brew install --cask rustdesk
 # brew install --cask spacedrive
 

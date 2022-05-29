@@ -1,0 +1,25 @@
+{
+	"Type GraphQL Resolver": {
+		"prefix": "resolver",
+		"body": [
+			"import { Resolver } from \"type-graphql\";",
+			"",
+			"@Resolver()",
+			"export class $1Resolver {",
+			"  @$2()",
+			"  async $3() {}",
+			"}"
+		],
+		"description": "TypeGraphQL Resolver"
+	},
+	"Util Function": {
+		"prefix": "ut",
+		"body": ["export const $TM_FILENAME_BASE = () => {", "", "}"],
+		"description": "Util Function"
+	},
+	"console.log": {
+		"prefix": "cl",
+		"body": ["console.log($1)"],
+		"description": "console.log"
+	}
+}

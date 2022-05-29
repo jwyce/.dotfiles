@@ -21,7 +21,6 @@ brew "pnpm"
 brew "yarn"
 brew "tmux"
 brew "neovim"
-brew "neovim"
 brew "helix"
 
 cask "iterm2"

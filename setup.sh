@@ -12,6 +12,7 @@ fish
 set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
 
 echo "📦 Installing brew packages"
+cp Brewfile ~
 brew bundle
 
 echo "🔥 Setting up neovim plugins and oh-my-tmux"

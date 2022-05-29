@@ -33,11 +33,11 @@ alias ni="npm install"
 alias nr="npm run"
 
 # pnpm aliases
-alias p="pnpm"
-alias pi="pnpm install"
-alias pa="pnpm add"
-alias pr="pnpm remove"
-alias pad="pnpm add -D"
+alias pn="pnpm"
+alias pni="pnpm install"
+alias pna="pnpm add"
+alias pnr="pnpm remove"
+alias pnad="pnpm add -D"
 
 # yarn aliases
 alias y="yarn"

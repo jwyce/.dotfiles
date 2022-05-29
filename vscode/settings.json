@@ -176,7 +176,8 @@
 		"badge.background": "#a95ffd",
 		"editorBracketHighlight.foreground5": "#a44a8c",
 		"activityBarBadge.background": "#a95ffd",
-		"editorBracketHighlight.foreground1": "#ffaab7"
+		"editorBracketHighlight.foreground1": "#ffaab7",
+    "editorLineNumber.activeForeground": "#d297f5"
 	},
 	"prettier.useTabs": true,
 	"editor.lineNumbers": "relative",

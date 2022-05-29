@@ -44,6 +44,7 @@ brew install exa
 brew install fnm
 
 # other utils
+brew install git
 brew install htop
 brew install starship
 brew install thefuck

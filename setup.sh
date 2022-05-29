@@ -27,7 +27,7 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 set -U fish_user_paths ~/.cargo/bin $fish_user_paths
 
 echo "🚚 Moving dotfiles"
-cp .tmux.conf .hyper.js .vimrc .ideavimrc .gitconfig ~
+cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .vimrc .ideavimrc .gitconfig ~
 cp -r .config/* ~
 
 echo "🎉 Done!"

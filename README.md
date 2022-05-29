@@ -9,5 +9,5 @@ Run this:
 ```sh
 git clone https://github.com/jwyce/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./install.sh
+./setup.sh
 ```

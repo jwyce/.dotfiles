@@ -185,6 +185,5 @@
 		"FIG_NEW_SESSION": "1"
 	},
 	"workbench.editor.enablePreview": false,
-	"cSpell.userWords": ["minigrep"],
   "rust-analyzer.cargo.features": "all"
 }

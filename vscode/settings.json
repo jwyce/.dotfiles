@@ -178,7 +178,9 @@
 		"editorBracketHighlight.foreground5": "#a44a8c",
 		"editorInlayHint.background": "#723500",
 		"editorInlayHint.foreground": "#9a9a9a",
-		"editorLineNumber.activeForeground": "#d297f5",
+		"editorLineNumber.activeForeground": "#e7e7e7",
+		"editorLineNumber.foreground": "#9a9a9a",
+		"editorCursor.foreground": "#e7e7e7ff",
 		"panel.border": "#a878c4",
 		"panel.dropBorder": "#a878c4",
 		"panelTitle.activeBorder": "#d297f5",
@@ -192,3 +194,4 @@
 	"workbench.productIconTheme": "fluent-icons",
 	"workbench.sideBar.location": "right"
 }
+

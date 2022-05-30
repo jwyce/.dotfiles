@@ -43,6 +43,7 @@ code --install-extension Orta.vscode-jest
 code --install-extension pomdtr.excalidraw-editor
 code --install-extension Prisma.prisma
 code --install-extension redhat.vscode-yaml
+code --install-extension richie5um2.vscode-sort-json
 code --install-extension rome.rome
 code --install-extension rust-lang.rust-analyzer
 code --install-extension saratravi.elixir-formatter

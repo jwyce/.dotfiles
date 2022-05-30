@@ -1,144 +1,110 @@
 {
-	"editor.fontSize": 14,
-	"editor.fontLigatures": true,
-	"editor.suggestSelection": "first",
-	"[rust]": {
-		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	"[cpp]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
 	},
 	"[elixir]": {
 		"editor.defaultFormatter": "saratravi.elixir-formatter"
 	},
-	"vim.insertModeKeyBindings": [
-		{
-			"after": ["<esc>"],
-			"before": ["j", "k"]
-		}
-	],
-	"git.autofetch": true,
-	"[typescript]": {
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"redhat.telemetry.enabled": true,
-	"editor.accessibilitySupport": "off",
-	"github.copilot.enable": {
-		"yaml": false,
-		"*": true,
-		"plaintext": false,
-		"markdown": true
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"editor.minimap.enabled": false,
 	"[javascriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"vim.useSystemClipboard": false,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"discord.idleTimeout": 1200,
+	"editor.accessibilitySupport": "off",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.detectIndentation": false,
+	"editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 14,
+	"editor.formatOnSave": true,
+	"editor.inlineSuggest.enabled": true,
+	"editor.lineNumbers": "relative",
+	"editor.linkedEditing": true,
+	"editor.minimap.enabled": false,
+	"editor.suggestSelection": "first",
+	"editor.tabSize": 2,
+	"files.exclude": {
+		"**/*.meta": true
+	},
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"github.copilot.enable": {
+		"*": true,
+		"markdown": true,
+		"plaintext": false,
+		"yaml": false
+	},
+	"howIVSCode.userIdentificationKey": " 6a88a47235b48b0af0c3d768b9bdfc",
+	"importCost.debug": false,
+	"importSorter.importStringConfiguration.tabSize": 2,
+	"javascript.format.semicolons": "insert",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"python.languageServer": "Default",
+	"react-native-tools.showUserTips": false,
+	"redhat.telemetry.enabled": true,
+	"rust-analyzer.cargo.features": "all",
+	"terminal.external.osxExec": "iterm2.app",
+	"terminal.integrated.defaultProfile.osx": "fish",
+	"terminal.integrated.env.osx": {
+		"FIG_NEW_SESSION": "1"
+	},
+	"terminal.integrated.fontFamily": "MesloLGS NF",
+	"terminal.integrated.fontSize": 13,
 	"terminal.integrated.gpuAcceleration": "canvas",
+	"terminal.integrated.profiles.linux": {
+		"fish": {
+			"icon": "terminal-ubuntu",
+			"path": "/usr/bin/fish"
+		}
+	},
+	"terminal.integrated.profiles.osx": {
+		"fish": {
+			"icon": "terminal-tmux",
+			"id": "fish",
+			"path": "/opt/homebrew/bin/fish"
+		}
+	},
 	"terminal.integrated.profiles.windows": {
 		"PowerShell": {
 			"icon": "terminal-powershell",
 			"source": "PowerShell"
 		}
 	},
-	"workbench.iconTheme": "bearded-icons",
-	"svelte.enable-ts-plugin": true,
-	"terminal.external.osxExec": "iterm2.app",
-	"[yaml]": {
-		"editor.defaultFormatter": "redhat.vscode-yaml"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
+	"todo-tree.filtering.excludeGlobs": ["**/node_modules", "**.d.ts"],
 	"todo-tree.general.tagGroups": {
 		"FIXME": ["FIXME", "FIXIT", "FIX"]
-	},
-	"react-native-tools.showUserTips": false,
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"typescript.format.semicolons": "insert",
-	"prettier.singleQuote": true,
-	"workbench.colorTheme": "Bearded Theme Arc",
-	"editor.tabSize": 2,
-	"todo-tree.highlights.useColourScheme": true,
-	"files.exclude": {
-		"**/*.meta": true
-	},
-	"git.confirmSync": false,
-	"discord.idleTimeout": 1200,
-	"importSorter.importStringConfiguration.tabSize": 2,
-	"importCost.debug": false,
-	"[markdown]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"editor.bracketPairColorization.enabled": true,
-	"howIVSCode.userIdentificationKey": " 6a88a47235b48b0af0c3d768b9bdfc",
-	"terminal.integrated.profiles.osx": {
-		"fish": {
-			"id": "fish",
-			"path": "/opt/homebrew/bin/fish",
-			"icon": "terminal-tmux"
-		}
-	},
-	"todo-tree.highlights.customHighlight": {
-		"REMARK": {
-			"foreground": "#111",
-			"iconColour": "#aaa",
-			"gutterIcon": true,
-			"background": "#aaa"
-		},
-		"NOTE": {
-			"foreground": "#111",
-			"iconColour": "#FFD700",
-			"gutterIcon": true,
-			"background": "#FFD700"
-		},
-		"BUG": {
-			"foreground": "#111",
-			"iconColour": "#aadd11",
-			"gutterIcon": true,
-			"background": "#aadd11"
-		},
-		"FIXME": {
-			"foreground": "#fff",
-			"iconColour": "#Ff2047",
-			"gutterIcon": true,
-			"background": "#Ff2047"
-		},
-		"TODO": {
-			"foreground": "#fff",
-			"iconColour": "#17b9ff",
-			"gutterIcon": true,
-			"background": "#17b9ff"
-		},
-		"HACK": {
-			"foreground": "#fff",
-			"iconColour": "#8A2BE2",
-			"gutterIcon": true,
-			"background": "#8A2BE2"
-		}
-	},
-	"diffEditor.ignoreTrimWhitespace": false,
-	"workbench.sideBar.location": "right",
-	"editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
-	"todo-tree.filtering.excludeGlobs": ["**/node_modules", "**.d.ts"],
-	"terminal.integrated.fontFamily": "MesloLGS NF",
-	"editor.inlineSuggest.enabled": true,
-	"javascript.format.semicolons": "insert",
-	"terminal.integrated.defaultProfile.osx": "fish",
-	"workbench.productIconTheme": "fluent-icons",
-	"typescript.updateImportsOnFileMove.enabled": "always",
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"editor.detectIndentation": false,
-	"terminal.integrated.fontSize": 13,
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"workbench.editor.wrapTabs": true,
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"editor.formatOnSave": true,
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"todo-tree.general.tags": [
 		"BUG",
@@ -150,40 +116,79 @@
 		"[ ]",
 		"[x]"
 	],
-	"editor.linkedEditing": true,
-	"python.languageServer": "Default",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-	"terminal.integrated.profiles.linux": {
-		"fish": {
-			"path": "/usr/bin/fish",
-			"icon": "terminal-ubuntu"
+	"todo-tree.highlights.customHighlight": {
+		"BUG": {
+			"background": "#aadd11",
+			"foreground": "#111",
+			"gutterIcon": true,
+			"iconColour": "#aadd11"
+		},
+		"FIXME": {
+			"background": "#Ff2047",
+			"foreground": "#fff",
+			"gutterIcon": true,
+			"iconColour": "#Ff2047"
+		},
+		"HACK": {
+			"background": "#8A2BE2",
+			"foreground": "#fff",
+			"gutterIcon": true,
+			"iconColour": "#8A2BE2"
+		},
+		"NOTE": {
+			"background": "#FFD700",
+			"foreground": "#111",
+			"gutterIcon": true,
+			"iconColour": "#FFD700"
+		},
+		"REMARK": {
+			"background": "#aaa",
+			"foreground": "#111",
+			"gutterIcon": true,
+			"iconColour": "#aaa"
+		},
+		"TODO": {
+			"background": "#17b9ff",
+			"foreground": "#fff",
+			"gutterIcon": true,
+			"iconColour": "#17b9ff"
 		}
 	},
+	"todo-tree.highlights.useColourScheme": true,
+	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+	"typescript.format.semicolons": "insert",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"vim.insertModeKeyBindings": [
+		{
+			"after": ["<esc>"],
+			"before": ["j", "k"]
+		}
+	],
+	"vim.useSystemClipboard": false,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"workbench.colorCustomizations": {
-		"tab.activeBorderTop": "#d297f5",
-		"editorInlayHint.background": "#723500",
-		"editorBracketHighlight.foreground2": "#9b97f9",
 		"activityBar.foreground": "#d297f5",
-		"panel.border": "#a878c4",
-		"editorBracketHighlight.foreground3": "#bfff88",
-		"terminal.tab.activeBorder": "#d297f5",
-		"panelTitle.activeBorder": "#d297f5",
-		"panel.dropBorder": "#a878c4",
-		"editorInlayHint.foreground": "#9a9a9a",
-		"border": "#d297f5",
-		"editorBracketHighlight.foreground4": "#81ecd5",
-		"badge.background": "#a95ffd",
-		"editorBracketHighlight.foreground5": "#a44a8c",
 		"activityBarBadge.background": "#a95ffd",
+		"badge.background": "#a95ffd",
+		"border": "#d297f5",
 		"editorBracketHighlight.foreground1": "#ffaab7",
-    "editorLineNumber.activeForeground": "#d297f5"
+		"editorBracketHighlight.foreground2": "#9b97f9",
+		"editorBracketHighlight.foreground3": "#bfff88",
+		"editorBracketHighlight.foreground4": "#81ecd5",
+		"editorBracketHighlight.foreground5": "#a44a8c",
+		"editorInlayHint.background": "#723500",
+		"editorInlayHint.foreground": "#9a9a9a",
+		"editorLineNumber.activeForeground": "#d297f5",
+		"panel.border": "#a878c4",
+		"panel.dropBorder": "#a878c4",
+		"panelTitle.activeBorder": "#d297f5",
+		"tab.activeBorderTop": "#d297f5",
+		"terminal.tab.activeBorder": "#d297f5"
 	},
-	"prettier.useTabs": true,
-	"editor.lineNumbers": "relative",
-	"terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
+	"workbench.colorTheme": "Bearded Theme Arc",
 	"workbench.editor.enablePreview": false,
-  "rust-analyzer.cargo.features": "all"
+	"workbench.editor.wrapTabs": true,
+	"workbench.iconTheme": "bearded-icons",
+	"workbench.productIconTheme": "fluent-icons",
+	"workbench.sideBar.location": "right"
 }

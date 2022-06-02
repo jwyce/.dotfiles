@@ -213,7 +213,7 @@
 		"tab.activeBorderTop": "#d297f5",
 		"terminal.tab.activeBorder": "#d297f5"
 	},
-	"workbench.colorTheme": "Bearded Theme Arc",
+	"workbench.colorTheme": "Bearded Theme Arc Reversed",
 	"workbench.editor.enablePreview": false,
 	"workbench.editor.wrapTabs": true,
 	"workbench.iconTheme": "bearded-icons",

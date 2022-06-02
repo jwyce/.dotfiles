@@ -23,7 +23,7 @@ alias rimraf='rm -rf'
 alias c='clear'
 alias l='exa -la'
 alias vim='nvim'
-alias brew='arch -arm64e /opt/homebrew/bin/brew'
+alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias yolo="git push origin master --force --no-verify"
 
 # npm aliases

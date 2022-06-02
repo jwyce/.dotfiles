@@ -35,6 +35,7 @@ code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-vscode.cmake-tools
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension msjsdiag.vscode-react-native
@@ -52,7 +53,9 @@ code --install-extension SimonSiefke.svg-preview
 code --install-extension steoates.autoimport
 code --install-extension sukumo28.wav-preview
 code --install-extension tamasfe.even-better-toml
+code --install-extension tobias-z.vscode-harpoon
 code --install-extension tomoki1207.pdf
+code --install-extension twxs.cmake
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscodevim.vim

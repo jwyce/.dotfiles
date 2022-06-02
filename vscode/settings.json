@@ -2,7 +2,9 @@
 	"[cpp]": {
 		"editor.defaultFormatter": "ms-vscode.cpptools"
 	},
-	"[elixir]": { "editor.defaultFormatter": "saratravi.elixir-formatter" },
+	"[elixir]": {
+		"editor.defaultFormatter": "saratravi.elixir-formatter"
+	},
 	"[go]": {
 		"editor.defaultFormatter": "golang.go"
 	},
@@ -156,6 +158,33 @@
 	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
 	"typescript.format.semicolons": "insert",
 	"typescript.updateImportsOnFileMove.enabled": "always",
+	"vim.leader": " ",
+	"vim.normalModeKeyBindings": [
+		{
+			"before": ["<leader>", "a"],
+			"commands": ["vscode-harpoon.addEditor"]
+		},
+		{
+			"before": ["<leader>", "e"],
+			"commands": ["vscode-harpoon.editEditors"]
+		},
+		{
+			"before": ["<leader>", "p", "e"],
+			"commands": ["vscode-harpoon.editorQuickPick"]
+		},
+		{
+			"before": ["<leader>", "1"],
+			"commands": ["vscode-harpoon.gotoEditor1"]
+		},
+		{
+			"before": ["<leader>", "2"],
+			"commands": ["vscode-harpoon.gotoEditor2"]
+		},
+		{
+			"before": ["<leader>", "3"],
+			"commands": ["vscode-harpoon.gotoEditor3"]
+		}
+	],
 	"vim.insertModeKeyBindings": [
 		{
 			"after": ["<esc>"],
@@ -191,4 +220,3 @@
 	"workbench.productIconTheme": "fluent-icons",
 	"workbench.sideBar.location": "right"
 }
-

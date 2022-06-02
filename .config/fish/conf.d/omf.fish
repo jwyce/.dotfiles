@@ -18,8 +18,7 @@ atuin init fish | source
 
 # aliases
 alias conf='vim ~/.config/fish/conf.d/omf.fish'
-alias home='cd ~/Documents/dev'
-alias dotfiles='cd ~/.config/'
+alias home='cd ~/dev'
 alias rimraf='rm -rf'
 alias c='clear'
 alias l='exa -la'

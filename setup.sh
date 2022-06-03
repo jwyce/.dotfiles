@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 echo "🍺 Installing homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile     eval "$(/opt/homebrew/bin/brew shellenv)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "🐠 Installing fish"
 brew install fish
@@ -28,7 +27,7 @@ set -U fish_user_paths ~/.cargo/bin $fish_user_paths
 
 echo "🚚 Moving dotfiles"
 cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .vimrc .ideavimrc .gitconfig ~
-cp -r .config/* ~
+cp -R .config/* ~
 
 echo "🎉 Done!"
 refresh

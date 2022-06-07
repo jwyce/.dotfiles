@@ -23,6 +23,8 @@ alias rimraf='rm -rf'
 alias c='clear'
 alias l='exa -la'
 alias vim='nvim'
+alias python='python3'
+alias pip='pip3'
 alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias yolo="git push origin master --force --no-verify"
 
@@ -47,6 +49,7 @@ alias yad="yarn add -D"
 
 # cargo aliases
 alias cr="cargo run"
+alias ca="cargo add"
 alias cn="cargo new"
 alias ct="cargo test"
 

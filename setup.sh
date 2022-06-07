@@ -28,6 +28,6 @@ set -U fish_user_paths ~/.cargo/bin $fish_user_paths
 echo "🚚 Moving dotfiles"
 cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .vimrc .ideavimrc .gitconfig ~
 cp -R .config/* ~
+cp -R .fonts/* ~/Library/Fonts
 
 echo "🎉 Done!"
-refresh

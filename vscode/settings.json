@@ -158,6 +158,7 @@
 	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
 	"typescript.format.semicolons": "insert",
 	"typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
 	"vim.leader": " ",
 	"vim.normalModeKeyBindings": [
 		{

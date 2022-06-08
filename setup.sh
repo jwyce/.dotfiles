@@ -7,8 +7,8 @@ echo "🐠 Installing fish"
 brew install fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 chsh -s /opt/homebrew/bin/fish
-fish
 set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+fish
 
 echo "📦 Installing brew packages"
 cp Brewfile ~
@@ -24,10 +24,15 @@ cp .tmux/.tmux.conf.local .
 echo "🦀 Installing rust"
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 set -U fish_user_paths ~/.cargo/bin $fish_user_paths
+fish
+cargo install cargo-edit
 
 echo "🚚 Moving dotfiles"
 cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .vimrc .ideavimrc .gitconfig ~
 cp -R .config/* ~
 cp -R .fonts/* ~/Library/Fonts
 
+brew install lolcat
+cat dr.txt | lolcat
 echo "🎉 Done!"
+

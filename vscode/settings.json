@@ -160,7 +160,12 @@
 	"typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsserver.experimental.enableProjectDiagnostics": false,
 	"vim.leader": " ",
-	"vim.normalModeKeyBindings": [
+  	"vim.normalModeKeyBindings": [
+		{
+			"name": "clipboard register",
+			"before": ["<leader>", "c"],
+			"after": ["\"", "+"]
+		},
 		{
 			"before": ["<leader>", "a"],
 			"commands": ["vscode-harpoon.addEditor"]
@@ -190,6 +195,13 @@
 		{
 			"after": ["<esc>"],
 			"before": ["j", "k"]
+		}
+	],
+	"vim.visualModeKeyBindings": [
+		{
+			"name": "clipboard register",
+			"before": ["<leader>", "c"],
+			"after": ["\"", "+"]
 		}
 	],
 	"vim.useSystemClipboard": false,

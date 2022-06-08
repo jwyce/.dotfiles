@@ -43,7 +43,7 @@
 	"editor.accessibilitySupport": "off",
 	"editor.bracketPairColorization.enabled": true,
 	"editor.detectIndentation": false,
-	"editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Dank Mono, Monaco, 'Apple Color Emoji', 'Courier New', monospace",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 14,
 	"editor.formatOnSave": true,

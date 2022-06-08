@@ -33,6 +33,6 @@ cp -R .config/* ~
 cp -R .fonts/* ~/Library/Fonts
 
 brew install lolcat
-cat dr.txt | lolcat
+cat doc.txt | lolcat
 echo "🎉 Done!"
 

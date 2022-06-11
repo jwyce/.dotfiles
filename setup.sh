@@ -30,6 +30,7 @@ cargo install cargo-edit
 echo "🚚 Moving dotfiles"
 cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .vimrc .ideavimrc .gitconfig ~
 cp -R .config/* ~/.config
+cp -R .local/* ~/.local
 cp -R fonts/* ~/Library/Fonts
 
 brew install lolcat

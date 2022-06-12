@@ -200,6 +200,10 @@
 		{
 			"before": ["<leader>", "y"],
 			"after": ["\"", "+", "y"]
+		},
+		{
+			"before": ["<leader>", "p"],
+			"after": ["\"", "_", "d", "P"]
 		}
 	],
 	"vim.useSystemClipboard": false,

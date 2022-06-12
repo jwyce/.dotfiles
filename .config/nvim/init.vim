@@ -33,3 +33,5 @@ let mapleader = " "
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nmap <leader>Y "+Y
+xnoremap <leader>p "_dP
+

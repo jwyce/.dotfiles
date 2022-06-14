@@ -17,5 +17,4 @@ Nnoremap = CreateNoremap("n", { noremap = true })
 Inoremap = CreateNoremap("i", { noremap = true })
 
 require("jwyce.telescope")
-require("jwyce.harpoon")
 require("jwyce.lsp")

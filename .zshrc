@@ -12,7 +12,6 @@ source "$HOME/antigen.zsh"
 antigen init ~/.antigenrc
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(fnm env --use-on-cd)"
@@ -20,11 +19,9 @@ eval "$(fnm env --use-on-cd)"
 # Enable vi mode
 bindkey -v
 
-# Atuin hack
-zle -N atuin{,}
-atuin(){ atuin search -i; }
-bindkey "$key[Up]" atuin
-
+# rebind atuin
+ATUIN_NOBIND=1 eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget
 
 # aliases
 alias conf='vim ~/.zshrc'

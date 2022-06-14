@@ -92,8 +92,8 @@
 	"terminal.integrated.profiles.osx": {
 		"fish": {
 			"icon": "terminal-tmux",
-			"id": "fish",
-			"path": "/opt/homebrew/bin/fish"
+			"id": "zsh",
+			"path": "/bin/zsh"
 		}
 	},
 	"terminal.integrated.profiles.windows": {

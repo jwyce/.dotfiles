@@ -1,23 +1,26 @@
-# Path to Oh My Fish install.
-set -q XDG_DATA_HOME
-  and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
-  or set -gx OMF_PATH "$HOME/.local/share/omf"
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 
-# Load Oh My Fish configuration.
-source $OMF_PATH/init.fish
 
-set -gx PATH /Users/wabamn/bin $PATH
-set -gx PATH /usr/local/bin $PATH
-set -gx PATH /opt/homebrew/bin $PATH
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
 
-fish_vi_key_bindings
-fnm env --use-on-cd | source
-starship init fish | source
-thefuck --alias | source
-atuin init fish | source
+# Load Antigen
+source "$HOME/antigen.zsh"
+
+# Load Antigen configurations
+antigen init ~/.antigenrc
+
+eval "$(atuin init zsh)"
+eval "$(starship init zsh)"
+eval "$(thefuck --alias)"
+eval "$(fnm env --use-on-cd)"
+
+# Enable vi mode
+bindkey -v
 
 # aliases
-alias conf='vim ~/.config/fish/conf.d/omf.fish'
+alias conf='vim ~/.zshrc'
 alias home='cd ~/dev'
 alias rimraf='rm -rf'
 alias c='clear'
@@ -52,9 +55,3 @@ alias cr="cargo run"
 alias ca="cargo add"
 alias cn="cargo new"
 alias ct="cargo test"
-
-# functions
-function on_exit --on-event fish_exit
-    echo 'so long and thanks for all the fish 🐬'
-    sleep 0.5
-end

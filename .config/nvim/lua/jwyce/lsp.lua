@@ -1,4 +1,4 @@
-local sumneko_root_path = "/~/jwyce/personal/lua-language-server"
+local sumneko_root_path = "~/dev/personal/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

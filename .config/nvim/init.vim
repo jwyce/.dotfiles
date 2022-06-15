@@ -61,11 +61,14 @@ call plug#end()
 
 inoremap jk <Esc>
 set termguicolors
-syntax on
-set re=0
+
+" syntax on
+" set re=0
+
 let mapleader = " "
 
 lua require("jwyce")
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 " greatest remap ever : asbjornHaland
 vnoremap <leader>y "+y

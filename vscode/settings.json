@@ -42,6 +42,7 @@
 	"discord.idleTimeout": 1200,
 	"editor.accessibilitySupport": "off",
 	"editor.bracketPairColorization.enabled": true,
+    "editor.cursorSurroundingLines": 8,
 	"editor.detectIndentation": false,
 	"editor.fontFamily": "Dank Mono, Monaco, 'Apple Color Emoji', 'Courier New', monospace",
 	"editor.fontLigatures": true,

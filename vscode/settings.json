@@ -178,16 +178,20 @@
 			"commands": ["vscode-harpoon.editorQuickPick"]
 		},
 		{
-			"before": ["<leader>", "1"],
+			"before": ["<leader>", "J"],
 			"commands": ["vscode-harpoon.gotoEditor1"]
 		},
 		{
-			"before": ["<leader>", "2"],
+			"before": ["<leader>", "K"],
 			"commands": ["vscode-harpoon.gotoEditor2"]
 		},
 		{
-			"before": ["<leader>", "3"],
+			"before": ["<leader>", "L"],
 			"commands": ["vscode-harpoon.gotoEditor3"]
+		},
+		{
+			"before": ["<leader>", ":"],
+			"commands": ["vscode-harpoon.gotoEditor4"]
 		}
 	],
 	"vim.insertModeKeyBindings": [

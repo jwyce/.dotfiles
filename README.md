@@ -1,6 +1,6 @@
 # dotfiles
 
-A collection of my dotfiles and configuration which I use in my personal development experience. This repo is meant to be used to quickly get my dev environment setup and running on a new macOS machine.
+A collection of dotfiles and configuration which I use to personalize my development experience. Get a new osx dev environment up and running blazingly fast 🔥
 
 ## Installation
 

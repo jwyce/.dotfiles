@@ -42,7 +42,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'sbdchd/neoformat'
 " colorschemes
 Plug 'rebelot/kanagawa.nvim'
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'gruvbox-community/gruvbox'
 
 " telescope requirements...

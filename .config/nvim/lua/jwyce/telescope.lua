@@ -53,12 +53,11 @@ M.search_dotfiles = function()
 end
 
 local function set_background(content)
-	-- vim.fn.system("dconf write /org/mate/desktop/background/picture-filename \"'" .. content .. "'\"")
-    -- vim.fn.system("open " .. content)
     local index = string.find(content, "/[^/]*$")
     local formatted = string.sub(content, 0, index-2) .. string.sub(content, index+1, #content)
-    -- vim.fn.system("echo " .. formatted .. " > ~/dev/anime.txt")
-    vim.fn.system("m wallpaper " .. formatted)
+     -- vim.fn.system("echo " .. formatted .. " > ~/dev/anime.txt")
+     -- vim.fn.system("m wallpaper " .. formatted)
+     vim.fn.system("wallpaper-changer " .. formatted)
 end
 
 local function select_background(prompt_bufnr, map)

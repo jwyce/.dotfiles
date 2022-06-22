@@ -52,24 +52,27 @@ M.search_dotfiles = function()
 	})
 end
 
-local function set_background(content)
+local function set_background(content, close)
     local index = string.find(content, "/[^/]*$")
     local formatted = string.sub(content, 0, index-2) .. string.sub(content, index+1, #content)
      -- vim.fn.system("echo " .. formatted .. " > ~/dev/anime.txt")
-     -- vim.fn.system("m wallpaper " .. formatted)
-     vim.fn.system("wallpaper-changer " .. formatted)
+     if close then
+         vim.fn.system("wallpaper-changer " .. formatted)
+     else
+         vim.fn.system("m wallpaper " .. formatted)
+     end
 end
 
 local function select_background(prompt_bufnr, map)
 	local function set_the_background(close)
 		local content = require("telescope.actions.state").get_selected_entry(prompt_bufnr)
-		set_background(content.cwd .. "/" .. content.value)
+		set_background(content.cwd .. "/" .. content.value, close)
 		if close then
 			require("telescope.actions").close(prompt_bufnr)
 		end
 	end
 
-	map("i", "<C-p>", function()
+	map("i", "<C-l>", function()
 	set_the_background()
 	end)
 

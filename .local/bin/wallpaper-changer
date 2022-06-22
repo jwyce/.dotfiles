@@ -31,9 +31,7 @@ end tell"
 echo $GO_LEFT_DESKTOP_SCRIPT_TEXT > $GO_LEFT_DESKTOP_SCRIPT_FILE
 
 function go_left() {
-  for i in {1..$NUM_DESKTOPS}; do
     osascript $GO_LEFT_DESKTOP_SCRIPT_FILE
-  done
 }
 go_left
 
@@ -46,16 +44,20 @@ on run picture_file
         tell every desktop
             set picture to picture_file
         end tell
+        delay 0.5
         tell application \"System Events\"
             key code 124 using {control down}
         end tell
-        delay 0.5
     end tell
 end run"
 echo $IMAGE_SCRIPT_TEXT > $IMAGE_SCRIPT_FILE
-for i in {1..$NUM_DESKTOPS}; do
+for i in {0..$NUM_DESKTOPS}; do
   osascript $IMAGE_SCRIPT_FILE "$NEW_PIC"
 done
-go_left
+
+for i in {1..$NUM_DESKTOPS}; do
+    go_left
+done
+
 rm -f $SCRIPT_FILE
 rm -f $GO_LEFT_DESKTOP_SCRIPT_FILE

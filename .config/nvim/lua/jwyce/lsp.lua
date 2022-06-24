@@ -1,4 +1,5 @@
-local sumneko_root_path = "~/dev/personal/lua-language-server"
+local sumneko_root_path = "/Users/jwyce/dev/personal/lua-language-server"
+
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -132,7 +133,8 @@ require("lspconfig").gopls.setup(config({
 
 -- who even uses this?
 require("lspconfig").rust_analyzer.setup(config({
-	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+	-- cmd = { "rustup", "run", "stable", "rust-analyzer" },
+    ["rust-analyzer"] = {}
 	--[[
     settings = {
         rust = {

@@ -16,11 +16,12 @@ zsh
 echo "📦 Installing brew formulae and casks"
 cp Brewfile ~
 brew bundle
+path+=/Applications/flameshot.app//Contents/MacOS/ # gross 🤢
 
 echo "🐢🧶🟧 Installing node, yarn, and pnpm"
 fnm install 16
 fnm use 16
-npm install -g yarn pnpm
+npm i -g yarn pnpm zx typescript-language-server
 
 echo "🔥 Setting up neovim plugins and oh-my-tmux"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

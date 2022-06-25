@@ -4,7 +4,7 @@ echo "🍺 Installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "🚚 Moving dotfiles"
-cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .ideavimrc .gitconfig .zshrc .antigenrc ~
+cp .tmux.conf .tmux-cht-command .tmux-cht-langauges .hyper.js .gitconfig .zshrc .antigenrc ~
 cp -R .config/* ~/.config
 cp -R .local/* ~/.local
 cp -R fonts/* ~/Library/Fonts

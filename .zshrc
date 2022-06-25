@@ -16,6 +16,8 @@ eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(fnm env --use-on-cd)"
 
+export BAT_THEME="gruvbox-dark"
+
 # Enable vi mode
 bindkey -v
 

@@ -32,7 +32,7 @@ cp .tmux/.tmux.conf.local .
 
 echo "🦀 Installing rust and cargo"
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-export PATH=~/.cargo/bin
+path+=~/.cargo/bin
 cargo install cargo-edit
 
 cat doc.txt | lolcat

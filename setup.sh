@@ -18,7 +18,7 @@ cp Brewfile ~
 brew bundle
 path+=/Applications/flameshot.app//Contents/MacOS/ # gross 🤢
 
-echo "🐢🧶🟧 Installing node, yarn, and pnpm"
+echo "🐢🧶🧩 Installing node, yarn, and pnpm"
 fnm install 16
 fnm use 16
 npm i -g yarn pnpm zx typescript-language-server

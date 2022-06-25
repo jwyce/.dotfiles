@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+code --install-extension antfu.icons-carbon
 code --install-extension BeardedBear.beardedicons
 code --install-extension BeardedBear.beardedtheme
 code --install-extension bierner.markdown-mermaid
@@ -21,11 +23,9 @@ code --install-extension heybourn.headwind
 code --install-extension HowIVSCode.howivscode
 code --install-extension IBM.output-colorizer
 code --install-extension icrawl.discord-vscode
-code --install-extension jpoissonnier.vscode-styled-components
 code --install-extension kumar-harsh.graphql-for-vscode
 code --install-extension mattpocock.ts-error-translator
 code --install-extension mhutchie.git-graph
-code --install-extension miguelsolorio.fluent-icons
 code --install-extension mike-co.import-sorter
 code --install-extension mikestead.dotenv
 code --install-extension mjmcloug.vscode-elixir
@@ -35,7 +35,6 @@ code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension ms-vscode.cmake-tools
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension msjsdiag.vscode-react-native
@@ -48,14 +47,12 @@ code --install-extension richie5um2.vscode-sort-json
 code --install-extension rome.rome
 code --install-extension rust-lang.rust-analyzer
 code --install-extension saratravi.elixir-formatter
-code --install-extension silvenon.mdx
 code --install-extension SimonSiefke.svg-preview
 code --install-extension steoates.autoimport
 code --install-extension sukumo28.wav-preview
 code --install-extension tamasfe.even-better-toml
 code --install-extension tobias-z.vscode-harpoon
 code --install-extension tomoki1207.pdf
-code --install-extension twxs.cmake
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscodevim.vim
@@ -64,4 +61,4 @@ code --install-extension wix.vscode-import-cost
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension ZixuanChen.vitest-explorer
-
+code --install-extension znck.grammarly

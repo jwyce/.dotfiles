@@ -232,6 +232,14 @@
 		{
 			"after": ["\"", "_", "d", "P"],
 			"before": ["<leader>", "p"]
+		},
+		{
+			"before": ["J"],
+			"commands": ["editor.action.moveLinesDownAction"]
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.moveLinesUpAction"]
 		}
 	],
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",

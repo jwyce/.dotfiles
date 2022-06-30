@@ -81,8 +81,8 @@
 	"terminal.external.osxExec": "iterm2.app",
 	"terminal.integrated.defaultProfile.osx": "fish",
 	"terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+		"FIG_NEW_SESSION": "1"
+	},
 	"terminal.integrated.fontFamily": "MesloLGS NF, Monaco, 'Apple Color Emoji', 'Courier New', monospace",
 	"terminal.integrated.fontSize": 13,
 	"terminal.integrated.gpuAcceleration": "canvas",
@@ -175,6 +175,26 @@
 			"before": ["<leader>", "y"]
 		},
 		{
+			"before": ["g", "d"],
+			"commands": ["editor.action.revealDefinition"]
+		},
+		{
+			"before": ["<leader>", "v", "r", "r"],
+			"commands": ["editor.action.goToReferences"]
+		},
+		{
+			"before": ["<leader>", "v", "r", "n"],
+			"commands": ["editor.action.rename"]
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.showHover"]
+		},
+		{
+			"before": ["<C-o>"],
+			"commands": ["workbench.action.closeActiveEditor"]
+		},
+		{
 			"before": ["<leader>", "a"],
 			"commands": ["vscode-harpoon.addEditor"]
 		},
@@ -240,5 +260,5 @@
 	"workbench.editor.wrapTabs": true,
 	"workbench.iconTheme": "bearded-icons",
 	"workbench.productIconTheme": "icons-carbon",
-  "workbench.sideBar.location": "right"
+	"workbench.sideBar.location": "right"
 }

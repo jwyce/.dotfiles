@@ -56,6 +56,7 @@ for i in {0..$NUM_DESKTOPS}; do
 done
 
 for i in {1..$NUM_DESKTOPS}; do
+    mint run igorkulman/ChangeMenuBarColor SolidColor "#333333" --all-displays
     go_left
 done
 

@@ -18,47 +18,37 @@ if [ -z "$NUM_DESKTOPS" ]; then
   echo "Defaulted number of desktops to $NUM_DESKTOPS"
 fi
 
-# Go to leftmost desktop
 
-GO_LEFT_DESKTOP_SCRIPT_FILE=$(mktemp -t desktop-image-switcher-go-left.XXXXXXXX)
-GO_LEFT_DESKTOP_SCRIPT_TEXT="
-tell application \"System Events\"
+SPACE_KEYS=(18 19 20 21 23)
+
+GO_TO_DESKTOP_SCRIPT_FILE=$(mktemp -t desktop-image-switcher-go-to.XXXXXXXX)
+GO_TO_DESKTOP_SCRIPT_TEXT="
+on run keycode
     tell application \"System Events\"
-        key code 123 using {control down}
-    end tell
-end tell"
-
-echo $GO_LEFT_DESKTOP_SCRIPT_TEXT > $GO_LEFT_DESKTOP_SCRIPT_FILE
-
-function go_left() {
-    osascript $GO_LEFT_DESKTOP_SCRIPT_FILE
-}
-go_left
-
-# Set image for each desktop
-
-IMAGE_SCRIPT_FILE=$(mktemp -t desktop-image-switcher.XXXXXXXX)
-IMAGE_SCRIPT_TEXT="
-on run picture_file
-    tell application \"System Events\"
-        tell every desktop
-            set picture to picture_file
-        end tell
-        delay 0.5
         tell application \"System Events\"
-            key code 124 using {control down}
+            key code keycode using {command down}
         end tell
     end tell
 end run"
-echo $IMAGE_SCRIPT_TEXT > $IMAGE_SCRIPT_FILE
-for i in {0..$NUM_DESKTOPS}; do
-  osascript $IMAGE_SCRIPT_FILE "$NEW_PIC"
-done
 
-for i in {1..$NUM_DESKTOPS}; do
-    mint run igorkulman/ChangeMenuBarColor SolidColor "#333333" --all-displays
-    go_left
+echo $GO_TO_DESKTOP_SCRIPT_TEXT > $GO_TO_DESKTOP_SCRIPT_FILE
+
+function go_to() {
+    echo "keycode $1"
+    osascript $GO_TO_DESKTOP_SCRIPT_FILE $1
+}
+
+for (( i = 1; i <= $NUM_DESKTOPS; i++ )) do
+    ( 
+        echo "setting wallpaper $i"
+        go_to $SPACE_KEYS[i]
+        sleep 0.5
+        m wallpaper "$NEW_PIC"
+        # xcode installation and license agreement needed
+        mint run igorkulman/ChangeMenuBarColor SolidColor "#333333" --all-displays
+    )
 done
+go_to $SPACE_KEYS[1]
 
 rm -f $SCRIPT_FILE
-rm -f $GO_LEFT_DESKTOP_SCRIPT_FILE
+rm -f $GO_TO_DESKTOP_SCRIPT_FILE

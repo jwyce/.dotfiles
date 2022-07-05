@@ -25,9 +25,7 @@ GO_TO_DESKTOP_SCRIPT_FILE=$(mktemp -t desktop-image-switcher-go-to.XXXXXXXX)
 GO_TO_DESKTOP_SCRIPT_TEXT="
 on run keycode
     tell application \"System Events\"
-        tell application \"System Events\"
-            key code keycode using {command down}
-        end tell
+        key code keycode using {command down}
     end tell
 end run"
 

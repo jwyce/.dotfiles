@@ -59,7 +59,7 @@ local function set_background(content, close)
      if close then
          vim.fn.system("wallpaper-changer " .. formatted)
      else
-         vim.fn.system("m wallpaper " .. formatted)
+         vim.fn.system("wallpaper " .. formatted)
      end
 end
 

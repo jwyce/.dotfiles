@@ -31,18 +31,6 @@ end run"
 
 echo $GO_TO_DESKTOP_SCRIPT_TEXT > $GO_TO_DESKTOP_SCRIPT_FILE
 
-CHANGE_DESKTOP_SCRIPT_FILE=$(mktemp -t desktop-image-switcher.XXXXXXXX)
-CHANGE_DESKTOP_SCRIPT_TEXT="
-on run picture_file
-    tell application \"System Events\"
-        tell every desktop
-            set picture to picture_file
-        end tell
-    end tell
-end run"
-
-echo $CHANGE_DESKTOP_SCRIPT_TEXT > $CHANGE_DESKTOP_SCRIPT_FILE
-
 function go_to() {
     echo "keycode $1"
     osascript $GO_TO_DESKTOP_SCRIPT_FILE $1
@@ -53,12 +41,11 @@ for (( i = 1; i <= $NUM_DESKTOPS; i++ )) do
         echo "setting wallpaper $i"
         go_to $SPACE_KEYS[i]
         sleep 0.5
-        osascript $CHANGE_DESKTOP_SCRIPT_FILE "$NEW_PIC"
+        wallpaper "$NEW_PIC"
         # xcode installation and license agreement needed
         mint run igorkulman/ChangeMenuBarColor SolidColor "#333333" --all-displays
     )
 done
 go_to $SPACE_KEYS[1]
 
-rm -f $SCRIPT_FILE
 rm -f $GO_TO_DESKTOP_SCRIPT_FILE

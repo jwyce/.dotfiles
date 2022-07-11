@@ -46,6 +46,6 @@ for (( i = 1; i <= $NUM_DESKTOPS; i++ )) do
         mint run igorkulman/ChangeMenuBarColor SolidColor "#333333" --all-displays
     )
 done
-go_to $SPACE_KEYS[1]
+go_to $SPACE_KEYS[2]
 
 rm -f $GO_TO_DESKTOP_SCRIPT_FILE

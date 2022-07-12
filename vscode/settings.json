@@ -81,8 +81,8 @@
 	"terminal.external.osxExec": "iterm2.app",
 	"terminal.integrated.defaultProfile.osx": "fish",
 	"terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
+    "FIG_NEW_SESSION": "1"
+  },
 	"terminal.integrated.fontFamily": "MesloLGS NF, Monaco, 'Apple Color Emoji', 'Courier New', monospace",
 	"terminal.integrated.fontSize": 13,
 	"terminal.integrated.gpuAcceleration": "canvas",
@@ -160,7 +160,7 @@
 	"todo-tree.highlights.useColourScheme": true,
 	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
 	"typescript.format.semicolons": "insert",
-	"typescript.tsserver.experimental.enableProjectDiagnostics": false,
+	"typescript.tsserver.experimental.enableProjectDiagnostics": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"vim.insertModeKeyBindings": [
 		{
@@ -185,6 +185,14 @@
 		{
 			"before": ["<leader>", "v", "r", "n"],
 			"commands": ["editor.action.rename"]
+		},
+		{
+			"before": ["<leader>", "p", "f"],
+			"commands": ["workbench.action.quickOpen"]
+		},
+		{
+			"before": ["<leader>", "p", "c"],
+			"commands": ["workbench.action.showCommands"]
 		},
 		{
 			"before": ["K"],
@@ -268,5 +276,5 @@
 	"workbench.editor.wrapTabs": true,
 	"workbench.iconTheme": "bearded-icons",
 	"workbench.productIconTheme": "icons-carbon",
-	"workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right"
 }

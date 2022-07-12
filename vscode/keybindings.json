@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-  	{
+	{
 		"key": "ctrl+n",
 		"command": "explorer.newFile"
 	},
@@ -48,8 +48,27 @@
 		"command": "-workbench.view.explorer",
 		"when": "viewContainer.workbench.view.explorer.enabled"
 	},
-    {
+	{
 		"key": "cmd+q",
 		"command": "-workbench.action.quit"
+	},
+	{
+		"key": "cmd+j",
+		"command": "-workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+c",
+		"command": "workbench.action.closeQuickOpen",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
 	}
 ]

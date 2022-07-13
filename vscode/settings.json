@@ -275,6 +275,6 @@
 	"workbench.editor.enablePreview": false,
 	"workbench.editor.wrapTabs": true,
 	"workbench.iconTheme": "bearded-icons",
-	"workbench.productIconTheme": "icons-carbon",
+	"workbench.productIconTheme": "fluent-icons",
   "workbench.sideBar.location": "right"
 }

@@ -183,7 +183,7 @@
 			"commands": ["editor.action.goToReferences"]
 		},
 		{
-			"before": ["<leader>", "v", "r", "n"],
+			"before": ["<leader>", "s"],
 			"commands": ["editor.action.rename"]
 		},
 		{

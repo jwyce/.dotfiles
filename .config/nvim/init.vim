@@ -43,6 +43,7 @@ Plug 'sbdchd/neoformat'
 " colorschemes
 Plug 'rebelot/kanagawa.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'gruvbox-community/gruvbox'
 
 " telescope requirements...

@@ -16,7 +16,7 @@ zsh
 echo "📦 Installing brew formulae and casks"
 cp Brewfile ~
 brew bundle
-path+=/Applications/flameshot.app//Contents/MacOS/ # gross 🤢
+echo -n 'export PATH=/Applications/flameshot.app//Contents/MacOS/:$PATH' >> ~/.zshenv # gross 🤢
 zsh
 
 echo "🐢 Installing node and package managers"
@@ -34,7 +34,7 @@ cp .tmux.conf ~
 
 echo "🦀 Installing rust and cargo"
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-path+=~/.cargo/bin
+echo -n 'export PATH=~/.cargo/bin:$PATH' >> ~/.zshenv 
 zsh
 cargo install cargo-edit
 

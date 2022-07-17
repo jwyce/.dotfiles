@@ -302,7 +302,10 @@
 		"panel.dropBorder": "#a878c4",
 		"panelTitle.activeBorder": "#d297f5",
 		"tab.activeBorderTop": "#d297f5",
-		"terminal.tab.activeBorder": "#d297f5"
+		"terminal.tab.activeBorder": "#d297f5",
+        "editor.selectionBackground": "#135564",
+		"editor.selectionHighlightBackground": "#135564",
+		"editor.findMatchHighlightBackground": "#135564"
 	},
 	"workbench.colorTheme": "Bearded Theme Arc Reversed",
 	"workbench.editor.enablePreview": false,

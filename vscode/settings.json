@@ -254,6 +254,14 @@
 			"commands": ["workbench.action.closeActiveEditor"]
 		},
 		{
+			"before": ["<C-d>"],
+			"after": ["<C-d>", "z", "z"]
+		},
+		{
+			"before": ["<C-u>"],
+			"after": ["<C-u>", "z", "z"]
+		},
+		{
 			"before": ["<leader>", "a"],
 			"commands": ["vscode-harpoon.addEditor"]
 		},

@@ -214,8 +214,28 @@
 			"commands": ["editor.action.goToReferences"]
 		},
 		{
-			"before": ["<leader>", "s"],
+			"before": ["<leader>", "v", "r", "n"],
 			"commands": ["editor.action.rename"]
+		},
+		{
+			"after": [
+				":",
+				"%",
+				"s",
+				"/",
+				"<C-r>",
+				"<C-w>",
+				"/",
+				"<C-r>",
+				"<C-w>",
+				"/",
+				"g",
+				"I",
+				"<Left>",
+				"<Left>",
+				"<Left>"
+			],
+			"before": ["<leader>", "s"]
 		},
 		{
 			"before": ["<leader>", "p", "f"],
@@ -282,12 +302,16 @@
 		}
 	],
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"window.zoomLevel": 1,
 	"workbench.colorCustomizations": {
 		"activityBar.foreground": "#d297f5",
 		"activityBarBadge.background": "#a95ffd",
 		"badge.background": "#a95ffd",
 		"border": "#d297f5",
 		"editor.background": "#000",
+		"editor.findMatchHighlightBackground": "#135564",
+		"editor.selectionBackground": "#135564",
+		"editor.selectionHighlightBackground": "#135564",
 		"editorBracketHighlight.foreground1": "#ffaab7",
 		"editorBracketHighlight.foreground2": "#9b97f9",
 		"editorBracketHighlight.foreground3": "#bfff88",
@@ -302,10 +326,7 @@
 		"panel.dropBorder": "#a878c4",
 		"panelTitle.activeBorder": "#d297f5",
 		"tab.activeBorderTop": "#d297f5",
-		"terminal.tab.activeBorder": "#d297f5",
-        "editor.selectionBackground": "#135564",
-		"editor.selectionHighlightBackground": "#135564",
-		"editor.findMatchHighlightBackground": "#135564"
+		"terminal.tab.activeBorder": "#d297f5"
 	},
 	"workbench.colorTheme": "Bearded Theme Arc Reversed",
 	"workbench.editor.enablePreview": false,

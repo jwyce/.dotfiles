@@ -97,6 +97,8 @@ nnoremap <leader>gln :cnext<CR>:call search(_search_term)<CR>
 nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
 nnoremap <leader>nf :Neoformat
 
+nnoremap n nzz
+nnoremap N Nzz
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <leader>x :silent !chmod +x %<CR>

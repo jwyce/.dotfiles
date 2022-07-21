@@ -26,9 +26,8 @@ ATUIN_NOBIND=1 eval "$(atuin init zsh)"
 bindkey '^r' _atuin_search_widget
 
 # aliases
-alias conf='vim ~/.zshrc'
-alias home='cd ~/dev'
 alias rimraf='rm -rf'
+alias code="open . -a \"Visual Studio Code\""
 alias c='clear'
 alias l='exa -la'
 alias vim='nvim'

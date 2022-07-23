@@ -27,6 +27,7 @@ alias code="open . -a \"Visual Studio Code\""
 alias c='clear'
 alias l='exa -la'
 alias vim='nvim'
+alias vi='nvim'
 alias python='python3'
 alias pip='pip3'
 alias mbrew='arch -arm64e /opt/homebrew/bin/brew'

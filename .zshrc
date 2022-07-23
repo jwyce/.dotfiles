@@ -33,10 +33,11 @@ alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias yolo="git push origin master --force --no-verify"
 
 # npm aliases
-alias nci="npm ci"
-alias nid="npm install --save-dev"
-alias ni="npm install"
 alias nr="npm run"
+alias nci="npm ci"
+alias ni="npm i"
+alias nid="npm i --save-dev"
+alias nrm="npm r"
 alias nt="npm run test"
 
 # pnpm aliases
@@ -45,12 +46,14 @@ alias pi="pnpm install"
 alias pa="pnpm add"
 alias pr="pnpm remove"
 alias pad="pnpm add -D"
+alias pt="pnpm test"
 
 # yarn aliases
 alias y="yarn"
 alias ya="yarn add"
 alias yr="yarn remove"
 alias yad="yarn add -D"
+alias yt="yarn test"
 
 # cargo aliases
 alias cr="cargo run"

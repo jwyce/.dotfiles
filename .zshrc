@@ -43,7 +43,7 @@ alias nt="npm run test"
 alias p="pnpm"
 alias pi="pnpm install"
 alias pa="pnpm add"
-alias prm="pnpm remove"
+alias pr="pnpm remove"
 alias pad="pnpm add -D"
 
 # yarn aliases

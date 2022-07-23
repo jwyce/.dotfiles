@@ -1,10 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
 
-
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
-
 # Load Antigen
 source "$HOME/antigen.zsh"
 
@@ -41,13 +37,14 @@ alias nci="npm ci"
 alias nid="npm install --save-dev"
 alias ni="npm install"
 alias nr="npm run"
+alias nt="npm run test"
 
 # pnpm aliases
-alias pn="pnpm"
-alias pni="pnpm install"
-alias pna="pnpm add"
-alias pnr="pnpm remove"
-alias pnad="pnpm add -D"
+alias p="pnpm"
+alias pi="pnpm install"
+alias pa="pnpm add"
+alias prm="pnpm remove"
+alias pad="pnpm add -D"
 
 # yarn aliases
 alias y="yarn"
@@ -60,3 +57,6 @@ alias cr="cargo run"
 alias ca="cargo add"
 alias cn="cargo new"
 alias ct="cargo test"
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"

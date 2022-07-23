@@ -37,8 +37,8 @@ alias yolo="git push origin master --force --no-verify"
 alias nr="npm run"
 alias nci="npm ci"
 alias ni="npm i"
-alias nid="npm i --save-dev"
-alias nrm="npm r"
+alias nid="npm i -D"
+alias nrm="npm rm"
 alias nt="npm run test"
 
 # pnpm aliases

@@ -23,7 +23,7 @@ bindkey '^r' _atuin_search_widget
 
 # aliases
 alias rimraf='rm -rf'
-alias code="open . -a \"Visual Studio Code\""
+alias code="open $1 -a \"Visual Studio Code\""
 alias c='clear'
 alias l='exa -la'
 alias vim='nvim'

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+code --install-extension antfu.iconify
+code --install-extension antfu.slidev
+code --install-extension antfu.where-am-i
 code --install-extension astro-build.astro-vscode
 code --install-extension BeardedBear.beardedicons
 code --install-extension BeardedBear.beardedtheme
@@ -22,6 +25,7 @@ code --install-extension HowIVSCode.howivscode
 code --install-extension IBM.output-colorizer
 code --install-extension icrawl.discord-vscode
 code --install-extension kumar-harsh.graphql-for-vscode
+code --install-extension lokalise.i18n-ally
 code --install-extension mattpocock.ts-error-translator
 code --install-extension mhutchie.git-graph
 code --install-extension miguelsolorio.fluent-icons
@@ -32,8 +36,6 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-dotnettools.csharp
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
-code --install-extension ms-vscode-remote.remote-containers
-code --install-extension ms-vscode-remote.remote-wsl
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension msjsdiag.vscode-react-native
@@ -55,6 +57,7 @@ code --install-extension tomoki1207.pdf
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscodevim.vim
+code --install-extension WakaTime.vscode-wakatime
 code --install-extension withfig.fig
 code --install-extension wix.vscode-import-cost
 code --install-extension xabikos.JavaScriptSnippets

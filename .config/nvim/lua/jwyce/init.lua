@@ -18,4 +18,5 @@ Inoremap = CreateNoremap("i", { noremap = true })
 
 require("jwyce.telescope")
 require("jwyce.lsp")
+require("jwyce.cloak")
 require("jwyce.nvim-treesitter-context")

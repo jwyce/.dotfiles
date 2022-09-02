@@ -18,7 +18,7 @@ Plug 'simrat39/symbols-outline.nvim'
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 " Debugger Plugins
 Plug 'mfussenegger/nvim-dap'
@@ -57,6 +57,7 @@ Plug 'ThePrimeagen/harpoon'
 
 " prettier
 Plug 'sbdchd/neoformat'
+Plug 'laytan/cloak.nvim'
 
 call plug#end()
 

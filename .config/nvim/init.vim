@@ -56,7 +56,10 @@ Plug 'ThePrimeagen/harpoon'
 
 " prettier
 Plug 'sbdchd/neoformat'
+
+" other
 Plug 'laytan/cloak.nvim'
+Plug 'andweeb/presence.nvim'
 
 call plug#end()
 

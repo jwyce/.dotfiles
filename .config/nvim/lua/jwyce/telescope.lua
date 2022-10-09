@@ -32,7 +32,7 @@ require("telescope").setup({
     ]]
 })
 
---require("telescope").load_extension("fzy_native")
+-- require("telescope").load_extension("fzy_native")
 
 local M = {}
 
@@ -57,7 +57,7 @@ end
 local function set_background(content, close)
     local index = string.find(content, "/[^/]*$")
     local formatted = string.sub(content, 0, index) .. string.sub(content, index+1, #content)
-     -- vim.fn.system("echo " .. formatted .. " > ~/dev/anime.txt")
+     vim.fn.system("echo " .. formatted .. " > ~/dev/anime.txt")
      if close then
          vim.fn.system("wallpaper-changer " .. formatted)
      else
@@ -75,7 +75,7 @@ local function select_background(prompt_bufnr, map)
 	end
 
 	map("i", "<C-l>", function()
-	set_the_background()
+        set_the_background()
 	end)
 
 	map("i", "<CR>", function()

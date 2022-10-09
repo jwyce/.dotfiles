@@ -1,3 +1,5 @@
+local nnoremap = require("jwyce.keymap").nnoremap
+
 function ContextSetup(show_all_context)
     require("treesitter-context").setup({
         enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -33,5 +35,6 @@ function ContextSetup(show_all_context)
     })
 end
 
-NnoremapGlobal("<leader>cf", "<cmd>lua ContextSetup(true)<CR>")
-NnoremapGlobal("<leader>cp", "<cmd>lua ContextSetup(false)<CR>")
+nnoremap("<leader>cf", function() ContextSetup(true) end)
+nnoremap("<leader>cp", function() ContextSetup(false) end)
+ContextSetup(false)

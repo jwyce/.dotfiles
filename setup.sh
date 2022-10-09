@@ -13,7 +13,7 @@ echo "🦠 Setting up zsh and antigen"
 curl -L git.io/antigen > antigen.zsh
 zsh
 
-echo "📦 Installing brew formulae and casks"
+echo "💎 Installing from Brewfile"
 cp Brewfile ~
 brew bundle
 echo -n 'export PATH=/Applications/flameshot.app//Contents/MacOS/:$PATH' >> ~/.zshenv # gross 🤢
@@ -26,9 +26,9 @@ fnm install 16
 fnm use 16
 npm i -g yarn pnpm zx typescript-language-server
 
-echo "🔌 Setting up vim.plug and .tmux"
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo "📦 Setting up packer and .tmux"
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
@@ -36,7 +36,7 @@ cp .tmux.conf ~
 
 echo "🦀 Installing rust and cargo"
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-echo -n 'export PATH=~/.cargo/bin:$PATH' >> ~/.zshenv 
+echo -n 'export PATH=~/.cargo/bin:$PATH' >> ~/.zshenv
 zsh
 cargo install cargo-edit
 

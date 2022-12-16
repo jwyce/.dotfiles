@@ -1,1 +1,1 @@
-require('jwyce')
+require("jwyce")

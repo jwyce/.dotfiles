@@ -1,11 +1,8 @@
 require("jwyce.set")
-require("jwyce.packer")
-require("jwyce.neogit")
---require("jwyce.debugger")
-require("jwyce.cloak")
+require("jwyce.remap")
 
 local augroup = vim.api.nvim_create_augroup
-JWyceGroup = augroup('JWyce', {})
+local JWyceGroup = augroup('JWyce', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -25,14 +22,6 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufEnter", "BufWinEnter", "TabEnter"}, {
-    group = JWyceGroup,
-    pattern = "*.rs",
-    callback = function()
-        require("lsp_extensions").inlay_hints{}
-    end
-})
-
 autocmd({"BufWritePre"}, {
     group = JWyceGroup,
     pattern = "*",
@@ -42,3 +31,4 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+

@@ -55,4 +55,29 @@ return require('packer').startup(function(use)
     use("laytan/cloak.nvim")
     use("andweeb/presence.nvim")
 
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use {
+        "windwp/nvim-ts-autotag",
+        config = function() require("nvim-ts-autotag").setup {} end
+    }
+    use {
+        "norcalli/nvim-colorizer.lua",
+        config = function() require("colorizer").setup {} end
+    }
+    use {
+        "themaxmarchuk/tailwindcss-colors.nvim",
+        config = function()
+            require("tailwindcss-colors").setup()
+        end
+    }
+
 end)

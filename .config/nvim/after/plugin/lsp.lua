@@ -17,6 +17,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
 })
+local root_pattern = require('lspconfig.util').root_pattern
 
 -- disable completion with tab
 -- this helps with copilot setup
@@ -32,12 +33,23 @@ lsp.set_preferences({
     sign_icons = {},
 })
 
-lsp.configure("denols", {
-    init_options = {
-        enable = true,
-        lint = true,
-        unstable = true,
-    },
+lsp.configure('denols', {
+    root_dir = root_pattern(
+        'deno.json'
+    )
+})
+lsp.configure('tsserver', {
+    single_file_support = false,
+    root_dir = root_pattern(
+        'tsconfig.json'
+    )
+})
+lsp.configure('tailwindcss', {
+    root_dir = root_pattern(
+        'tailwind.config.js',
+        'tailwind.config.cjs',
+        'tailwind.config.ts'
+    )
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -58,6 +70,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
 end)
 
 lsp.setup()

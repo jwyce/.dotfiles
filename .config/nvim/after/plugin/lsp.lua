@@ -30,7 +30,12 @@ lsp.setup_nvim_cmp({
 
 lsp.set_preferences({
     suggest_lsp_servers = true,
-    sign_icons = {},
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I'
+    },
 })
 
 lsp.configure('denols', {
@@ -77,5 +82,4 @@ lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,
-    underline = false,
 })

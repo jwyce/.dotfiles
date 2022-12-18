@@ -49,13 +49,6 @@ alias pr="pnpm remove"
 alias pad="pnpm add -D"
 alias pt="pnpm test"
 
-# yarn aliases
-alias y="yarn"
-alias ya="yarn add"
-alias yr="yarn remove"
-alias yad="yarn add -D"
-alias yt="yarn test"
-
 # cargo aliases
 alias cr="cargo run"
 alias ca="cargo add"

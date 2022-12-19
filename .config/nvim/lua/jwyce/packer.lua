@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
     use("github/copilot.vim")
     use("laytan/cloak.nvim")
     use("andweeb/presence.nvim")
+    use("sbdchd/neoformat")
 
     use {
         'numToStr/Comment.nvim',

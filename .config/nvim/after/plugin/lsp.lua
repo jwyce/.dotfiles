@@ -47,7 +47,7 @@ lsp.configure('tsserver', {
     single_file_support = false,
     root_dir = root_pattern(
         'tsconfig.json'
-    )
+    ),
 })
 lsp.configure('tailwindcss', {
     root_dir = root_pattern(

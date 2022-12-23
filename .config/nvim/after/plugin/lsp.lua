@@ -44,7 +44,16 @@ lsp.configure('denols', {
     )
 })
 lsp.configure('tsserver', {
-    single_file_support = false,
+    commands = {
+        OrganizeImports = {
+            function()
+                vim.lsp.buf.execute_command({
+                    command = '_typescript.organizeImports',
+                    arguments = { vim.api.nvim_buf_get_name(0) },
+                })
+            end,
+        },
+    },
     root_dir = root_pattern(
         'tsconfig.json'
     ),

@@ -19,6 +19,15 @@ return require('packer').startup(function(use)
       require("todo-comments").setup {}
     end
   }
+  -- Lua
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end
+  }
+
   use("folke/tokyonight.nvim")
   use({
     'rose-pine/neovim',

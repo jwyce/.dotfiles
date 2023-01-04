@@ -32,6 +32,7 @@ alias python='python3'
 alias pip='pip3'
 alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias yolo="git push origin master --force --no-verify"
+alias f='fuck'
 
 # npm aliases
 alias nr="npm run"

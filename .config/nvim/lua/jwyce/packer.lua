@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
       require("todo-comments").setup {}
     end
   }
-  -- Lua
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -27,6 +26,7 @@ return require('packer').startup(function(use)
       require("trouble").setup {}
     end
   }
+  use("folke/zen-mode.nvim")
 
   use("folke/tokyonight.nvim")
   use({
@@ -42,6 +42,10 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use("github/copilot.vim")
+  use("laytan/cloak.nvim")
+  use("andweeb/presence.nvim")
+  use("sbdchd/neoformat")
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -65,25 +69,20 @@ return require('packer').startup(function(use)
     }
   }
 
-  use("folke/zen-mode.nvim")
-  use("github/copilot.vim")
-  use("laytan/cloak.nvim")
-  use("andweeb/presence.nvim")
-  use("sbdchd/neoformat")
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
   use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-
+  use {
+    'stevearc/oil.nvim',
+    config = function() require('oil').setup() end
+  }
   use {
     'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
+    config = function() require('Comment').setup() end
   }
   use {
     "windwp/nvim-autopairs",
@@ -97,6 +96,7 @@ return require('packer').startup(function(use)
     "norcalli/nvim-colorizer.lua",
     config = function() require("colorizer").setup {} end
   }
+
   use {
     "themaxmarchuk/tailwindcss-colors.nvim",
     config = function()
@@ -105,11 +105,9 @@ return require('packer').startup(function(use)
   }
   use({
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    tag = "*",
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup({})
     end
   })
 end)

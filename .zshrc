@@ -32,6 +32,7 @@ alias rimraf='rm -rf'
 alias code="open $1 -a \"Visual Studio Code\""
 alias c='clear'
 alias l='exa -la'
+alias lg='lazygit'
 alias vim='nvim'
 alias vi='nvim'
 alias python='python3'

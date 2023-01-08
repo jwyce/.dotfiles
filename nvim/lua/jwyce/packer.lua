@@ -46,6 +46,8 @@ return require('packer').startup(function(use)
   use("laytan/cloak.nvim")
   use("andweeb/presence.nvim")
   use("sbdchd/neoformat")
+  use('kdheepak/lazygit.nvim')
+  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -68,9 +70,6 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
-
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
   use {
     'nvim-lualine/lualine.nvim',

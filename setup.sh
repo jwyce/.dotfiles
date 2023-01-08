@@ -78,6 +78,7 @@ if ! test -e $HOME/antigen.zsh; then
 else
     log_end "antigen config detected"
 fi
+echo
 
 log_start "🦀 Installing Rust..."
 if ! command -v rustc &> /dev/null; then
@@ -108,9 +109,7 @@ else
     log_end "nvim config detected"
 fi
 
-# Install packer
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &> /dev/null
-# Install plugins
+log_start "📦 Installing packer plugins..."
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &> /dev/null
 log_end "packer.nvim plugins synced"
 echo

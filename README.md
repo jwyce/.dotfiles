@@ -1,13 +1,7 @@
-# dotfiles
-
-A collection of dotfiles and configuration which I use to personalize my development experience. Get a new osx dev environment up and running blazingly fast 🔥
+# .dotfiles
+Dotfiles for setting up my macOS environment
 
 ## Installation
-
-Run this:
-
-```sh
-git clone https://github.com/jwyce/.dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./setup.sh
+```
+/bin/bash  -c "$(curl -fsSL https://raw.githubusercontent.com/jwyce/.dotfiles/HEAD/install.sh)"
 ```

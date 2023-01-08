@@ -7,12 +7,18 @@ source "$HOME/antigen.zsh"
 # Load Antigen configurations
 antigen init ~/.antigenrc
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+export DOT=$HOME/.dotfiles
+export CONFIG=$HOME/.config
+export NVIM_LUA=$DOT/nvim/lua/brendonovich
+export ZSHRC=$DOT/.zshrc
+export BREWFILE=$DOT/Brewfile
+
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(fnm env --use-on-cd)"
 
-export BAT_THEME="gruvbox-dark"
+export STARSHIP_CONFIG=$DOT/starship.toml
+export BAT_THEME="ansi"
 
 # Enable vi mode
 bindkey -v
@@ -30,7 +36,6 @@ alias vim='nvim'
 alias vi='nvim'
 alias python='python3'
 alias pip='pip3'
-alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 

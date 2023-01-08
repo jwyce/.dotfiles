@@ -11,7 +11,7 @@
   s = status
   co = checkout
   cob = checkout -b
-  del = branch -D    
+  del = branch -D
   br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   save = !git add -A && git commit -m 'chore: savepoint'
   undo = reset HEAD~1 --mixed
@@ -29,7 +29,7 @@
     navigate = true  # use n and N to move between diff sections
     light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     line-numbers = true
-    syntax-theme = gruvbox-dark
+    syntax-theme = ansi
 
 [merge]
     conflictstyle = diff3

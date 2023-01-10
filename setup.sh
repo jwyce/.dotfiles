@@ -46,16 +46,14 @@ symlink $DOT/.tmux-cht-langauges $HOME/.tmux-cht-languages
 symlink $DOT/.hyper.js $HOME/.hyper.js
 symlink $DOT/.antigenrc $HOME/.antigenrc
 symlink $DOT/.gitconfig $HOME/.gitconfig
+if ! test -e $LOCAL/bin/scripts; then
+    symlink $DOT/bin/scripts $LOCAL/bin
+fi
 log_end "Symlinks created"
 
-# TODO: figure out how to symlink this with fig
 log_start "🔠 Copying Fonts..."
 cp -R fonts/* $HOME/Library/Fonts
 log_end "fonts copied"
-
-log_start "0️⃣  Copying Scripts..."
-cp -R bin/* $LOCAL/bin
-log_end "scripts copied"
 
 log_start "🍺 Installing Homebrew..."
 if ! eval_brew; then

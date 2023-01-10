@@ -39,22 +39,6 @@ alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 
-# npm aliases
-alias nr="npm run"
-alias nci="npm ci"
-alias ni="npm i"
-alias nid="npm i -D"
-alias nrm="npm rm"
-alias nt="npm run test"
-
-# pnpm aliases
-alias p="pnpm"
-alias pi="pnpm install"
-alias pa="pnpm add"
-alias pr="pnpm remove"
-alias pad="pnpm add -D"
-alias pt="pnpm test"
-
 # cargo aliases
 alias cr="cargo run"
 alias ca="cargo add"

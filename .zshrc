@@ -8,7 +8,7 @@ antigen init ~/.antigenrc
 
 export DOT=$HOME/.dotfiles
 export CONFIG=$HOME/.config
-export NVIM_LUA=$DOT/nvim/lua/brendonovich
+export NVIM_LUA=$DOT/nvim/lua/jwyce
 export ZSHRC=$DOT/.zshrc
 export BREWFILE=$DOT/Brewfile
 
@@ -17,7 +17,7 @@ eval "$(thefuck --alias)"
 eval "$(fnm env --use-on-cd)"
 
 export STARSHIP_CONFIG=$DOT/starship.toml
-export BAT_THEME="ansi"
+export BAT_THEME="gruvbox-dark"
 
 # Enable vi mode
 bindkey -v
@@ -38,6 +38,7 @@ alias python='python3'
 alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
+alias kc='kubectl'
 
 # cargo aliases
 alias cr="cargo run"

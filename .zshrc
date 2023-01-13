@@ -11,6 +11,9 @@ export CONFIG=$HOME/.config
 export NVIM_LUA=$DOT/nvim/lua/jwyce
 export ZSHRC=$DOT/.zshrc
 export BREWFILE=$DOT/Brewfile
+export BIN=$DOT/bin/scripts
+
+export PATH=$PATH:$BIN
 
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"

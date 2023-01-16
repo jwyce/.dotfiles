@@ -53,7 +53,6 @@ return require('packer').startup(function(use)
   use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
 
-  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,

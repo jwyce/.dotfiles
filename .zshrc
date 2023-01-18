@@ -42,6 +42,7 @@ alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 alias kc='kubectl'
+alias clean_symln='rm -- *(-@D)'
 
 # cargo aliases
 alias cr="cargo run"

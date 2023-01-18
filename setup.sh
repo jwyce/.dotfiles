@@ -42,7 +42,7 @@ symlink $DOT/.zprofile $HOME/.zprofile
 symlink $DOT/.tmux.conf $DOT/.tmux/
 symlink $DOT/.tmux/.tmux.conf $HOME/.tmux.conf
 symlink $DOT/.tmux-cht-command $HOME/.tmux-cht-command
-symlink $DOT/.tmux-cht-langauges $HOME/.tmux-cht-languages
+symlink $DOT/.tmux-cht-languages $HOME/.tmux-cht-languages
 symlink $DOT/.hyper.js $HOME/.hyper.js
 symlink $DOT/.antigenrc $HOME/.antigenrc
 symlink $DOT/.gitconfig $HOME/.gitconfig

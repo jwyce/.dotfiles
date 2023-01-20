@@ -38,7 +38,6 @@ mkdir -p $CONFIG
 
 log_start "🔗 Symlinking dotfiles..."
 symlink $DOT/.zshrc $HOME/.zshrc
-symlink $DOT/.zprofile $HOME/.zprofile
 symlink $DOT/.tmux.conf $DOT/.tmux/
 symlink $DOT/.tmux/.tmux.conf $HOME/.tmux.conf
 symlink $DOT/.tmux-cht-command $HOME/.tmux-cht-command

@@ -6,21 +6,20 @@ source "$HOME/antigen.zsh"
 # Load Antigen configurations
 antigen init ~/.antigenrc
 
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export DOT=$HOME/.dotfiles
 export CONFIG=$HOME/.config
 export NVIM_LUA=$DOT/nvim/lua/jwyce
 export ZSHRC=$DOT/.zshrc
 export BREWFILE=$DOT/Brewfile
 export BIN=$DOT/bin/scripts
-
-export PATH=$PATH:$BIN
+export PATH="$BIN:$PATH"
+export STARSHIP_CONFIG=$DOT/starship.toml
+export BAT_THEME="gruvbox-dark"
 
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(fnm env --use-on-cd)"
-
-export STARSHIP_CONFIG=$DOT/starship.toml
-export BAT_THEME="gruvbox-dark"
 
 # Enable vi mode
 bindkey -v

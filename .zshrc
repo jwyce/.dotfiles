@@ -20,6 +20,13 @@ export BAT_THEME="gruvbox-dark"
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(fnm env --use-on-cd)"
+export PATH=$PATH:$BIN
+export STARSHIP_CONFIG=$DOT/starship.toml
+export BAT_THEME="gruvbox-dark"
+
+eval "$(fnm env --use-on-cd)"
+eval "$(starship init zsh)"
+eval "$(thefuck --alias)"
 
 # Enable vi mode
 bindkey -v

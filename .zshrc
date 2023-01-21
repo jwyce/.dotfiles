@@ -6,7 +6,6 @@ source "$HOME/antigen.zsh"
 # Load Antigen configurations
 antigen init ~/.antigenrc
 
-# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export DOT=$HOME/.dotfiles
 export CONFIG=$HOME/.config
 export NVIM_LUA=$DOT/nvim/lua/jwyce

@@ -43,6 +43,7 @@ lsp.configure('denols', {
         'deno.json'
     )
 })
+
 lsp.configure('tsserver', {
     commands = {
         OrganizeImports = {
@@ -58,6 +59,7 @@ lsp.configure('tsserver', {
         'tsconfig.json'
     ),
 })
+
 lsp.configure('tailwindcss', {
     root_dir = root_pattern(
         'tailwind.config.js',
@@ -69,10 +71,10 @@ lsp.configure('tailwindcss', {
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    if client.name == "eslint" then
-        vim.cmd [[ LspStop eslint ]]
-        return
-    end
+    -- if client.name == "eslint" then
+    --     vim.cmd [[ LspStop eslint ]]
+    --     return
+    -- end
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)

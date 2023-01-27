@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   use("andweeb/presence.nvim")
   use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
+  use('monaqa/dial.nvim')
 
   use({
     "iamcco/markdown-preview.nvim",

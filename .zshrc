@@ -13,6 +13,7 @@ export ZSHRC=$DOT/.zshrc
 export BREWFILE=$DOT/Brewfile
 export BIN=$DOT/bin/scripts
 export PATH="$BIN:$PATH"
+export PATH="$PATH:/Users/wabamn/.bin"
 export STARSHIP_CONFIG=$DOT/starship.toml
 export BAT_THEME="gruvbox-dark"
 
@@ -50,3 +51,4 @@ alias ct="cargo test"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+

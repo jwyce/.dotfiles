@@ -67,6 +67,8 @@ module.exports = {
   },
   plugins: ["hyper-tokyo-night", "hyper-opacity"],
   localPlugins: [],
-  keymaps: {},
+  keymaps: {
+    "pane:close": ""
+  },
 };
 //# sourceMappingURL=config-default.js.map

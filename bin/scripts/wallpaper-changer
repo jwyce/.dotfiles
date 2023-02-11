@@ -37,13 +37,11 @@ function go_to() {
 }
 
 for (( i = 1; i <= $NUM_DESKTOPS; i++ )) do
-    ( 
+    (
         echo "setting wallpaper $i"
         go_to $SPACE_KEYS[i]
         sleep 0.5
         wallpaper "$NEW_PIC"
-        # xcode installation and license agreement needed
-        mint run igorkulman/ChangeMenuBarColor SolidColor "#333333" --all-displays
     )
 done
 go_to $SPACE_KEYS[2]

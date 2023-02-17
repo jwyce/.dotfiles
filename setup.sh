@@ -52,7 +52,7 @@ fi
 log_end "Symlinks created"
 
 log_start "🔠 Copying Fonts..."
-cp -R fonts/* $HOME/Library/Fonts
+cp -R $DOT/fonts/* $HOME/Library/Fonts
 log_end "fonts copied"
 
 log_start "🍺 Installing Homebrew..."

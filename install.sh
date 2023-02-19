@@ -14,6 +14,8 @@ function eval_brew() {
 REPO_URL=https://github.com/jwyce/.dotfiles.git
 INSTALL_PATH=$HOME/.dotfiles
 
+xcode-select --install
+
 if ! eval_brew; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

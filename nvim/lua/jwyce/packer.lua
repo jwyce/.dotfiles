@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
     end
   })
 
+  use('jwyce/telescope-media-files.nvim')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('eandrju/cellular-automaton.nvim')
@@ -52,6 +53,7 @@ return require('packer').startup(function(use)
   use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
   use('monaqa/dial.nvim')
+  use("princejoogie/tailwind-highlight.nvim")
 
   use({
     "iamcco/markdown-preview.nvim",
@@ -101,16 +103,18 @@ return require('packer').startup(function(use)
     config = function() require("nvim-ts-autotag").setup {} end
   }
   use {
-    "norcalli/nvim-colorizer.lua",
-    config = function() require("colorizer").setup {} end
+    "brenoprata10/nvim-highlight-colors",
+    config = function() require('nvim-highlight-colors').setup {} end
   }
-
-  use {
-    "themaxmarchuk/tailwindcss-colors.nvim",
+  use({
+    "roobert/tailwindcss-colorizer-cmp.nvim",
     config = function()
-      require("tailwindcss-colors").setup()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 1,
+      })
     end
-  }
+  })
+
   use({
     "kylechui/nvim-surround",
     tag = "*",

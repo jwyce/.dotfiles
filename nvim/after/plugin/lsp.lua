@@ -25,7 +25,10 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
+  formatting = {
+    format = require("tailwindcss-colorizer-cmp").formatter
+  }
 })
 
 lsp.set_preferences({
@@ -80,6 +83,13 @@ lsp.configure('tailwindcss', {
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
+  local tw_highlight = require('tailwind-highlight')
+
+  tw_highlight.setup(client, bufnr, {
+    single_column = false,
+    mode = 'background',
+    debounce = 200,
+  })
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -91,7 +101,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-
 end)
 
 lsp.setup()

@@ -102,7 +102,7 @@ else
 fi
 echo
 
-log_start "🧙‍♂️ Configuring neovim..."
+log_start "🧙 Configuring neovim..."
 if ! test -e $CONFIG/nvim; then
     symlink $DOT/nvim $CONFIG
     log_end "nvim config setup"

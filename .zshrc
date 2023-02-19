@@ -48,6 +48,5 @@ alias ca="cargo add"
 alias cn="cargo new"
 alias ct="cargo test"
 
-export PATH="$PATH:/Users/wabamn/.bin"
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

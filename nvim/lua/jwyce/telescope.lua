@@ -56,7 +56,7 @@ end
 local function set_background(content, close)
   -- local index = string.find(content, "/[^/]*$")
   -- local formatted = string.sub(content, 0, index) .. string.sub(content, index + 1, #content)
-  vim.fn.system("echo " .. content.. " > ~/dev/anime.txt")
+  -- vim.fn.system("echo " .. content.. " > ~/dev/anime.txt")
   if close then
     vim.fn.system("wallpaper-changer " .. content)
   else

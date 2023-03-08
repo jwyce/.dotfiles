@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: "stable",
     fontSize: 16,
     fontFamily:
-      'Dank Mono, FiraCode Nerd Font Mono, "Apple Color Emoji", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      'Dank Mono, MesloLGS NF, FiraCode Nerd Font Mono, "Apple Color Emoji", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     fontWeight: "normal",
     fontWeightBold: "bold",
     lineHeight: 1,

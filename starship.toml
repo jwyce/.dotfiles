@@ -1,5 +1,5 @@
 [character]
-error_symbol = "[✘](bold red) "
+error_symbol = "[](bold red) "
 
 [cmd_duration]
 format = "  took ${duration}"
@@ -11,7 +11,7 @@ untracked = "?${count}"
 modified = "!${count}"
 staged = "+${count}"
 renamed = "»${count}"
-deleted = "${count}"
+deleted = "✘${count}"
 
 [directory]
 truncate_to_repo = false

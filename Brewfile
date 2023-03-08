@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
 tap "homebrew/core"
 
@@ -43,6 +44,7 @@ cask "discord"
 cask "docker"
 cask "fig"
 cask "flameshot"
+cask "font-fira-code-nerd-font"
 cask "github"
 cask "hyper"
 cask "iina"

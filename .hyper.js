@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: "stable",
     fontSize: 16,
     fontFamily:
-      'Dank Mono, MesloLGS NF, "Apple Color Emoji", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      'Dank Mono, FiraCode Nerd Font Mono, "Apple Color Emoji", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     fontWeight: "normal",
     fontWeightBold: "bold",
     lineHeight: 1,
@@ -20,7 +20,7 @@ module.exports = {
     cursorBlink: false,
     foregroundColor: "#fff",
     backgroundColor: "#000",
-    opacity: 0.9,
+    opacity: 0.90,
     selectionColor: "rgba(248,28,229,0.3)",
     borderColor: "#333",
     css: "",

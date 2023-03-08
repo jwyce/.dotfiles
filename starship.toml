@@ -1,5 +1,5 @@
 [character]
-error_symbol = "[✖](bold red) "
+error_symbol = "[✘](bold red) "
 
 [cmd_duration]
 format = "  took ${duration}"
@@ -11,19 +11,30 @@ untracked = "?${count}"
 modified = "!${count}"
 staged = "+${count}"
 renamed = "»${count}"
-deleted = "✘${count}"
+deleted = "${count}"
+
+[directory]
+truncate_to_repo = false
+truncation_length = 5
+read_only = " "
+
+[gcloud]
+disabled = true
 
 [aws]
 symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [conda]
 symbol = " "
 
 [dart]
 symbol = " "
-
-[directory]
-read_only = " "
 
 [docker_context]
 symbol = " "
@@ -39,6 +50,9 @@ symbol = " "
 
 [golang]
 symbol = " "
+
+[haskell]
+symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -67,6 +81,10 @@ symbol = "📦 "
 [python]
 symbol = " "
 
+[spack]
+symbol = "🅢 "
+
 [rust]
 symbol = "🦀 "
+
 

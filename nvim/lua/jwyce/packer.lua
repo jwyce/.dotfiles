@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 
   use('jwyce/telescope-media-files.nvim')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  use('nvim-treesitter/nvim-treesitter-context')
   use('nvim-treesitter/playground')
   use('eandrju/cellular-automaton.nvim')
   use('theprimeagen/harpoon')

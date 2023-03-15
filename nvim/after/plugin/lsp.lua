@@ -47,6 +47,16 @@ lsp.configure('denols', {
   )
 })
 
+lsp.configure('rust_analyzer', {
+  diagnostics = {
+    external = {
+      enable = true,
+    },
+    previewRustcOutput = true,
+    useRustcErrorCode = true,
+  },
+})
+
 lsp.configure('tsserver', {
   commands = {
     OrganizeImports = {
@@ -73,9 +83,9 @@ lsp.configure('tailwindcss', {
     tailwindCSS = {
       experimental = {
         classRegex = {
-          { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+          { "cva\\(([^)]*)\\)",  "[\"'`]([^\"'`]*).*?[\"'`]" },
           { "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
-          { "tw\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+          { "tw\\(([^)]*)\\)",   "(?:'|\"|`)([^']*)(?:'|\"|`)" },
         },
       },
     },

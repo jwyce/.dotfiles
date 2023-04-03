@@ -19,12 +19,10 @@ export BAT_THEME="gruvbox-dark"
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # Enable vi mode
 bindkey -v
-
-# rebind atuin
-ATUIN_NOBIND=1 eval "$(atuin init zsh)"
 bindkey '^r' _atuin_search_widget
 
 # aliases

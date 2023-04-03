@@ -21,35 +21,29 @@ read_only = " "
 [gcloud]
 disabled = true
 
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
+[bun]
+symbol = "🥟 "
 
 [c]
 symbol = " "
-
-[conda]
-symbol = " "
 
 [dart]
 symbol = " "
 
 [docker_context]
-symbol = " "
+symbol = "🐳 "
 
 [elixir]
 symbol = " "
 
 [elm]
-symbol = " "
+symbol = "🌳 "
 
 [git_branch]
 symbol = " "
 
 [golang]
-symbol = " "
+symbol = "🐹 "
 
 [haskell]
 symbol = " "
@@ -58,16 +52,10 @@ symbol = " "
 symbol = " "
 
 [java]
-symbol = " "
-
-[julia]
-symbol = " "
+symbol = "☕ "
 
 [memory_usage]
 symbol = " "
-
-[nim]
-symbol = " "
 
 [nix_shell]
 symbol = " "
@@ -79,12 +67,11 @@ symbol = " "
 symbol = "📦 "
 
 [python]
-symbol = " "
-
-[spack]
-symbol = "🅢 "
+symbol = "🐍 "
 
 [rust]
 symbol = "🦀 "
 
+[zig]
+symbol = "🦎 "
 

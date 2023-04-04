@@ -32,7 +32,11 @@ return require('packer').startup(function(use)
   }
   use("folke/zen-mode.nvim")
 
+  use("ellisonleao/gruvbox.nvim")
+  use("rebelot/kanagawa.nvim")
   use("folke/tokyonight.nvim")
+  use({ 'nyoom-engineering/oxocarbon.nvim' })
+  use({ "catppuccin/nvim", as = "catppuccin" })
   use({
     'rose-pine/neovim',
     as = 'rose-pine',

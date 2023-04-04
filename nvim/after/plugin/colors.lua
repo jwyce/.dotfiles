@@ -2,7 +2,7 @@ local hi = require("nvim-highlight-colors")
 vim.keymap.set("n", "cmp", hi.toggle)
 
 function ColorMyPencils(color)
-  color = color or "rose-pine"
+  color = color or "catppuccin"
   vim.cmd.colorscheme(color)
   vim.opt.background = "dark"
 

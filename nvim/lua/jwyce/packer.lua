@@ -60,6 +60,9 @@ return require('packer').startup(function(use)
   use('monaqa/dial.nvim')
   use("princejoogie/tailwind-highlight.nvim")
 
+  use("tyru/open-browser.vim")
+  use("tyru/open-browser-github.vim")
+
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,

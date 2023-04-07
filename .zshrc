@@ -29,6 +29,9 @@ bindkey '^r' _atuin_search_widget
 alias rimraf='rm -rf'
 alias code="open $1 -a \"Visual Studio Code\""
 alias c='clear'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias l='exa -la'
 alias lg='lazygit'
 alias vim='nvim'

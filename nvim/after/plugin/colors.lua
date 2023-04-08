@@ -2,6 +2,10 @@ local hi = require("nvim-highlight-colors")
 vim.keymap.set("n", "cmp", hi.toggle)
 
 function ColorMyPencils(color)
+  require("tokyonight").setup({
+    style = "night",
+  })
+
   color = color or "catppuccin"
   vim.cmd.colorscheme(color)
   vim.opt.background = "dark"
@@ -14,4 +18,3 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
-

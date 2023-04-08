@@ -32,10 +32,9 @@ return require('packer').startup(function(use)
   }
   use("folke/zen-mode.nvim")
 
+  use("folke/tokyonight.nvim")
   use("ellisonleao/gruvbox.nvim")
   use("rebelot/kanagawa.nvim")
-  use("folke/tokyonight.nvim")
-  use({ 'nyoom-engineering/oxocarbon.nvim' })
   use({ "catppuccin/nvim", as = "catppuccin" })
   use({
     'rose-pine/neovim',
@@ -59,7 +58,6 @@ return require('packer').startup(function(use)
   use('kdheepak/lazygit.nvim')
   use('monaqa/dial.nvim')
   use("princejoogie/tailwind-highlight.nvim")
-
   use("tyru/open-browser.vim")
   use("tyru/open-browser-github.vim")
 

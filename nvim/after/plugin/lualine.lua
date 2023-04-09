@@ -7,7 +7,7 @@ local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
   black  = '#080808',
-  orange   = '#ff8800',
+  orange = '#ff9e64',
   white  = '#c6c6c6',
   red    = '#ff5189',
   violet = '#d183e8',
@@ -20,12 +20,10 @@ local bubbles_theme = {
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
-
-  command = { a = { fg = colors.black, bg = colors.orange } },
+  command = { a = { fg = colors.black, bg = colors.red } },
   insert = { a = { fg = colors.black, bg = colors.blue } },
   visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
-
+  replace = { a = { fg = colors.black, bg = colors.orange } },
   inactive = {
     a = { fg = colors.white, bg = colors.black },
     b = { fg = colors.white, bg = colors.black },
@@ -43,7 +41,7 @@ require('lualine').setup {
     lualine_a = {
       { 'mode', separator = { left = '' }, right_padding = 2 },
     },
-    lualine_b = { 'filename', 'branch' },
+    lualine_b = { 'branch', { 'filename', path = 1 } },
     lualine_c = { 'fileformat' },
     lualine_x = {},
     lualine_y = { 'filetype', 'progress' },

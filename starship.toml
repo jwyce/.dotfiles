@@ -63,6 +63,9 @@ symbol = " "
 [nodejs]
 symbol = " "
 
+[ocaml]
+symbol = "🐫 "
+
 [package]
 symbol = "📦 "
 

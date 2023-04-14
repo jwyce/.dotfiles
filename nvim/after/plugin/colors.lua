@@ -6,7 +6,7 @@ function ColorMyPencils(color)
     style = "night",
   })
 
-  color = color or "catppuccin"
+  color = color or "rose-pine"
   vim.cmd.colorscheme(color)
   vim.opt.background = "dark"
 

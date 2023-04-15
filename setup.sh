@@ -33,14 +33,16 @@ function eval_brew() {
 DOT=$HOME/.dotfiles
 CONFIG=$HOME/.config
 LOCAL=$HOME/.local
+TMUX=$CONFIG/tmux
 
 mkdir -p $CONFIG
+mkdir -p $TMUX
 
 log_start "🔗 Symlinking dotfiles..."
 symlink $DOT/.zshrc $HOME/.zshrc
 symlink $DOT/.zprofile $HOME/.zprofile
-symlink $DOT/.tmux.conf $DOT/.tmux/
-symlink $DOT/.tmux/.tmux.conf $HOME/.tmux.conf
+symlink $DOT/.tmux/.tmux.conf $TMUX/tmux.conf
+symlink $DOT/tmux.conf.local $TMUX/tmux.conf.local
 symlink $DOT/.tmux-cht-command $HOME/.tmux-cht-command
 symlink $DOT/.tmux-cht-languages $HOME/.tmux-cht-languages
 symlink $DOT/.hyper.js $HOME/.hyper.js

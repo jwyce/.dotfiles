@@ -42,7 +42,7 @@ log_start "🔗 Symlinking dotfiles..."
 symlink $DOT/.zshrc $HOME/.zshrc
 symlink $DOT/.zprofile $HOME/.zprofile
 symlink $DOT/.tmux/.tmux.conf $TMUX/tmux.conf
-symlink $DOT/tmux.conf.local $TMUX/tmux.conf.local
+symlink $DOT/.tmux.conf.local $TMUX/tmux.conf.local
 symlink $DOT/.tmux-cht-command $HOME/.tmux-cht-command
 symlink $DOT/.tmux-cht-languages $HOME/.tmux-cht-languages
 symlink $DOT/.hyper.js $HOME/.hyper.js

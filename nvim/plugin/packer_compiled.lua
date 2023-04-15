@@ -135,6 +135,12 @@ _G.packer_plugins = {
     path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/dial.nvim",
     url = "https://github.com/monaqa/dial.nvim"
   },
+  ["gitlinker.nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14gitlinker\frequire\0" },
+    loaded = true,
+    path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/gitlinker.nvim",
+    url = "https://github.com/ruifm/gitlinker.nvim"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
@@ -144,6 +150,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["instant.nvim"] = {
+    loaded = true,
+    path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/instant.nvim",
+    url = "https://github.com/jbyuki/instant.nvim"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
@@ -240,16 +251,6 @@ _G.packer_plugins = {
     path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/oil.nvim",
     url = "https://github.com/stevearc/oil.nvim"
   },
-  ["open-browser-github.vim"] = {
-    loaded = true,
-    path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/open-browser-github.vim",
-    url = "https://github.com/tyru/open-browser-github.vim"
-  },
-  ["open-browser.vim"] = {
-    loaded = true,
-    path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/open-browser.vim",
-    url = "https://github.com/tyru/open-browser.vim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jwyce/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -332,14 +333,38 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
+-- Config for: tailwindcss-colorizer-cmp.nvim
+time([[Config for tailwindcss-colorizer-cmp.nvim]], true)
+try_loadstring("\27LJ\2\nc\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\23color_square_width\3\1\nsetup\30tailwindcss-colorizer-cmp\frequire\0", "config", "tailwindcss-colorizer-cmp.nvim")
+time([[Config for tailwindcss-colorizer-cmp.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: oil.nvim
+time([[Config for oil.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
+time([[Config for oil.nvim]], false)
+-- Config for: gitlinker.nvim
+time([[Config for gitlinker.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14gitlinker\frequire\0", "config", "gitlinker.nvim")
+time([[Config for gitlinker.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
 -- Config for: nvim-ts-autotag
 time([[Config for nvim-ts-autotag]], true)
 try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
@@ -352,26 +377,6 @@ time([[Config for todo-comments.nvim]], false)
 time([[Config for nvim-highlight-colors]], true)
 try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\26nvim-highlight-colors\frequire\0", "config", "nvim-highlight-colors")
 time([[Config for nvim-highlight-colors]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: tailwindcss-colorizer-cmp.nvim
-time([[Config for tailwindcss-colorizer-cmp.nvim]], true)
-try_loadstring("\27LJ\2\nc\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\23color_square_width\3\1\nsetup\30tailwindcss-colorizer-cmp\frequire\0", "config", "tailwindcss-colorizer-cmp.nvim")
-time([[Config for tailwindcss-colorizer-cmp.nvim]], false)
--- Config for: oil.nvim
-time([[Config for oil.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
-time([[Config for oil.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

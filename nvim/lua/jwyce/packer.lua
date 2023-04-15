@@ -58,9 +58,8 @@ return require('packer').startup(function(use)
   use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
   use('monaqa/dial.nvim')
+  use('jbyuki/instant.nvim')
   use("princejoogie/tailwind-highlight.nvim")
-  use("tyru/open-browser.vim")
-  use("tyru/open-browser-github.vim")
 
   use({
     "iamcco/markdown-preview.nvim",
@@ -100,6 +99,10 @@ return require('packer').startup(function(use)
   use {
     'numToStr/Comment.nvim',
     config = function() require('Comment').setup() end
+  }
+  use {
+    'ruifm/gitlinker.nvim',
+    config = function() require('gitlinker').setup() end
   }
   use {
     "windwp/nvim-autopairs",

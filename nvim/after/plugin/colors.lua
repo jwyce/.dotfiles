@@ -1,11 +1,13 @@
 local hi = require("nvim-highlight-colors")
 vim.keymap.set("n", "cmp", hi.toggle)
+require("tokyonight").setup({
+  style = "night",
+})
+require('rose-pine').setup({
+  disable_background = true
+})
 
 function ColorMyPencils(color)
-  require("tokyonight").setup({
-    style = "night",
-  })
-
   color = color or "rose-pine"
   vim.cmd.colorscheme(color)
   vim.opt.background = "dark"

@@ -1,6 +1,5 @@
 require("jwyce.set")
 require("jwyce.remap")
-require("jwyce.cloak")
 require("jwyce.packer")
 
 local augroup = vim.api.nvim_create_augroup

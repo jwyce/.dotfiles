@@ -25,6 +25,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^r' _atuin_search_widget
+bindkey -s ^f "tmux-sessionizer\n"
 
 # aliases
 alias rimraf='rm -rf'

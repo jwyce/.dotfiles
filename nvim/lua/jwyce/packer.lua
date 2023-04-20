@@ -55,6 +55,8 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use("theprimeagen/refactoring.nvim")
   use('mfussenegger/nvim-dap')
+  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+  use { "cshuaimin/ssr.nvim", module = "ssr" }
   use('eandrju/cellular-automaton.nvim')
   use("github/copilot.vim")
   use("laytan/cloak.nvim")

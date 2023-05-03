@@ -29,7 +29,6 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 # aliases
 alias rimraf='rm -rf'
-alias code="open $1 -a \"Visual Studio Code\""
 alias c='clear'
 alias ..="cd .."
 alias ...="cd ../.."

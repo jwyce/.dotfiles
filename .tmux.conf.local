@@ -13,6 +13,8 @@ bind-key -r A run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/personal"
 bind-key -r S run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/projects"
 bind-key -r D run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/playground"
 
+bind-key -T prefix L switch-client -l
+
 set-window-option -g status-keys vi
 set-window-option -g mode-keys vi
 

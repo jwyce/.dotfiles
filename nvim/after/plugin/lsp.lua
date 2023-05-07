@@ -92,6 +92,8 @@ lsp.configure('tailwindcss', {
   },
 })
 
+lsp.nvim_workspace()
+
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
   local tw_highlight = require('tailwind-highlight')

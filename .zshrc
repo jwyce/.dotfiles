@@ -42,13 +42,8 @@ alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 alias kc='kubectl'
+alias cp='pbcopy'
 alias clean_symln='rm -- *(-@D)'
-
-# cargo aliases
-alias cr="cargo run"
-alias ca="cargo add"
-alias cn="cargo new"
-alias ct="cargo test"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

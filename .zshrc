@@ -42,7 +42,7 @@ alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 alias kc='kubectl'
-alias cp='pbcopy'
+alias xsc='pbcopy'
 alias clean_symln='rm -- *(-@D)'
 
 # Fig post block. Keep at the bottom of this file.

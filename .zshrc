@@ -45,5 +45,7 @@ alias kc='kubectl'
 alias xsc='pbcopy'
 alias clean_symln='rm -- *(-@D)'
 
+source "$DOT/.nelnet"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

@@ -43,7 +43,7 @@ alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 alias kc='kubectl'
 alias xsc='pbcopy'
-alias clean_symln='rm -- *(-@D)'
+alias rm_dangling_links='rm -- *(-@D)'
 
 source "$DOT/.nelnet"
 

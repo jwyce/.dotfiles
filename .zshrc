@@ -36,7 +36,6 @@ alias ....="cd ../../.."
 alias l='exa -la'
 alias lg='lazygit'
 alias vim='nvim'
-alias vi='nvim'
 alias python='python3'
 alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"

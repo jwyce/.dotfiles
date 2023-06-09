@@ -27,7 +27,7 @@ brew "jq"
 brew "lazygit"
 brew "lolcat"
 brew "lua"
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 brew "opam"
 brew "ouch"
 brew "pastel"

@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   }
   use {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {}
     end
@@ -77,6 +77,7 @@ return require('packer').startup(function(use)
 
   use {
     'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -99,7 +100,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
     'stevearc/oil.nvim',

@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = {
+    requires = {
       'JoosepAlviste/nvim-ts-context-commentstring',
     },
     run = function()
@@ -116,7 +116,9 @@ return require('packer').startup(function(use)
   }
   use {
     'numToStr/Comment.nvim',
-    config = function() require('Comment').setup() end
+    config = function()
+      require('Comment').setup()
+    end
   }
   use {
     'ruifm/gitlinker.nvim',

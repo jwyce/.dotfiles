@@ -48,6 +48,9 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
     run = function()
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
@@ -55,12 +58,17 @@ return require('packer').startup(function(use)
   use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" })
   use('nvim-treesitter/nvim-treesitter-context')
   use('nvim-treesitter/playground')
+
+  use('mfussenegger/nvim-dap')
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+
   use('mbbill/undotree')
   use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
   use('theprimeagen/harpoon')
   use("theprimeagen/refactoring.nvim")
-  use('mfussenegger/nvim-dap')
   use { "cshuaimin/ssr.nvim", module = "ssr" }
   use('eandrju/cellular-automaton.nvim')
   use("github/copilot.vim")

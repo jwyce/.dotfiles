@@ -42,8 +42,6 @@ brew "typos-cli"
 
 # cask "jukebox"
 # cask "screenstudio"
-# cask "scriptkit"
-# cask "sourcegraph"
 # cask "spacedrive"
 cask "1password"
 cask "amethyst"

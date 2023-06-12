@@ -60,13 +60,14 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
 
   use('mfussenegger/nvim-dap')
-  use 'leoluz/nvim-dap-go'
-  use 'rcarriga/nvim-dap-ui'
-  use 'theHamsta/nvim-dap-virtual-text'
+  use('leoluz/nvim-dap-go')
+  use('rcarriga/nvim-dap-ui')
+  use('theHamsta/nvim-dap-virtual-text')
 
   use('mbbill/undotree')
   use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
+  use("tpope/vim-fugitive")
   use('theprimeagen/harpoon')
   use("theprimeagen/refactoring.nvim")
   use { "cshuaimin/ssr.nvim", module = "ssr" }

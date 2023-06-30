@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
   use("theprimeagen/refactoring.nvim")
   use { "cshuaimin/ssr.nvim", module = "ssr" }
   use('eandrju/cellular-automaton.nvim')
+  use('tjdevries/sPoNGe-BoB.NvIm')
   use("github/copilot.vim")
   use("laytan/cloak.nvim")
   use('monaqa/dial.nvim')

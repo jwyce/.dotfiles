@@ -14,7 +14,6 @@ export BREWFILE=$DOT/Brewfile
 export BIN=$DOT/bin/scripts
 export PATH="$BIN:$PATH"
 export STARSHIP_CONFIG=$DOT/starship.toml
-export BAT_THEME="gruvbox-dark"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
@@ -33,7 +32,7 @@ alias c='clear'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias l='exa -la'
+alias ls='exa'
 alias lg='lazygit'
 alias vim='nvim'
 alias python='python3'

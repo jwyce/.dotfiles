@@ -93,6 +93,16 @@ else
 fi
 echo
 
+log_start "🐫 Installing OCaml..."
+if ! command -v opam &> /dev/null; then
+    bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+    log_end "OCaml installed"
+else
+    opam --version
+    log_end "OCaml detected"
+fi
+echo
+
 log_start "🐢 Installing node and package managers..."
 if ! command -v node &> /dev/null; then
     fnm use 16 --install-if-missing

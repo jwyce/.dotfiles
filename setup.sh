@@ -98,10 +98,11 @@ if ! command -v opam &> /dev/null; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
 
     opam init
+    opam switch create 4.14.1
     opam install dune merlin ocaml-lsp-server odoc ocamlformat utop dune-release
     log_end "OCaml installed"
 else
-    opam --version
+    ocaml --version
     log_end "OCaml detected"
 fi
 echo

@@ -19,7 +19,7 @@ eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(opam env)"
+eval "$(opam env --switch=4.14.1)"
 
 # Enable vi mode
 bindkey -v

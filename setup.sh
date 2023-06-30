@@ -105,7 +105,7 @@ echo
 
 log_start "🐢 Installing node and package managers..."
 if ! command -v node &> /dev/null; then
-    fnm use 16 --install-if-missing
+    fnm use 18 --install-if-missing
     npm i -g yarn pnpm @antfu/ni
     log_end "NodeJS installed"
 else

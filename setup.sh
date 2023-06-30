@@ -96,6 +96,8 @@ echo
 log_start "🐫 Installing OCaml..."
 if ! command -v opam &> /dev/null; then
     bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+    opam init
+    opam install dune merlin ocaml-lsp-server odoc ocamlformat utop dune-release
     log_end "OCaml installed"
 else
     opam --version

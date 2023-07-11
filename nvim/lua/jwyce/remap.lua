@@ -4,8 +4,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "H", "^")
-vim.keymap.set("n", "L", "$")
+vim.keymap.set({ "n", "x" }, "H", "^")
+vim.keymap.set({ "n", "x" }, "L", "$")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -18,12 +18,10 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>pp", "\"+p")
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set({ "n", "x" }, "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set({ "n", "x" }, "<leader>d", "\"_d")
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")

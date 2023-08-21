@@ -48,7 +48,9 @@ cmp_mappings['<S-Tab>'] = nil
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings,
   sources = {
-    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'path' },
     {
       name = "dictionary",
       keyword_length = 2,

@@ -85,6 +85,8 @@ return require('packer').startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  use('uga-rosa/cmp-dictionary')
+
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',

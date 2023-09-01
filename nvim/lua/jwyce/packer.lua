@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
   use("folke/zen-mode.nvim")
 
   use("folke/tokyonight.nvim")
-  use("ellisonleao/gruvbox.nvim")
   use("rebelot/kanagawa.nvim")
   use({ "catppuccin/nvim", as = "catppuccin" })
   use({
@@ -70,13 +69,11 @@ return require('packer').startup(function(use)
   use("tpope/vim-fugitive")
   use('theprimeagen/harpoon')
   use("theprimeagen/refactoring.nvim")
-  use { "cshuaimin/ssr.nvim", module = "ssr" }
   use('eandrju/cellular-automaton.nvim')
   use('tjdevries/sPoNGe-BoB.NvIm')
   use("github/copilot.vim")
   use("laytan/cloak.nvim")
   use('monaqa/dial.nvim')
-  use('jbyuki/instant.nvim')
   use("andweeb/presence.nvim")
   use("princejoogie/tailwind-highlight.nvim")
 

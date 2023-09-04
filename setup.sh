@@ -70,6 +70,7 @@ else
 fi
 log_start "💎 Installing from Brewfile..."
 brew bundle --file $DOT/Brewfile
+gem install github-auth
 fig theme poimandres
 log_end "Formulae and casks installed"
 echo

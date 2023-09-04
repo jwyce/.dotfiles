@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ ! -f ~/.ssh/authorized_keys ]; then
+  # create an account alias
+  sudo dscl . -append /Users/$USER RecordName Pair pair
+
+  # configure sshd to only allow public-key authentication
+  sudo sed -E -i.bak 's/^#?(PasswordAuthentication|ChallengeResponseAuthentication).*$/\1 no/' /etc/sshd_config
+
+  touch ~/.ssh/authorized_keys
+fi
+
+echo "run <ssh $(id -un)@$(hostname)> to join tmux pairing session"
+
+if [ ! -z "$1" ]; then
+  gh-auth add --users $1 --command="$( which tmux ) attach -t pair"
+fi

@@ -10,7 +10,7 @@ if [ ! -f ~/.ssh/authorized_keys ]; then
   touch ~/.ssh/authorized_keys
 fi
 
-echo "run <ssh $(id -un)@$(hostname)> to join tmux pairing session"
+echo "run 'ssh $(id -un)@$(hostname)' to join tmux pairing session"
 
 if [ ! -z "$1" ]; then
   gh-auth add --users $1 --command="$( which tmux ) attach -t pair"

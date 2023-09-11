@@ -112,6 +112,7 @@ log_start "🐢 Installing node and package managers..."
 if ! command -v node &> /dev/null; then
     fnm use 18 --install-if-missing
     npm i -g yarn pnpm @antfu/ni
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://bun.sh/install | bash)"
     log_end "NodeJS installed"
 else
     node -v

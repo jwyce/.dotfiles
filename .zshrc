@@ -6,6 +6,8 @@ source "$HOME/antigen.zsh"
 # Load Antigen configurations
 antigen init ~/.antigenrc
 
+[ -s "/Users/jwyce/.bun/_bun" ] && source "/Users/jwyce/.bun/_bun"
+
 export DOT=$HOME/.dotfiles
 export CONFIG=$HOME/.config
 export NVIM_LUA=$DOT/nvim/lua/jwyce
@@ -14,6 +16,8 @@ export BREWFILE=$DOT/Brewfile
 export BIN=$DOT/bin/scripts
 export PATH="$BIN:$PATH"
 export STARSHIP_CONFIG=$DOT/starship.toml
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
@@ -48,3 +52,4 @@ source "$DOT/.nelnet"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+

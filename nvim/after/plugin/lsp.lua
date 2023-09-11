@@ -20,24 +20,25 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 local root_pattern = require('lspconfig.util').root_pattern
 
 local dict = require("cmp_dictionary")
+local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
 
 dict.setup({
-	exact = 3,
-	first_case_insensitive = false,
-	document = false,
-	document_command = "wn %s -over",
-	async = false,
-	max_items = -1,
-	capacity = 5,
-	debug = false,
+  exact = 3,
+  first_case_insensitive = false,
+  document = false,
+  document_command = "wn %s -over",
+  async = false,
+  max_items = -1,
+  capacity = 5,
+  debug = false,
 })
 dict.switcher({
-	spelllang = {
-		en = "~/.dotfiles/en.dict",
-	},
-	filepath = {
-		["*"] = "~/.dotfiles/en.dict",
-	},
+  spelllang = {
+    en = "~/.dotfiles/en.dict",
+  },
+  filepath = {
+    ["*"] = "~/.dotfiles/en.dict",
+  },
 })
 
 -- disable completion with tab
@@ -57,7 +58,7 @@ lsp.setup_nvim_cmp({
     },
   },
   formatting = {
-    format = require("tailwindcss-colorizer-cmp").formatter
+    format = tailwindcss_colorizer_cmp.formatter,
   }
 })
 

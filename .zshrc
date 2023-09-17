@@ -46,6 +46,7 @@ alias yolo="git push origin master --force --no-verify"
 alias f='fuck'
 alias kc='kubectl'
 alias xsc='pbcopy'
+alias my_ip="ifconfig | awk '/inet /&&!/127.0.0.1/{print \$2;exit}'"
 alias rm_dangling_links='rm -- *(-@D)'
 
 source "$DOT/.nelnet"

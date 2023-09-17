@@ -1,0 +1,3 @@
+#!/bin/sh
+
+while true; do ps $1 -o rss,vsz,command | awk 'FNR == 2 {print $1}' | numfmt --to=iec --format="%.2fB"; sleep 1; done

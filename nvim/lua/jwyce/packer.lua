@@ -77,10 +77,15 @@ return require('packer').startup(function(use)
   use("andweeb/presence.nvim")
   use("princejoogie/tailwind-highlight.nvim")
 
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  use { "ellisonleao/glow.nvim", config = function()
+    require("glow").setup({
+      glow_path = "/opt/homebrew/bin/glow",
+      install_path = "/opt/homebrew/bin/glow", -- default path for installing glow binary
+      style = "dark",
+      border = "rounded",
+      width = 120,
+    })
+  end }
 
   use('uga-rosa/cmp-dictionary')
 

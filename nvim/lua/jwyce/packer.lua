@@ -64,7 +64,6 @@ return require('packer').startup(function(use)
   use('theHamsta/nvim-dap-virtual-text')
 
   use('mbbill/undotree')
-  use("sbdchd/neoformat")
   use('kdheepak/lazygit.nvim')
   use("tpope/vim-fugitive")
   use('theprimeagen/harpoon')
@@ -119,6 +118,10 @@ return require('packer').startup(function(use)
   use {
     'stevearc/oil.nvim',
     config = function() require('oil').setup() end
+  }
+  use {
+    'stevearc/conform.nvim',
+    config = function() require('conform').setup() end
   }
   use {
     'numToStr/Comment.nvim',

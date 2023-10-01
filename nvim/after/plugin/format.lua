@@ -1,4 +1,17 @@
-vim.g.neoformat_try_node_exe = 1
-vim.g.neoformat_enabled_javascript = { "prettier", "prettiereslint", "denofmt" }
-vim.g.neoformat_enabled_json = { "prettier", "prettiereslint", "denofmt" }
-vim.keymap.set("n", "<leader>f", function() vim.cmd("Neoformat") end)
+local conform = require("conform")
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		python = { "isort", "black" },
+		json = { "prettier" },
+		javascript = { "prettier" },
+		typescript = { { "prettier", "deno_fmt" } },
+		typescriptreact = { "prettier" },
+		go = { "gofmt" },
+		rust = { "rustfmt" },
+		ocaml = { "ocamlformat" },
+		["*"] = { "codespell" },
+		["_"] = { "trim_whitespace" },
+	},
+})
+vim.keymap.set("n", "<leader>f", conform.format)

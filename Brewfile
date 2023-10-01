@@ -3,7 +3,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
 tap "homebrew/core"
 
-brew "aspell"
 brew "ast-grep"
 brew "atuin"
 brew "bottom"

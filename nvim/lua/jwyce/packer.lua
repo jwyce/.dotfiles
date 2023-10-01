@@ -86,8 +86,6 @@ return require('packer').startup(function(use)
     })
   end }
 
-  use('uga-rosa/cmp-dictionary')
-
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',

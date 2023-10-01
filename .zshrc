@@ -32,12 +32,14 @@ bindkey '^r' _atuin_search_widget
 bindkey -s ^f "tmux-sessionizer\n"
 
 # aliases
-alias rimraf='rm -rf'
 alias c='clear'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias ls='exa'
+alias ls='eza --icons'
+alias find='fd'
+alias ps='procs'
+alias grep='rg'
 alias lg='lazygit'
 alias vim='nvim'
 alias python='python3'

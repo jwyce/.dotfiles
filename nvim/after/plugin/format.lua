@@ -7,6 +7,8 @@ require("conform").setup({
 		javascript = { "prettier" },
 		typescript = { { "prettier", "deno_fmt" } },
 		typescriptreact = { "prettier" },
+		astro = { "prettier" },
+		css = { "prettier" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
 		ocaml = { "ocamlformat" },

@@ -1,7 +1,10 @@
 local hi = require("nvim-highlight-colors")
 vim.keymap.set("n", "cmp", hi.toggle)
 require("tokyonight").setup({
-	style = "night",
+	style = "moon",
+	styles = {
+		keywords = { italic = false },
+	},
 })
 require("rose-pine").setup({
 	disable_background = true,

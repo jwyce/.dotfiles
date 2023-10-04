@@ -9,6 +9,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+vim.opt.spellsuggest = "best,9"
 
 vim.opt.wrap = false
 

@@ -39,7 +39,13 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/jwyce/packer.lua<CR>");
+-- spell check toggle
+-- z= is the spell check suggestion menu
+-- zg adds the word to the dictionary
+-- ]s and [s jump to the next and previous misspelled word
+vim.keymap.set("n", "<leader>sc", "<cmd>set spell!<CR>");
+
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/jwyce/lazy.lua<CR>");
 vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()

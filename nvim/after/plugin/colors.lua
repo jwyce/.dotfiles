@@ -26,6 +26,7 @@ require("gruvbox").setup({
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	no_italic = true,
+  transparent_background = true,
 	styles = {
 		comments = { "italic" },
 	},

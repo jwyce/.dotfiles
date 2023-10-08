@@ -84,6 +84,18 @@ local plugins = {
 	"brenoprata10/nvim-highlight-colors",
 	"princejoogie/tailwind-highlight.nvim",
 	"roobert/tailwindcss-colorizer-cmp.nvim",
+
+	{
+		"epwalsh/obsidian.nvim",
+		lazy = true,
+		event = {
+      "BufReadPre " .. vim.fn.expand "~" .. "/omoi/**.md",
+      "BufNewFile " .. vim.fn.expand "~" .. "/omoi/**.md"
+		},
+		opts = {
+			dir = "~/omoi",
+		},
+	},
 }
 
 local opts = {}

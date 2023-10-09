@@ -89,8 +89,8 @@ local plugins = {
 		"epwalsh/obsidian.nvim",
 		lazy = true,
 		event = {
-      "BufReadPre " .. vim.fn.expand "~" .. "/omoi/**.md",
-      "BufNewFile " .. vim.fn.expand "~" .. "/omoi/**.md"
+			"BufReadPre " .. vim.fn.expand("~") .. "/omoi/**.md",
+			"BufNewFile " .. vim.fn.expand("~") .. "/omoi/**.md",
 		},
 		opts = {
 			dir = "~/omoi",

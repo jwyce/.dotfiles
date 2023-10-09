@@ -36,6 +36,7 @@ require("tokyonight").setup({
 	transparent = true,
 	styles = {
 		keywords = { italic = false },
+    floats = "transparent"
 	},
 })
 require("rose-pine").setup({

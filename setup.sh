@@ -45,11 +45,13 @@ symlink $DOT/.tmux/.tmux.conf $TMUX/tmux.conf
 symlink $DOT/.tmux.conf.local $TMUX/tmux.conf.local
 symlink $DOT/.tmux-cht-command $HOME/.tmux-cht-command
 symlink $DOT/.tmux-cht-languages $HOME/.tmux-cht-languages
-symlink $DOT/.hyper.js $HOME/.hyper.js
 symlink $DOT/.antigenrc $HOME/.antigenrc
 symlink $DOT/.gitconfig $HOME/.gitconfig
 if ! test -e $LOCAL/bin/scripts; then
     symlink $DOT/bin/scripts $LOCAL/bin
+fi
+if ! test -e $LOCAL/.config/kitty; then
+    symlink $DOT/kitty $LOCAL/.config
 fi
 log_end "Symlinks created"
 

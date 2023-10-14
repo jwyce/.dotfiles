@@ -130,11 +130,6 @@ else
     log_end "nvim config detected"
 fi
 
-log_start "🧩 Installing packer plugins..."
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &> /dev/null
-log_end "packer.nvim plugins synced"
-echo
-
 cat doc.txt | lolcat
 log_end "🎉 Done!"
 

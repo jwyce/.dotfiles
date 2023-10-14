@@ -48,7 +48,6 @@ local plugins = {
 	"monaqa/dial.nvim",
 	"sindrets/diffview.nvim",
 	"andweeb/presence.nvim",
-	"andymass/vim-matchup",
 	"cshuaimin/ssr.nvim",
 	{ "toppair/peek.nvim", build = "deno task --quiet build:fast", opts = {} },
 

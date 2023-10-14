@@ -55,6 +55,5 @@
   "trouble.nvim": { "branch": "main", "commit": "a97c24c311e08365a69b092b2f6f3d31559f92e2" },
   "undotree": { "branch": "master", "commit": "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" },
   "vim-fugitive": { "branch": "master", "commit": "99db68d9b3304580bd383da7aaee05c7a954a344" },
-  "vim-matchup": { "branch": "master", "commit": "6dbe108230c7dbbf00555b7d4d9f6a891837ef07" },
   "zen-mode.nvim": { "branch": "main", "commit": "cb73b8bd0ef9d765b942db09dc762c603a89ae44" }
 }

@@ -53,7 +53,7 @@ local function set_background(content, close)
   -- local formatted = string.sub(content, 0, index) .. string.sub(content, index + 1, #content)
   -- vim.fn.system("echo " .. content.. " > ~/dev/anime.txt")
   if close then
-    vim.fn.system("wallpaper-changer " .. content)
+    vim.fn.system("wallpaper " .. content)
   else
     vim.fn.system("wallpaper " .. content)
   end
@@ -62,15 +62,15 @@ end
 local function select_background(prompt_bufnr, map, cwd)
   local function set_the_background(close)
     local content = require("telescope.actions.state").get_selected_entry(prompt_bufnr)
-    set_background(cwd .. "/" .. string.sub(content.value, 2), close)
+    set_background(cwd .. string.sub(content.value, 2), close)
     if close then
       require("telescope.actions").close(prompt_bufnr)
     end
   end
 
-  map("i", "<C-l>", function()
-    set_the_background()
-  end)
+  -- map("i", "<C-l>", function()
+  --   set_the_background()
+  -- end)
 
   map("i", "<CR>", function()
     set_the_background(true)

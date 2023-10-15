@@ -37,6 +37,7 @@ local plugins = {
 	"tpope/vim-fugitive",
 	"mbbill/undotree",
 	"theprimeagen/harpoon",
+	"theprimeagen/git-worktree.nvim",
 	{ "theprimeagen/refactoring.nvim", opts = {} },
 	{ "folke/todo-comments.nvim", opts = {} },
 	"folke/trouble.nvim",

@@ -39,13 +39,13 @@ mkdir -p $CONFIG
 mkdir -p $TMUX
 
 log_start "🔗 Symlinking dotfiles..."
-symlink $DOT/.zshrc $HOME/.zshrc
-symlink $DOT/.zprofile $HOME/.zprofile
+symlink $DOT/zsh/.antigenrc $HOME/.antigenrc
+symlink $DOT/zsh/.zshrc $HOME/.zshrc
+symlink $DOT/zsh/.zprofile $HOME/.zprofile
 symlink $DOT/.tmux/.tmux.conf $TMUX/tmux.conf
-symlink $DOT/.tmux.conf.local $TMUX/tmux.conf.local
-symlink $DOT/.tmux-cht-command $HOME/.tmux-cht-command
-symlink $DOT/.tmux-cht-languages $HOME/.tmux-cht-languages
-symlink $DOT/.antigenrc $HOME/.antigenrc
+symlink $DOT/tmux/.tmux.conf.local $TMUX/tmux.conf.local
+symlink $DOT/tmux/.tmux-cht-command $HOME/.tmux-cht-command
+symlink $DOT/tmux/.tmux-cht-languages $HOME/.tmux-cht-languages
 symlink $DOT/.gitconfig $HOME/.gitconfig
 if ! test -e $LOCAL/bin/scripts; then
     symlink $DOT/bin/scripts $LOCAL/bin

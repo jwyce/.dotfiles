@@ -19,9 +19,8 @@ local plugins = {
 
 	"folke/tokyonight.nvim",
 	"rebelot/kanagawa.nvim",
-	"shaunsingh/oxocarbon.nvim",
 	"ellisonleao/gruvbox.nvim",
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 
 	"nvim-treesitter/nvim-treesitter",

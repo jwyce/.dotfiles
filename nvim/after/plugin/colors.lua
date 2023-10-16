@@ -36,7 +36,7 @@ require("tokyonight").setup({
 	transparent = true,
 	styles = {
 		keywords = { italic = false },
-    floats = "transparent"
+		floats = "transparent",
 	},
 })
 require("rose-pine").setup({
@@ -56,17 +56,6 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "LineNr", { fg = "#5eacd3" })
 	vim.api.nvim_set_hl(0, "netrwDir", { fg = "#5eacd3" })
 	vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#555555", ctermbg = "none" })
-
-	if color == "oxocarbon" then
-		local oxocarbon = require("oxocarbon")
-		vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = oxocarbon.blend, bg = oxocarbon.blend })
-		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = oxocarbon.base02, bg = oxocarbon.base02 })
-		vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = oxocarbon.base05, bg = oxocarbon.base02 })
-		vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = oxocarbon.base08, bg = oxocarbon.base02 })
-		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = oxocarbon.base02, bg = oxocarbon.base12 })
-		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = oxocarbon.base02, bg = oxocarbon.base11 })
-		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = oxocarbon.blend, bg = oxocarbon.blend })
-	end
 end
 
 ColorMyPencils()

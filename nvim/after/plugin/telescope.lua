@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>gw", require("telescope").extensions.git_worktree.g
 vim.keymap.set("n", "<leader>gm", require("telescope").extensions.git_worktree.create_git_worktree, {})
 vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>vb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>vr", builtin.registers, {})
+vim.keymap.set("n", "<leader>vre", builtin.registers, {})
 vim.keymap.set("n", "<leader>vm", builtin.marks, {})
 vim.keymap.set("n", "<leader>vrc", function()
 	require("jwyce.telescope").search_dotfiles()

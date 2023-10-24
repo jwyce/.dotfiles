@@ -1,0 +1,18 @@
+import:
+ - ~/.config/alacritty/tokyonight.yml
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 5
+  dimensions:
+    columns: 80
+    lines: 24
+  opacity: 0.9
+  option_as_alt: Both
+  decorations: none
+font:
+  normal:
+    family: DankMono Nerd Font Mono
+  size: 18.0

@@ -51,7 +51,7 @@ alias xsc='pbcopy'
 alias my_ip="ifconfig | awk '/inet /&&!/127.0.0.1/{print \$2;exit}'"
 alias rm_dangling_links='rm -- *(-@D)'
 
-source "$DOT/.nelnet"
+source "$DOT/.work"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

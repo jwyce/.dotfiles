@@ -8,7 +8,7 @@ if ! sudo -v; then
 fi
 
 function eval_brew() {
-    eval "$(/opt/homebrew/bin/brew shellenv)" > /dev/null
+    eval "$(/opt/homebrew/bin/brew shellenv 2>&1)" > /dev/null
 }
 
 REPO_URL=https://github.com/jwyce/.dotfiles.git

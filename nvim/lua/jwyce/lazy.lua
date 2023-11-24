@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	"nvim-lua/plenary.nvim",
-	{ "nvim-telescope/telescope.nvim", tag = "0.1.1" },
+	{ "nvim-telescope/telescope.nvim" },
 	"jwyce/telescope-media-files.nvim",
 	"nvim-tree/nvim-web-devicons",
 

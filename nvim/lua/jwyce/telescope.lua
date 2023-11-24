@@ -51,7 +51,7 @@ M.search_dotfiles = function()
 end
 
 local function set_background(content)
-	-- vim.fn.system("echo " .. content.. " > ~/dev/anime.txt")
+	vim.fn.system("echo " .. content.. " | pbcopy")
 	vim.fn.system("wallpaper " .. content)
 end
 

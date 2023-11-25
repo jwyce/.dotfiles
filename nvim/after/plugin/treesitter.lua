@@ -1,3 +1,5 @@
+vim.g.skip_ts_context_commentstring_module = true
+
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all"
 	ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
@@ -20,3 +22,6 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = false,
 	},
 })
+
+require("ts_context_commentstring").setup({})
+require("Comment").setup()

@@ -2,6 +2,8 @@
 	email = wycejared@gmail.com
 	username = jwyce
 	name = Jared Wyce
+[init]
+	defaultBranch = main
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -17,7 +19,6 @@
   undo = reset HEAD~1 --mixed
   res = !git reset --hard
   done = !git push origin HEAD
-  lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
 [core]
   editor = nvim
 [diff]

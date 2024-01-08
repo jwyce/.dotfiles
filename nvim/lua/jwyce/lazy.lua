@@ -12,45 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	-- shared dependencies
 	"nvim-lua/plenary.nvim",
-	{ "nvim-telescope/telescope.nvim" },
-	"jwyce/telescope-media-files.nvim",
 	"nvim-tree/nvim-web-devicons",
 
-	"folke/tokyonight.nvim",
-	"rebelot/kanagawa.nvim",
-	"ellisonleao/gruvbox.nvim",
-	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "rose-pine/neovim", name = "rose-pine" },
-
-	"nvim-treesitter/nvim-treesitter",
-	"JoosepAlviste/nvim-ts-context-commentstring",
-	"nvim-treesitter/nvim-treesitter-context",
-	"nvim-treesitter/playground",
-	"mfussenegger/nvim-dap",
-	"leoluz/nvim-dap-go",
-	"rcarriga/nvim-dap-ui",
-	"theHamsta/nvim-dap-virtual-text",
-
-	"kdheepak/lazygit.nvim",
-	"tpope/vim-fugitive",
-	"mbbill/undotree",
+	-- crucial
+	"nvim-telescope/telescope.nvim",
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"theprimeagen/harpoon",
-	"theprimeagen/git-worktree.nvim",
-	{ "theprimeagen/refactoring.nvim", opts = {} },
-	{ "folke/todo-comments.nvim", opts = {} },
-	"folke/trouble.nvim",
-	"folke/zen-mode.nvim",
-
-	"eandrju/cellular-automaton.nvim",
-	"zbirenbaum/copilot.lua",
-	"laytan/cloak.nvim",
-	"monaqa/dial.nvim",
-	"sindrets/diffview.nvim",
-	"andweeb/presence.nvim",
-	"cshuaimin/ssr.nvim",
-	{ "toppair/peek.nvim", build = "deno task --quiet build:fast", opts = {} },
-
+	{ "stevearc/oil.nvim", opts = {} },
+	"stevearc/conform.nvim",
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
@@ -73,17 +44,54 @@ local plugins = {
 		},
 	},
 
+	-- color themes
+	"folke/tokyonight.nvim",
+	"rebelot/kanagawa.nvim",
+	"ellisonleao/gruvbox.nvim",
+	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "rose-pine/neovim", name = "rose-pine" },
+
+	-- language support
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	"nvim-treesitter/nvim-treesitter-context",
+	"nvim-treesitter/playground",
+	"mfussenegger/nvim-dap",
+	"leoluz/nvim-dap-go",
+	"rcarriga/nvim-dap-ui",
+	"theHamsta/nvim-dap-virtual-text",
+
+	-- actually useful
+	"kdheepak/lazygit.nvim",
+	"tpope/vim-fugitive",
+	"mbbill/undotree",
+	"theprimeagen/git-worktree.nvim",
+	{ "theprimeagen/refactoring.nvim", opts = {} },
+	{ "folke/todo-comments.nvim", opts = {} },
+	"folke/trouble.nvim",
+	"numToStr/Comment.nvim",
+	"laytan/cloak.nvim",
+
+	-- cosmetic
+	"nvim-lualine/lualine.nvim",
+	"folke/zen-mode.nvim",
+	"eandrju/cellular-automaton.nvim",
+	"sindrets/diffview.nvim",
+	"andweeb/presence.nvim",
+	"jwyce/telescope-media-files.nvim",
+
+	-- trying it out
+	"zbirenbaum/copilot.lua",
+	"monaqa/dial.nvim",
+	"cshuaimin/ssr.nvim",
+	{ "toppair/peek.nvim", build = "deno task --quiet build:fast", opts = {} },
+
+	-- misc
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 		opts = {},
 	},
-
-	"nvim-lualine/lualine.nvim",
-	{ "stevearc/oil.nvim", opts = {} },
-	"stevearc/conform.nvim",
-	"numToStr/Comment.nvim",
 	{ "ruifm/gitlinker.nvim", opts = {} },
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 	{ "windwp/nvim-ts-autotag", opts = {} },

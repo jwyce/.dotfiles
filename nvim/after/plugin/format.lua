@@ -10,6 +10,7 @@ require("conform").setup({
 		svelte = { "prettier" },
 		astro = { "prettier" },
 		css = { "prettier" },
+		markdown = { "prettier" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
 		ocaml = { "ocamlformat" },

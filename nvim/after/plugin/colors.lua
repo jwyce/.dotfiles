@@ -47,7 +47,7 @@ require("rose-pine").setup({
 })
 
 function ColorMyPencils(color)
-	color = color or "tokyonight"
+	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 	vim.opt.background = "dark"
 

@@ -14,7 +14,6 @@ require("conform").setup({
 		go = { "gofmt" },
 		rust = { "rustfmt" },
 		ocaml = { "ocamlformat" },
-		["*"] = { "codespell" },
 		["_"] = { "trim_whitespace" },
 	},
 })

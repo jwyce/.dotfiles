@@ -41,9 +41,14 @@ require("tokyonight").setup({
 })
 require("rose-pine").setup({
 	dark_variant = "main", -- main, moon
-	disable_background = true,
-	disable_float_background = true,
-	disable_italics = true,
+	styles = {
+		bold = true,
+		italic = false,
+		transparency = true,
+	},
+	highlight_groups = {
+		OilDir = { fg = "foam" },
+	},
 })
 
 function ColorMyPencils(color)

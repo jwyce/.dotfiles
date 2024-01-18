@@ -9,6 +9,7 @@ require("conform").setup({
 		typescriptreact = { "prettier" },
 		svelte = { "prettier" },
 		astro = { "prettier" },
+		html = { "prettier" },
 		css = { "prettier" },
 		markdown = { "prettier" },
 		go = { "gofmt" },

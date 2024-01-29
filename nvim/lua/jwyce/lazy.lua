@@ -69,10 +69,12 @@ local plugins = {
 	{ "folke/todo-comments.nvim", opts = {} },
 	"folke/trouble.nvim",
 	"numToStr/Comment.nvim",
+	"nvim-pack/nvim-spectre",
 	"laytan/cloak.nvim",
 
 	-- cosmetic
 	"nvim-lualine/lualine.nvim",
+	"j-hui/fidget.nvim",
 	"folke/zen-mode.nvim",
 	"eandrju/cellular-automaton.nvim",
 	"sindrets/diffview.nvim",
@@ -98,6 +100,17 @@ local plugins = {
 	"brenoprata10/nvim-highlight-colors",
 	"princejoogie/tailwind-highlight.nvim",
 	"roobert/tailwindcss-colorizer-cmp.nvim",
+	{
+		"theprimeagen/vim-apm",
+		config = function()
+			local apm = require("vim-apm")
+
+			apm:setup({})
+			vim.keymap.set("n", "<leader>apm", function()
+				apm:toggle_monitor()
+			end)
+		end,
+	},
 
 	{
 		"epwalsh/obsidian.nvim",

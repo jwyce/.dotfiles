@@ -72,7 +72,7 @@ else
 fi
 log_start "💎 Installing from Brewfile..."
 brew bundle --file $DOT/Brewfile
-fig theme poimandres
+cw theme poimandres
 log_end "Formulae and casks installed"
 echo
 

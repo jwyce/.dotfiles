@@ -57,7 +57,7 @@ local plugins = {
 	"nvim-treesitter/playground",
 	"mfussenegger/nvim-dap",
 	"leoluz/nvim-dap-go",
-	"rcarriga/nvim-dap-ui",
+	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 	"theHamsta/nvim-dap-virtual-text",
 
 	-- actually useful

@@ -66,6 +66,7 @@ local plugins = {
 	"mbbill/undotree",
 	"theprimeagen/git-worktree.nvim",
 	{ "theprimeagen/refactoring.nvim", opts = {} },
+	{ "dmmulroy/ts-error-translator.nvim", opts = {} },
 	{ "folke/todo-comments.nvim", opts = {} },
 	"folke/trouble.nvim",
 	"numToStr/Comment.nvim",

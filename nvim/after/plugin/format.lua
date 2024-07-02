@@ -18,4 +18,6 @@ require("conform").setup({
 		["_"] = { "trim_whitespace" },
 	},
 })
-vim.keymap.set("n", "<leader>f", conform.format)
+vim.keymap.set("n", "<leader>f", function()
+	conform.format({ async = true, lsp_fallback = true })
+end)

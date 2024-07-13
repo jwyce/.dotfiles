@@ -18,6 +18,8 @@ export PATH="$BIN:$PATH"
 export STARSHIP_CONFIG=$DOT/starship.toml
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"

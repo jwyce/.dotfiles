@@ -21,6 +21,13 @@ local root_pattern = require('lspconfig.util').root_pattern
 
 local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
 
+cmp.setup.filetype({"sql"}, {
+  sources = {
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' },
+  },
+})
+
 -- disable completion with tab
 -- this helps with copilot setup
 cmp_mappings['<Tab>'] = nil
@@ -35,7 +42,7 @@ lsp.setup_nvim_cmp({
   },
   formatting = {
     format = tailwindcss_colorizer_cmp.formatter,
-  }
+  },
 })
 
 lsp.set_preferences({

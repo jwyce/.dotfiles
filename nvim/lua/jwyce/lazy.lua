@@ -55,10 +55,22 @@ local plugins = {
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-treesitter/playground",
+
+	-- debugging
 	"mfussenegger/nvim-dap",
 	"leoluz/nvim-dap-go",
 	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 	"theHamsta/nvim-dap-virtual-text",
+
+	--sql
+	"tpope/vim-dadbod",
+	"kristijanhusak/vim-dadbod-completion",
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		init = function()
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
 
 	-- actually useful
 	"kdheepak/lazygit.nvim",

@@ -19,5 +19,5 @@ require("conform").setup({
 	},
 })
 vim.keymap.set("n", "<leader>f", function()
-	conform.format({ async = true, lsp_fallback = true })
+	conform.format({ async = true, lsp_format = "fallback" })
 end)

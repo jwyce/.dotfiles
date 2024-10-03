@@ -5,7 +5,7 @@ require("conform").setup({
 		python = { "isort", "ruff_format" },
 		json = { "prettier" },
 		javascript = { "prettier" },
-		typescript = { { "prettier", "deno_fmt" } },
+		typescript = { "prettier", "deno_fmt", stop_after_first = true },
 		typescriptreact = { "prettier" },
 		svelte = { "prettier" },
 		astro = { "prettier" },

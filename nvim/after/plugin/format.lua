@@ -3,6 +3,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "isort", "ruff_format" },
+		yaml = { "prettier" },
 		json = { "prettier" },
 		javascript = { "prettier" },
 		typescript = { "prettier", "deno_fmt", stop_after_first = true },

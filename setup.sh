@@ -42,6 +42,7 @@ log_start "🔗 Symlinking dotfiles..."
 symlink $DOT/zsh/.antigenrc $HOME/.antigenrc
 symlink $DOT/zsh/.zshrc $HOME/.zshrc
 symlink $DOT/zsh/.zprofile $HOME/.zprofile
+symlink $DOT/aerospace.toml $HOME/.aerospace.toml
 symlink $DOT/.tmux/.tmux.conf $TMUX/tmux.conf
 symlink $DOT/tmux/.tmux.conf.local $TMUX/tmux.conf.local
 symlink $DOT/tmux/.tmux-cht-command $HOME/.tmux-cht-command

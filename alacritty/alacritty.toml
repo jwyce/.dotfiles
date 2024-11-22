@@ -1,4 +1,3 @@
-import = ["/Users/jwyce/.config/alacritty/tokyonight.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -20,3 +19,6 @@ lines = 24
 
 [window.padding]
 x = 5
+
+[general]
+import = ["/Users/jwyce/.config/alacritty/tokyonight.toml"]

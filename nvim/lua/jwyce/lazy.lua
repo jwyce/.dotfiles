@@ -82,7 +82,8 @@ local plugins = {
 	{ "folke/todo-comments.nvim", opts = {} },
 	"folke/trouble.nvim",
 	"numToStr/Comment.nvim",
-	"nvim-pack/nvim-spectre",
+	{ "MagicDuck/grug-far.nvim", opts = {} },
+
 	"laytan/cloak.nvim",
 
 	-- cosmetic

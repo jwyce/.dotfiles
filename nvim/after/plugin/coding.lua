@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set({ "n", "x" }, "<leader>sR", function()
 	require("ssr").open()
 end)
-vim.keymap.set("n", "<leader>S", ":Spectre<cr>")
+vim.keymap.set("n", "<leader>GF", ":GrugFar<cr>")
 
 vim.keymap.set("x", "<leader>re", ":Refactor extract ")
 vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")

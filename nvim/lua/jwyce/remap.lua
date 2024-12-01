@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -14,14 +15,14 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", "\"_dP")
-vim.keymap.set("n", "<leader>P", "\"+p")
+vim.keymap.set("x", "<leader>p", '"_dP')
+vim.keymap.set("n", "<leader>P", '"+p')
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "x" }, "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set({ "n", "x" }, "<leader>d", "\"_d")
+vim.keymap.set({ "n", "x" }, "<leader>d", '"_d')
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -43,11 +44,11 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- z= is the spell check suggestion menu
 -- zg adds the word to the dictionary
 -- ]s and [s jump to the next and previous misspelled word
-vim.keymap.set("n", "<leader>sc", "<cmd>set spell!<CR>");
+vim.keymap.set("n", "<leader>sc", "<cmd>set spell!<CR>")
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/jwyce/lazy.lua<CR>");
-vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/jwyce/lazy.lua<CR>")
+vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd("so")
+	vim.cmd("so")
 end)

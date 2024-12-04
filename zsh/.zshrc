@@ -8,6 +8,7 @@ antigen init ~/.antigenrc
 
 export DOT=$HOME/.dotfiles
 export CONFIG=$HOME/.config
+export LOCAL=$HOME/.local
 export NVIM_LUA=$DOT/nvim/lua/jwyce
 export ZSHRC=$DOT/.zshrc
 export BREWFILE=$DOT/Brewfile
@@ -17,7 +18,6 @@ export STARSHIP_CONFIG=$DOT/starship.toml
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
-
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"

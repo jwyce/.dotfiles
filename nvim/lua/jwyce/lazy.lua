@@ -83,7 +83,7 @@ local plugins = {
 	"folke/trouble.nvim",
 	"numToStr/Comment.nvim",
 	{ "MagicDuck/grug-far.nvim", opts = {} },
-
+  "3rd/image.nvim",
 	"laytan/cloak.nvim",
 
 	-- cosmetic

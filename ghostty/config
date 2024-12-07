@@ -1,0 +1,15 @@
+theme = tokyonight
+
+font-size = 18
+font-family = Dank Mono
+font-thicken = true
+
+mouse-hide-while-typing = true
+window-decoration = false
+background-opacity = 0.9
+macos-option-as-alt = true
+
+shell-integration-features = no-cursor
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+window-padding-x = 10

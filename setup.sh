@@ -51,8 +51,8 @@ symlink $DOT/.gitconfig $HOME/.gitconfig
 if ! test -e $LOCAL/bin/scripts; then
     symlink $DOT/bin/scripts $LOCAL/bin
 fi
-if ! test -e $CONFIG/alacritty; then
-    symlink $DOT/alacritty $CONFIG
+if ! test -e $CONFIG/ghostty then
+    symlink $DOT/ghostty $CONFIG
 fi
 log_end "Symlinks created"
 

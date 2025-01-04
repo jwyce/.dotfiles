@@ -83,7 +83,7 @@ local plugins = {
 	"folke/trouble.nvim",
 	"numToStr/Comment.nvim",
 	{ "MagicDuck/grug-far.nvim", opts = {} },
-  "3rd/image.nvim",
+	"3rd/image.nvim",
 	"laytan/cloak.nvim",
 
 	-- cosmetic
@@ -128,13 +128,19 @@ local plugins = {
 
 	{
 		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
 		lazy = true,
-		event = {
-			"BufReadPre " .. vim.fn.expand("~") .. "/omoi/**.md",
-			"BufNewFile " .. vim.fn.expand("~") .. "/omoi/**.md",
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
 		},
 		opts = {
-			dir = "~/omoi",
+			workspaces = {
+				{
+					name = "omoi",
+					path = "~/omoi",
+				},
+			},
 		},
 	},
 }

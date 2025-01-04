@@ -4,6 +4,8 @@ font-size = 18
 font-family = Dank Mono
 font-thicken = true
 font-feature = -liga
+font-feature = -calt
+font-feature = -dlig
 
 mouse-hide-while-typing = true
 window-decoration = false
@@ -13,4 +15,6 @@ macos-option-as-alt = true
 shell-integration-features = no-cursor
 cursor-style-blink = false
 cursor-invert-fg-bg = true
-window-padding-x = 10
+adjust-cell-height = 4
+window-padding-x = 4
+window-padding-y = 4

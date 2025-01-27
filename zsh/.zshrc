@@ -21,7 +21,6 @@ export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
-eval "$(thefuck --alias)"
 eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(opam env --switch=4.14.1)"
 

@@ -19,8 +19,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 local root_pattern = require("lspconfig.util").root_pattern
 
-local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
-
 cmp.setup.filetype({ "sql" }, {
 	sources = {
 		{ name = "vim-dadbod-completion" },
@@ -41,7 +39,9 @@ lsp.setup_nvim_cmp({
 		{ name = "path" },
 	},
 	formatting = {
-		format = tailwindcss_colorizer_cmp.formatter,
+		format = require("lspkind").cmp_format({
+			before = require("tailwind-tools.cmp").lspkind_format,
+		}),
 	},
 })
 
@@ -85,14 +85,13 @@ lsp.configure("tsserver", {
 })
 
 lsp.configure("tailwindcss", {
-	root_dir = root_pattern("tailwind.config.js", "tailwind.config.cjs", "tailwind.config.ts"),
 	settings = {
 		tailwindCSS = {
 			experimental = {
 				classRegex = {
-					{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+					{ "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+					{ "tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
 					{ "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
-					{ "tw\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
 				},
 			},
 		},
@@ -101,15 +100,8 @@ lsp.configure("tailwindcss", {
 
 lsp.nvim_workspace()
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(bufnr)
 	local opts = { buffer = bufnr, remap = false }
-	local tw_highlight = require("tailwind-highlight")
-
-	tw_highlight.setup(client, bufnr, {
-		single_column = false,
-		mode = "background",
-		debounce = 200,
-	})
 
 	vim.keymap.set("n", "gd", function()
 		vim.lsp.buf.definition()

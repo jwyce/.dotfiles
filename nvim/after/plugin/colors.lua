@@ -50,6 +50,7 @@ require("rose-pine").setup({
 		OilDir = { fg = "foam" },
 		CurSearch = { fg = "base", bg = "rose", inherit = false },
 		Search = { fg = "text", bg = "rose", blend = 20, inherit = false },
+		Visual = { bg = "#44415a", inherit = false },
 	},
 })
 

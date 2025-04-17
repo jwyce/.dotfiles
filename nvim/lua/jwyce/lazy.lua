@@ -22,6 +22,7 @@ local plugins = {
 	"theprimeagen/harpoon",
 	{ "stevearc/oil.nvim", opts = {} },
 	"stevearc/conform.nvim",
+	"onsails/lspkind.nvim",
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
@@ -78,7 +79,6 @@ local plugins = {
 	"mbbill/undotree",
 	"theprimeagen/git-worktree.nvim",
 	{ "theprimeagen/refactoring.nvim", opts = {} },
-	{ "dmmulroy/ts-error-translator.nvim", opts = {} },
 	{ "folke/todo-comments.nvim", opts = {} },
 	"folke/trouble.nvim",
 	"numToStr/Comment.nvim",
@@ -112,37 +112,7 @@ local plugins = {
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 	{ "windwp/nvim-ts-autotag", opts = {} },
 	"brenoprata10/nvim-highlight-colors",
-	"princejoogie/tailwind-highlight.nvim",
-	"roobert/tailwindcss-colorizer-cmp.nvim",
-	{
-		"theprimeagen/vim-apm",
-		config = function()
-			local apm = require("vim-apm")
-
-			apm:setup({})
-			vim.keymap.set("n", "<leader>apm", function()
-				apm:toggle_monitor()
-			end)
-		end,
-	},
-
-	{
-		"epwalsh/obsidian.nvim",
-		version = "*", -- recommended, use latest release instead of latest commit
-		lazy = true,
-		ft = "markdown",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		opts = {
-			workspaces = {
-				{
-					name = "omoi",
-					path = "~/omoi",
-				},
-			},
-		},
-	},
+	{ "luckasRanarison/tailwind-tools.nvim", build = ":UpdateRemotePlugins", opts = {} },
 }
 
 local opts = {}

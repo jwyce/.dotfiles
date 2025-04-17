@@ -100,7 +100,7 @@ lsp.configure("tailwindcss", {
 
 lsp.nvim_workspace()
 
-lsp.on_attach(function(bufnr)
+lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function()

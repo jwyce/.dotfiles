@@ -1,0 +1,41 @@
+return {
+	cmd = { "tailwindcss-language-server", "--stdio" },
+	filetypes = {
+		"astro",
+		"astro-markdown",
+		"eelixir",
+		"elixir",
+		"gohtml",
+		"gohtmltmpl",
+		"handlebars",
+		"html",
+		"htmlangular",
+		"html-eex",
+		"heex",
+		"markdown",
+		"mdx",
+		"css",
+		"less",
+		"postcss",
+		"sass",
+		"scss",
+		"javascript",
+		"javascriptreact",
+		"reason",
+		"rescript",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"svelte",
+		"templ",
+	},
+	settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					{ "([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]" },
+				},
+			},
+		},
+	},
+}

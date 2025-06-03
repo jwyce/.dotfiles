@@ -15,6 +15,12 @@ bind-key -r D run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/playground"
 
 bind-key -T prefix L switch-client -l
 
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
 set-window-option -g status-keys vi
 set-window-option -g mode-keys vi
 

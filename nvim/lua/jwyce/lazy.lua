@@ -19,29 +19,20 @@ local plugins = {
 	-- crucial
 	"nvim-telescope/telescope.nvim",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"theprimeagen/harpoon",
+	{ "theprimeagen/harpoon", branch = "harpoon2" },
 	{ "stevearc/oil.nvim", opts = {} },
 	"stevearc/conform.nvim",
-	"onsails/lspkind.nvim",
+	{ "saghen/blink.cmp", version = "1.*", opts_extend = { "sources.default" } },
+	{ "mason-org/mason.nvim", opts = {} },
 	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v1.x",
-		dependencies = {
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" },
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
-
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lua" },
-
-			-- Snippets
-			{ "L3MON4D3/LuaSnip" },
+		"mason-org/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = {
+				"ts_ls",
+				"eslint",
+				"lua_ls",
+				"rust_analyzer",
+			},
 		},
 	},
 
@@ -111,8 +102,10 @@ local plugins = {
 	{ "ruifm/gitlinker.nvim", opts = {} },
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 	{ "windwp/nvim-ts-autotag", opts = {} },
-	"brenoprata10/nvim-highlight-colors",
-	{ "luckasRanarison/tailwind-tools.nvim", build = ":UpdateRemotePlugins", opts = {} },
+	{ "brenoprata10/nvim-highlight-colors", opts = {
+		render = "virtual",
+		virtual_symbol = "■",
+	} },
 }
 
 local opts = {}

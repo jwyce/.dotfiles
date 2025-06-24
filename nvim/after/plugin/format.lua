@@ -15,6 +15,7 @@ require("conform").setup({
 		markdown = { "prettier" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
+		elixir = { "mix" },
 		ocaml = { "ocamlformat" },
 		["_"] = { "trim_whitespace" },
 	},

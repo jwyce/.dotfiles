@@ -42,7 +42,7 @@ end
 local function select_background(prompt_bufnr, map, cwd)
 	map("i", "<CR>", function()
 		local content = require("telescope.actions.state").get_selected_entry(prompt_bufnr)
-		set_background(cwd .. string.sub(content.value, 2))
+		set_background(cwd .. "/" .. content.value)
 		require("telescope.actions").close(prompt_bufnr)
 	end)
 end
@@ -54,7 +54,7 @@ local function image_selector(prompt, cwd)
 			cwd = cwd,
 
 			attach_mappings = function(prompt_bufnr, map)
-				select_background(prompt_bufnr, map)
+				select_background(prompt_bufnr, map, cwd)
 
 				-- Please continue mapping (attaching additional key maps):
 				-- Ctrl+n/p to move up and down the list.

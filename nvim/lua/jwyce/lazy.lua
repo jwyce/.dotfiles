@@ -73,7 +73,7 @@ local plugins = {
 	"theprimeagen/git-worktree.nvim",
 	{ "theprimeagen/refactoring.nvim", opts = {} },
 	{ "folke/todo-comments.nvim", opts = {} },
-	"folke/trouble.nvim",
+	{ "folke/trouble.nvim", opts = {} },
 	"numToStr/Comment.nvim",
 	{ "MagicDuck/grug-far.nvim", opts = {} },
 	{

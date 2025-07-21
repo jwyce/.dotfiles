@@ -3,6 +3,7 @@ require("blink.cmp").setup({
 		preset = "default",
 		["<CR>"] = { "accept", "fallback" },
 		["<C-e>"] = { "show" },
+		["<C-o>"] = { "hide" },
 	},
 
 	appearance = {

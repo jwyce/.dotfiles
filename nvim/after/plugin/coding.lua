@@ -15,7 +15,9 @@ vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
 
 vim.keymap.set("n", "<leader>lsp", ":LspRestart<cr>")
 
-vim.keymap.set("n", "<leader>tt", ":TroubleToggle workspace_diagnostics<cr>")
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>")
+vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>")
+
 vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 

@@ -21,23 +21,6 @@ vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>")
 vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 
-require("copilot").setup({
-	suggestion = {
-		enabled = true,
-		auto_trigger = true,
-		debounce = 75,
-		keymap = {
-			accept = "<Tab>",
-			accept_word = false,
-			accept_line = false,
-			next = "<M-]>",
-			prev = "<M-[>",
-			dismiss = "<C-]>",
-		},
-	},
-	filetypes = { ["*"] = true },
-})
-
 require("zen-mode").setup({
 	window = {
 		width = 90,

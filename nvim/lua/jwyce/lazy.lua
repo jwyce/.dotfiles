@@ -95,7 +95,6 @@ local plugins = {
 	"andweeb/presence.nvim",
 
 	-- trying it out
-	"zbirenbaum/copilot.lua",
 	"monaqa/dial.nvim",
 	"cshuaimin/ssr.nvim",
 	{ "toppair/peek.nvim", build = "deno task --quiet build:fast", opts = {} },

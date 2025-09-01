@@ -6,6 +6,7 @@ font-thicken = true
 font-feature = -liga
 font-feature = -calt
 font-feature = -dlig
+font-codepoint-map = U+4E00-U+9FFF,U+3400-U+4DBF=Hiragino Maru Gothic ProN
 
 mouse-hide-while-typing = true
 window-decoration = false

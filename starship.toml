@@ -32,7 +32,7 @@ style = "#f9f1e1"
 symbol = " "
 
 [docker_context]
-symbol = " "
+symbol = "  "
 
 [elixir]
 symbol = " "
@@ -44,7 +44,7 @@ symbol = "🌳 "
 symbol = " "
 
 [golang]
-symbol = "󰟓 "
+symbol = " "
 
 [haskell]
 symbol = " "

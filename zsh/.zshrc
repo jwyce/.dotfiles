@@ -25,7 +25,7 @@ export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_P
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(opam env --switch=4.14.1)"
+eval "$(opam env --switch=5.4.0)"
 
 # Enable vi mode
 bindkey -v

@@ -9,6 +9,14 @@ return {
 			callback(root_dir)
 		end
 	end,
+	init_options = {
+		plugins = {
+			{
+				name = "typescript-svelte-plugin",
+				location = vim.fn.expand("$HOME/.local/share/nvim/mason/packages/svelte-language-server/node_modules/typescript-svelte-plugin"),
+			},
+		},
+	},
 	commands = {
 		OrganizeImports = {
 			function()

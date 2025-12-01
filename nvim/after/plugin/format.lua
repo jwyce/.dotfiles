@@ -9,6 +9,7 @@ require("conform").setup({
 		python = { "isort", "ruff_format" },
 		yaml = { "biome", "prettier" },
 		json = { "biome", "prettier" },
+		jsonc = { "biome", "prettier" },
 		javascript = { "biome", "prettier" },
 		typescript = { "biome", "prettier", "deno_fmt", stop_after_first = true },
 		typescriptreact = { "biome", "prettier" },

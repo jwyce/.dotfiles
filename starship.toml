@@ -37,14 +37,14 @@ symbol = "  "
 [elixir]
 symbol = " "
 
+[gleam]
+symbol = "󰦥 "
+
 [git_branch]
 symbol = " "
 
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "

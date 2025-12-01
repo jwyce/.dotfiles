@@ -37,9 +37,6 @@ symbol = "  "
 [elixir]
 symbol = " "
 
-[elm]
-symbol = "🌳 "
-
 [git_branch]
 symbol = " "
 
@@ -72,8 +69,8 @@ style = "#b5a2d1"
 symbol = " "
 
 [ocaml]
-symbol = "🐫 "
-style = "#f28c04"
+symbol = " "
+style = "#ed6b0d"
 
 [package]
 symbol = " "

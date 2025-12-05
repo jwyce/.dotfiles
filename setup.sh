@@ -34,9 +34,11 @@ DOT=$HOME/.dotfiles
 CONFIG=$HOME/.config
 LOCAL=$HOME/.local
 TMUX=$CONFIG/tmux
+CLAUDE=$HOME/.claude
 
 mkdir -p $CONFIG
 mkdir -p $TMUX
+mkdir -p $CLAUDE
 
 log_start "🔗 Symlinking dotfiles..."
 symlink $DOT/zsh/.antigenrc $HOME/.antigenrc
@@ -54,6 +56,9 @@ fi
 if ! test -e $CONFIG/ghostty; then
     symlink $DOT/ghostty $CONFIG
 fi
+symlink $DOT/.claude/CLAUDE.md $CLAUDE/CLAUDE.md
+symlink $DOT/.claude/settings.json $CLAUDE/settings.json
+symlink $DOT/.claude/commands $CLAUDE/commands
 log_end "Symlinks created"
 
 log_start "🔠 Copying Fonts..."
@@ -97,11 +102,11 @@ echo
 
 log_start "🐫 Installing OCaml..."
 if ! command -v opam &> /dev/null; then
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://opam.ocaml.org/install.sh)"
 
-    opam init
-    opam switch create 4.14.1
-    opam install dune merlin ocaml-lsp-server odoc ocamlformat utop dune-release
+    opam init -y
+    opam switch create 5.4.0 -y
+    opam install -y ocaml-lsp-server odoc ocamlformat utop core core_bench
     log_end "OCaml installed"
 else
     ocaml --version

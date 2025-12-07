@@ -8,11 +8,6 @@ tmux_conf_24b_colour=auto
 bind-key -r f run-shell "tmux neww ~/.local/bin/scripts/tmux-sessionizer"
 bind-key -r i run-shell "tmux neww ~/.local/bin/scripts/tmux-cht"
 
-bind-key -r W run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/work"
-bind-key -r A run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/personal"
-bind-key -r S run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/projects"
-bind-key -r D run-shell "~/.local/bin/scripts/tmux-sessionizer ~/dev/playground"
-
 bind-key -T prefix L switch-client -l
 
 set -gu prefix2

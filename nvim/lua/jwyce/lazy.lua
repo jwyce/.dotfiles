@@ -92,16 +92,27 @@ local plugins = {
 	"eandrju/cellular-automaton.nvim",
 	"sindrets/diffview.nvim",
 	"andweeb/presence.nvim",
+	{
+		"NStefan002/screenkey.nvim",
+		lazy = false,
+		version = "*",
+	},
 
 	-- trying it out
 	"monaqa/dial.nvim",
 	"cshuaimin/ssr.nvim",
 	{ "toppair/peek.nvim", build = "deno task --quiet build:fast", opts = {} },
+	{
+		"nomad/nomad",
+		version = "*",
+		build = "cargo build --release && cp target/release/libnomad.dylib lua/nomad.so",
+		opts = {},
+	},
 
 	-- misc
 	{
 		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		version = "*",
 		event = "VeryLazy",
 		opts = {},
 	},

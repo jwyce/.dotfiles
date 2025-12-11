@@ -2,7 +2,7 @@ local hi = require("nvim-highlight-colors")
 vim.keymap.set("n", "cmp", hi.toggle)
 require("kanagawa").setup({
 	transparent = true,
-	theme = "wave", -- wave, dragon, lotus
+	theme = "wave",
 	keywordStyle = { italic = false },
 	colors = {
 		theme = {
@@ -24,7 +24,7 @@ require("gruvbox").setup({
 	transparent_mode = true,
 })
 require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	flavour = "mocha",
 	no_italic = true,
 	transparent_background = true,
 	styles = {
@@ -32,7 +32,7 @@ require("catppuccin").setup({
 	},
 })
 require("tokyonight").setup({
-	style = "night", -- storm, night, moon
+	style = "moon", -- storm, moon
 	transparent = true,
 	styles = {
 		keywords = { italic = false },
@@ -55,7 +55,7 @@ require("rose-pine").setup({
 })
 
 function ColorMyPencils(color)
-	color = color or "rose-pine"
+	color = color or "tokyonight"
 	vim.cmd.colorscheme(color)
 	vim.opt.background = "dark"
 

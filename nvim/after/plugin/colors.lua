@@ -31,6 +31,21 @@ require("catppuccin").setup({
 		comments = { "italic" },
 	},
 })
+require("bearded").setup({
+	flavor = "arc-reversed",
+	transparent = true,
+	italic = false,
+	on_highlights = function(set, palette)
+		set("Normal", { fg = palette.ui.default })
+		set("NormalFloat", { bg = "NONE" })
+		set("FloatBorder", { bg = "NONE" })
+		set("TelescopeNormal", { bg = "NONE" })
+		set("TelescopeBorder", { bg = "NONE" })
+		set("TelescopePromptNormal", { bg = "NONE" })
+		set("TelescopeResultsNormal", { bg = "NONE" })
+		set("TelescopePreviewNormal", { bg = "NONE" })
+	end,
+})
 require("tokyonight").setup({
 	style = "moon", -- storm, moon
 	transparent = true,

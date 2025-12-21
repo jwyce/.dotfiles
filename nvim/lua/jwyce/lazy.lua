@@ -42,6 +42,8 @@ local plugins = {
 	"folke/tokyonight.nvim",
 	"rebelot/kanagawa.nvim",
 	"ellisonleao/gruvbox.nvim",
+	"nexxeln/vesper.nvim",
+  "Ferouk/bearded-nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 

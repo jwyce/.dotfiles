@@ -43,7 +43,7 @@ local plugins = {
 	"rebelot/kanagawa.nvim",
 	"ellisonleao/gruvbox.nvim",
 	"nexxeln/vesper.nvim",
-  "Ferouk/bearded-nvim",
+	"Ferouk/bearded-nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 
@@ -103,7 +103,7 @@ local plugins = {
 	-- trying it out
 	"monaqa/dial.nvim",
 	"cshuaimin/ssr.nvim",
-	{ "toppair/peek.nvim", build = "deno task --quiet build:fast", opts = {} },
+	{ "OXY2DEV/markview.nvim", lazy = false },
 	{
 		"nomad/nomad",
 		version = "*",

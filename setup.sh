@@ -35,10 +35,14 @@ CONFIG=$HOME/.config
 LOCAL=$HOME/.local
 TMUX=$CONFIG/tmux
 CLAUDE=$HOME/.claude
+OPENCODE=$CONFIG/opencode
 
 mkdir -p $CONFIG
 mkdir -p $TMUX
 mkdir -p $CLAUDE
+mkdir -p $OPENCODE
+mkdir -p $OPENCODE/themes
+mkdir -p $OPENCODE/command
 
 log_start "🔗 Symlinking dotfiles..."
 symlink $DOT/zsh/.antigenrc $HOME/.antigenrc
@@ -59,6 +63,10 @@ fi
 symlink $DOT/.claude/CLAUDE.md $CLAUDE/CLAUDE.md
 symlink $DOT/.claude/settings.json $CLAUDE/settings.json
 symlink $DOT/.claude/commands $CLAUDE/commands
+symlink $DOT/opencode/opencode.json $OPENCODE/opencode.json
+symlink $DOT/opencode/oh-my-opencode.json $OPENCODE/oh-my-opencode.json
+symlink $DOT/opencode/themes/tokyonight-transparent.json $OPENCODE/themes/tokyonight-transparent.json
+symlink $DOT/opencode/command/supermemory-init.md $OPENCODE/command/supermemory-init.md
 log_end "Symlinks created"
 
 log_start "🔠 Copying Fonts..."

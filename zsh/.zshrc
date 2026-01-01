@@ -9,16 +9,19 @@ antigen init ~/.antigenrc
 export DOT=$HOME/.dotfiles
 export CONFIG=$HOME/.config
 export LOCAL=$HOME/.local
+export EDITOR=nvim
 export NVIM_LUA=$DOT/nvim/lua/jwyce
 export ZSHRC=$DOT/.zshrc
 export BREWFILE=$DOT/Brewfile
-export BIN=$DOT/bin/scripts
-export PATH="$BIN:$PATH"
 export STARSHIP_CONFIG=$DOT/starship.toml
 export BUN_INSTALL="$HOME/.bun"
+export BIN=$DOT/bin/scripts
+export PATH="$BIN:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+export PATH=/Users/jwyce/.opencode/bin:$PATH
 export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
 export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 

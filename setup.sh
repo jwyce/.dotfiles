@@ -67,6 +67,7 @@ symlink $DOT/opencode/opencode.json $OPENCODE/opencode.json
 symlink $DOT/opencode/oh-my-opencode.json $OPENCODE/oh-my-opencode.json
 symlink $DOT/opencode/themes/tokyonight-transparent.json $OPENCODE/themes/tokyonight-transparent.json
 symlink $DOT/opencode/command/supermemory-init.md $OPENCODE/command/supermemory-init.md
+symlink $DOT/opencode/command/rmslop.md $OPENCODE/command/rmslop.md
 log_end "Symlinks created"
 
 log_start "🔠 Copying Fonts..."

@@ -8,13 +8,13 @@
 		},
 		"playwriter": {
 			"type": "local",
-			"command": ["npx", "playwriter"],
+			"command": ["npx", "playwriter@0.0.26"],
 			"enabled": true
 		}
 	},
 	"plugin": [
 		"oh-my-opencode",
-		"opencode-antigravity-auth@1.2.6",
+		"opencode-antigravity-auth",
 		"opencode-openai-codex-auth",
 		"opencode-supermemory"
 	],
@@ -22,9 +22,9 @@
 		"google": {
 			"name": "Google",
 			"models": {
-				"gemini-3-pro-high": {
+				"antigravity-gemini-3-pro-high": {
 					"name": "Gemini 3 Pro High (Antigravity)",
-					"thinking": true,
+					"reasoning": true,
 					"attachment": true,
 					"limit": {
 						"context": 1048576,
@@ -35,9 +35,9 @@
 						"output": ["text"]
 					}
 				},
-				"gemini-3-pro-medium": {
+				"antigravity-gemini-3-pro-medium": {
 					"name": "Gemini 3 Pro Medium (Antigravity)",
-					"thinking": true,
+					"reasoning": true,
 					"attachment": true,
 					"limit": {
 						"context": 1048576,
@@ -48,9 +48,9 @@
 						"output": ["text"]
 					}
 				},
-				"gemini-3-pro-low": {
+				"antigravity-gemini-3-pro-low": {
 					"name": "Gemini 3 Pro Low (Antigravity)",
-					"thinking": true,
+					"reasoning": true,
 					"attachment": true,
 					"limit": {
 						"context": 1048576,
@@ -61,7 +61,7 @@
 						"output": ["text"]
 					}
 				},
-				"gemini-3-flash": {
+				"antigravity-gemini-3-flash": {
 					"name": "Gemini 3 Flash (Antigravity)",
 					"attachment": true,
 					"limit": {
@@ -73,7 +73,7 @@
 						"output": ["text"]
 					}
 				},
-				"gemini-3-flash-lite": {
+				"antigravity-gemini-3-flash-lite": {
 					"name": "Gemini 3 Flash Lite (Antigravity)",
 					"attachment": true,
 					"limit": {
@@ -96,11 +96,11 @@
 				},
 				"o3": {
 					"name": "o3",
-					"thinking": true
+					"reasoning": true
 				},
 				"o4-mini": {
 					"name": "o4-mini",
-					"thinking": true
+					"reasoning": true
 				},
 				"codex-1": {
 					"name": "Codex-1"

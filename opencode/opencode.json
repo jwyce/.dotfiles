@@ -8,7 +8,7 @@
 		},
 		"playwriter": {
 			"type": "local",
-			"command": ["npx", "playwriter@0.0.26"],
+			"command": ["npx", "playwriter@latest"],
 			"enabled": true
 		}
 	},

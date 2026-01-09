@@ -46,6 +46,7 @@ alias ls='eza --icons'
 alias ps='procs'
 alias lg='lazygit'
 alias vim='nvim'
+alias oc='opencode'
 alias python='python3'
 alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"

@@ -16,6 +16,7 @@
 		"oh-my-opencode",
 		"opencode-antigravity-auth",
 		"opencode-openai-codex-auth",
+		"opencode-anthropic-auth@0.0.8",
 		"opencode-supermemory"
 	],
 	"provider": {

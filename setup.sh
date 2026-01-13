@@ -30,7 +30,9 @@ SYMLINKS=(
     "$DOT/tmux/.tmux-cht-command:$HOME/.tmux-cht-command"
     "$DOT/tmux/.tmux-cht-languages:$HOME/.tmux-cht-languages"
     # git
-    "$DOT/.gitconfig:$HOME/.gitconfig"
+    "$DOT/git/.gitconfig:$HOME/.gitconfig"
+    # jj
+    "$DOT/git/jj.toml:$CONFIG/jj/config.toml"
     # aerospace
     "$DOT/aerospace.toml:$HOME/.aerospace.toml"
     # claude

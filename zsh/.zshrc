@@ -33,7 +33,6 @@ eval "$(opam env --switch=5.4.0)"
 
 # Enable vi mode
 bindkey -v
-bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^r' _atuin_search_widget
 bindkey -s ^f "tmux-sessionizer\n"
 

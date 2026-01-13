@@ -4,14 +4,16 @@ error_symbol = "[](bold red) "
 [cmd_duration]
 format = "  took ${duration}"
 
+[git_branch]
+disabled = true
+
 [git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
-untracked = "?${count}"
-modified = "!${count}"
-staged = "+${count}"
-renamed = "»${count}"
-deleted = "✘${count}"
+disabled = true
+
+[custom.jj]
+when = "jj-starship detect"
+shell = ["jj-starship"]
+format = "$output "
 
 [directory]
 truncate_to_repo = false
@@ -39,9 +41,6 @@ symbol = " "
 
 [gleam]
 symbol = "󰦥 "
-
-[git_branch]
-symbol = " "
 
 [golang]
 symbol = " "

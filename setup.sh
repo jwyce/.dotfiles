@@ -4,28 +4,12 @@ trap "exit" INT
 
 # https://gist.github.com/vratiu/9780109
 Color_Off="\033[0m"       # Text Reset
-Black="\033[0;30m"        # Black
-Red="\033[0;31m"          # Red
-Green="\033[0;32m"        # Green
-Yellow="\033[0;33m"       # Yellow
 Blue="\033[0;34m"         # Blue
-Purple="\033[0;35m"       # Purple
-Cyan="\033[0;36m"         # Cyan
-White="\033[0;37m"        # White
+Green="\033[0;32m"        # Green
 
-function symlink() {
-    ln -sf $1 $2
-}
-
-function log_start() {
-    echo -e "${Blue}$1${Color_Off}"
-}
-
-function log_end() {
-    echo -e "${Green}$1${Color_Off}"
-}
-
-function eval_brew() {
+log_start() { echo -e "${Blue}$1${Color_Off}"; }
+log_end() { echo -e "${Green}$1${Color_Off}"; }
+eval_brew() {
     eval "$(/opt/homebrew/bin/brew shellenv)"
     eval "$(fnm env --use-on-cd)"
 }
@@ -33,41 +17,51 @@ function eval_brew() {
 DOT=$HOME/.dotfiles
 CONFIG=$HOME/.config
 LOCAL=$HOME/.local
-TMUX=$CONFIG/tmux
-CLAUDE=$HOME/.claude
-OPENCODE=$CONFIG/opencode
 
-mkdir -p $CONFIG
-mkdir -p $TMUX
-mkdir -p $CLAUDE
-mkdir -p $OPENCODE
-mkdir -p $OPENCODE/themes
-mkdir -p $OPENCODE/command
+# Symlink mappings: "source:destination"
+SYMLINKS=(
+    # zsh
+    "$DOT/zsh/.antigenrc:$HOME/.antigenrc"
+    "$DOT/zsh/.zshrc:$HOME/.zshrc"
+    "$DOT/zsh/.zprofile:$HOME/.zprofile"
+    # tmux
+    "$DOT/.tmux/.tmux.conf:$CONFIG/tmux/tmux.conf"
+    "$DOT/tmux/.tmux.conf.local:$CONFIG/tmux/tmux.conf.local"
+    "$DOT/tmux/.tmux-cht-command:$HOME/.tmux-cht-command"
+    "$DOT/tmux/.tmux-cht-languages:$HOME/.tmux-cht-languages"
+    # git
+    "$DOT/.gitconfig:$HOME/.gitconfig"
+    # aerospace
+    "$DOT/aerospace.toml:$HOME/.aerospace.toml"
+    # claude
+    "$DOT/.claude/CLAUDE.md:$HOME/.claude/CLAUDE.md"
+    "$DOT/.claude/settings.json:$HOME/.claude/settings.json"
+    "$DOT/.claude/commands:$HOME/.claude/commands"
+    # opencode
+    "$DOT/opencode/opencode.json:$CONFIG/opencode/opencode.json"
+    "$DOT/opencode/oh-my-opencode.json:$CONFIG/opencode/oh-my-opencode.json"
+    "$DOT/opencode/themes/tokyonight-transparent.json:$CONFIG/opencode/themes/tokyonight-transparent.json"
+    "$DOT/opencode/command/supermemory-init.md:$CONFIG/opencode/command/supermemory-init.md"
+    "$DOT/opencode/command/rmslop.md:$CONFIG/opencode/command/rmslop.md"
+    # nvim
+    "$DOT/nvim:$CONFIG/nvim"
+    # ghostty
+    "$DOT/ghostty:$CONFIG/ghostty"
+    # scripts
+    "$DOT/bin/scripts:$LOCAL/bin/scripts"
+)
 
 log_start "🔗 Symlinking dotfiles..."
-symlink $DOT/zsh/.antigenrc $HOME/.antigenrc
-symlink $DOT/zsh/.zshrc $HOME/.zshrc
-symlink $DOT/zsh/.zprofile $HOME/.zprofile
-symlink $DOT/aerospace.toml $HOME/.aerospace.toml
-symlink $DOT/.tmux/.tmux.conf $TMUX/tmux.conf
-symlink $DOT/tmux/.tmux.conf.local $TMUX/tmux.conf.local
-symlink $DOT/tmux/.tmux-cht-command $HOME/.tmux-cht-command
-symlink $DOT/tmux/.tmux-cht-languages $HOME/.tmux-cht-languages
-symlink $DOT/.gitconfig $HOME/.gitconfig
-if ! test -e $LOCAL/bin/scripts; then
-    symlink $DOT/bin/scripts $LOCAL/bin
-fi
-if ! test -e $CONFIG/ghostty; then
-    symlink $DOT/ghostty $CONFIG
-fi
-symlink $DOT/.claude/CLAUDE.md $CLAUDE/CLAUDE.md
-symlink $DOT/.claude/settings.json $CLAUDE/settings.json
-symlink $DOT/.claude/commands $CLAUDE/commands
-symlink $DOT/opencode/opencode.json $OPENCODE/opencode.json
-symlink $DOT/opencode/oh-my-opencode.json $OPENCODE/oh-my-opencode.json
-symlink $DOT/opencode/themes/tokyonight-transparent.json $OPENCODE/themes/tokyonight-transparent.json
-symlink $DOT/opencode/command/supermemory-init.md $OPENCODE/command/supermemory-init.md
-symlink $DOT/opencode/command/rmslop.md $OPENCODE/command/rmslop.md
+for entry in "${SYMLINKS[@]}"; do
+    src="${entry%%:*}"
+    dest="${entry##*:}"
+    mkdir -p "$(dirname "$dest")"
+    if [[ -d "$src" ]]; then
+        [[ -e "$dest" ]] || ln -sf "$src" "$dest"
+    else
+        ln -sf "$src" "$dest"
+    fi
+done
 log_end "Symlinks created"
 
 log_start "🔠 Copying Fonts..."
@@ -112,14 +106,16 @@ echo
 log_start "🐫 Installing OCaml..."
 if ! command -v opam &> /dev/null; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://opam.ocaml.org/install.sh)"
-
     opam init -y
+fi
+if ! opam switch list 2>/dev/null | grep -q "5.4.0"; then
     opam switch create 5.4.0 -y
     opam install -y ocaml-lsp-server odoc ocamlformat utop core core_bench
-    log_end "OCaml installed"
+    log_end "OCaml 5.4.0 installed"
 else
+    opam switch 5.4.0
     ocaml --version
-    log_end "OCaml detected"
+    log_end "OCaml 5.4.0 detected"
 fi
 echo
 
@@ -134,14 +130,6 @@ else
     log_end "NodeJS detected"
 fi
 echo
-
-log_start "🧙 Configuring neovim..."
-if ! test -e $CONFIG/nvim; then
-    symlink $DOT/nvim $CONFIG
-    log_end "nvim config setup"
-else
-    log_end "nvim config detected"
-fi
 
 cat doc.txt | lolcat
 log_end "🎉 Done!"

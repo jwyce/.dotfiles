@@ -1,4 +1,5 @@
 vim.keymap.set("n", "<leader>lg", ":LazyGit<cr>")
+vim.keymap.set("n", "<leader>jj", ":LazyJJ<cr>")
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set({ "n", "x" }, "<leader>sR", function()
 	require("ssr").open()

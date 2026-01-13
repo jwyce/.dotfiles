@@ -13,6 +13,8 @@ function M.setup()
 	local is_image_preview = false
 	local image = nil
 	local last_file_path = ""
+	local render_timer = nil
+	local DEBOUNCE_MS = 150
 
 	local is_supported_image = function(filepath)
 		local split_path = vim.split(filepath:lower(), ".", { plain = true })
@@ -21,6 +23,12 @@ function M.setup()
 	end
 
 	local delete_image = function()
+		if render_timer then
+			render_timer:stop()
+			render_timer:close()
+			render_timer = nil
+		end
+
 		if not image then
 			return
 		end
@@ -30,17 +38,27 @@ function M.setup()
 	end
 
 	local create_image = function(filepath, winid, bufnr)
-		image = image_api.hijack_buffer(filepath, winid, bufnr)
-
-		if not image then
-			return
+		if render_timer then
+			render_timer:stop()
+			render_timer:close()
 		end
 
-		vim.schedule(function()
-			image:render()
-		end)
+		render_timer = vim.uv.new_timer()
+		render_timer:start(DEBOUNCE_MS, 0, vim.schedule_wrap(function()
+			if render_timer then
+				render_timer:close()
+				render_timer = nil
+			end
 
-		is_image_preview = true
+			image = image_api.hijack_buffer(filepath, winid, bufnr)
+
+			if not image then
+				return
+			end
+
+			image:render()
+			is_image_preview = true
+		end))
 	end
 
 	local function defaulter(f, default_opts)

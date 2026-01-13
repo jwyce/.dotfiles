@@ -45,6 +45,7 @@ alias ....="cd ../../.."
 alias ls='eza --icons'
 alias ps='procs'
 alias lg='lazygit'
+alias ljj='lazyjj'
 alias vim='nvim'
 alias oc='opencode'
 alias python='python3'

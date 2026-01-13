@@ -70,6 +70,7 @@ local plugins = {
 
 	-- actually useful
 	"kdheepak/lazygit.nvim",
+	{ "swaits/lazyjj.nvim", opts = {} },
 	"tpope/vim-fugitive",
 	"mbbill/undotree",
 	"theprimeagen/git-worktree.nvim",

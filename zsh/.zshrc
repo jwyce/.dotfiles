@@ -75,5 +75,6 @@ autoload -U compinit && compinit
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
 source <(carapace _carapace)
+compdef _tmux tmux  # use native zsh completion for tmux
 
 . "$HOME/.local/bin/env"

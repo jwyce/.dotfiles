@@ -20,6 +20,8 @@ set-window-option -g status-keys vi
 set-window-option -g mode-keys vi
 
 set -gq allow-passthrough on
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
 set -g visual-activity off
 set-option -g focus-events on
 

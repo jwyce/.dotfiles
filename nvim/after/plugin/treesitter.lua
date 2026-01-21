@@ -1,5 +1,7 @@
 vim.g.skip_ts_context_commentstring_module = true
 
+vim.treesitter.language.register("markdown", "mdx")
+
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all"
 	ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },

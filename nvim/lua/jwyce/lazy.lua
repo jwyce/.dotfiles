@@ -43,6 +43,7 @@ local plugins = {
 	"rebelot/kanagawa.nvim",
 	"ellisonleao/gruvbox.nvim",
 	"nexxeln/vesper.nvim",
+  "vague-theme/vague.nvim",
 	"Ferouk/bearded-nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },

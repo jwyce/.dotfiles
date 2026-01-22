@@ -1,0 +1,350 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly RED='\033[0;31m'
+readonly GREEN='\033[0;32m'
+readonly BLUE='\033[0;34m'
+readonly CYAN='\033[0;36m'
+readonly RESET='\033[0m'
+readonly BOLD='\033[1m'
+
+readonly SCRIPT_NAME="dot"
+readonly VERSION="1.0.0"
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+while [[ -L "$SCRIPT_PATH" ]]; do
+    SCRIPT_PATH="$(readlink "$SCRIPT_PATH")"
+done
+DOTFILES_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+readonly DOTFILES_DIR
+
+readonly PACKAGES_DIR="${DOTFILES_DIR}/packages"
+readonly HOME_DIR="${DOTFILES_DIR}/home"
+
+print_header() { echo -e "\n${BOLD}${BLUE}==>${RESET} ${BOLD}$1${RESET}"; }
+print_success() { echo -e "${GREEN}✓${RESET} $1"; }
+print_error() { echo -e "${RED}✗${RESET} $1" >&2; }
+print_info() { echo -e "${CYAN}ℹ${RESET} $1"; }
+
+command_exists() { command -v "$1" >/dev/null 2>&1; }
+
+eval_brew() {
+    if [[ "$(uname -m)" == "arm64" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
+}
+
+install_homebrew() {
+    print_header "Installing Homebrew"
+    if command_exists brew; then
+        print_success "Homebrew already installed"
+        return 0
+    fi
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval_brew
+    print_success "Homebrew installed"
+}
+
+install_packages() {
+    print_header "Installing packages from Brewfile"
+    if [[ ! -f "${PACKAGES_DIR}/Brewfile" ]]; then
+        print_error "Brewfile not found at ${PACKAGES_DIR}/Brewfile"
+        return 1
+    fi
+    brew bundle --file="${PACKAGES_DIR}/Brewfile"
+    print_success "Packages installed"
+}
+
+link_dot_cli() {
+    print_header "Linking dot CLI"
+    mkdir -p "${HOME}/.local/bin"
+    ln -sf "${DOTFILES_DIR}/dot" "${HOME}/.local/bin/dot"
+    print_success "dot linked to ~/.local/bin/dot"
+}
+
+stow_dotfiles() {
+    print_header "Stowing dotfiles"
+    if ! command_exists stow; then
+        print_error "GNU Stow not installed. Run: brew install stow"
+        return 1
+    fi
+
+    local old_symlinks=(
+        "$HOME/.config/nvim"
+        "$HOME/.config/ghostty"
+        "$HOME/.config/jj/config.toml"
+        "$HOME/.config/tmux/tmux.conf.local"
+        "$HOME/.config/tmux/tmux-cht-command"
+        "$HOME/.config/tmux/tmux-cht-languages"
+        "$HOME/.config/git/config"
+        "$HOME/.config/opencode/opencode.json"
+        "$HOME/.config/opencode/oh-my-opencode.json"
+        "$HOME/.config/starship.toml"
+        "$HOME/.gitconfig"
+        "$HOME/.zshrc"
+        "$HOME/.zprofile"
+        "$HOME/.antigenrc"
+        "$HOME/.aerospace.toml"
+        "$HOME/.tmux-cht-command"
+        "$HOME/.tmux-cht-languages"
+    )
+
+    for link in "${old_symlinks[@]}"; do
+        [[ -L "$link" ]] && rm -f "$link"
+    done
+
+    stow -R -v -d "${DOTFILES_DIR}" -t "${HOME}" home
+    print_success "Dotfiles stowed"
+}
+
+link_tmux_submodule() {
+    print_header "Linking tmux submodule"
+    mkdir -p "${HOME}/.config/tmux"
+    ln -sf "${DOTFILES_DIR}/.tmux/.tmux.conf" "${HOME}/.config/tmux/tmux.conf"
+    print_success "tmux.conf linked"
+}
+
+ensure_zdotdir() {
+    print_header "Configuring ZDOTDIR"
+    local zshenv="$HOME/.zshenv"
+    if ! grep -q 'ZDOTDIR' "$zshenv" 2>/dev/null; then
+        if [[ -f "$zshenv" ]]; then
+            local tmp=$(mktemp)
+            echo 'export ZDOTDIR="$HOME/.config/zsh"' | cat - "$zshenv" > "$tmp"
+            mv "$tmp" "$zshenv"
+        else
+            echo 'export ZDOTDIR="$HOME/.config/zsh"' > "$zshenv"
+        fi
+        print_success "ZDOTDIR added to .zshenv"
+    else
+        print_success "ZDOTDIR already configured"
+    fi
+}
+
+install_fonts() {
+    print_header "Installing fonts"
+    local font_dir="${DOTFILES_DIR}/fonts"
+    if [[ -d "$font_dir" ]]; then
+        cp -R "$font_dir"/* "$HOME/Library/Fonts/"
+        print_success "Fonts installed"
+    else
+        print_info "No fonts directory found"
+    fi
+}
+
+generate_ssh_key() {
+    print_header "Generating SSH key"
+    local key_path="$HOME/.ssh/id_ed25519"
+    if [[ -f "$key_path" ]]; then
+        print_success "SSH key already exists"
+        return 0
+    fi
+    mkdir -p "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+    read -r -p "Enter email for SSH key: " email
+    ssh-keygen -t ed25519 -C "$email" -f "$key_path"
+    print_success "SSH key generated"
+    print_info "Add to GitHub: pbcopy < ${key_path}.pub"
+}
+
+install_opencode() {
+    print_header "Installing OpenCode"
+    if command_exists opencode; then
+        print_success "OpenCode already installed"
+        return 0
+    fi
+    curl -fsSL https://opencode.ai/install | bash
+    print_success "OpenCode installed"
+}
+
+install_antigen() {
+    print_header "Installing Antigen"
+    if [[ -f "$HOME/antigen.zsh" ]]; then
+        print_success "Antigen already installed"
+        return 0
+    fi
+    curl -L git.io/antigen > "$HOME/antigen.zsh"
+    print_success "Antigen installed"
+}
+
+install_rust() {
+    print_header "Installing Rust"
+    if command_exists rustc; then
+        rustc -V
+        print_success "Rust already installed"
+        return 0
+    fi
+    rustup-init -y
+    print_success "Rust installed"
+}
+
+install_ocaml() {
+    print_header "Installing OCaml"
+    if ! command_exists opam; then
+        NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://opam.ocaml.org/install.sh)"
+        opam init -y
+    fi
+    if ! opam switch list 2>/dev/null | grep -q "5.4.0"; then
+        opam switch create 5.4.0 -y
+        opam install -y ocaml-lsp-server odoc ocamlformat utop core core_bench
+        print_success "OCaml 5.4.0 installed"
+    else
+        print_success "OCaml 5.4.0 already installed"
+    fi
+}
+
+install_node() {
+    print_header "Installing Node.js"
+    if command_exists node; then
+        node -v
+        print_success "Node.js already installed"
+        return 0
+    fi
+    eval "$(fnm env --use-on-cd)"
+    fnm use 22 --install-if-missing
+    npm i -g pnpm @antfu/ni
+    print_success "Node.js installed"
+}
+
+install_bun() {
+    print_header "Installing Bun"
+    if command_exists bun; then
+        print_success "Bun already installed"
+        return 0
+    fi
+    curl -fsSL https://bun.sh/install | bash
+    print_success "Bun installed"
+}
+
+cmd_init() {
+    local skip_font=false
+    local skip_ssh=false
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --skip-font) skip_font=true; shift ;;
+            --skip-ssh) skip_ssh=true; shift ;;
+            *) shift ;;
+        esac
+    done
+
+    print_header "Initializing dotfiles"
+
+    install_homebrew
+    eval_brew
+    install_packages
+    link_dot_cli
+    stow_dotfiles
+    link_tmux_submodule
+    ensure_zdotdir
+
+    [[ "$skip_font" == false ]] && install_fonts
+    [[ "$skip_ssh" == false ]] && generate_ssh_key
+
+    install_opencode
+    install_antigen
+    install_rust
+    install_ocaml
+    install_node
+    install_bun
+
+    print_header "Initialization complete! 🎉"
+    print_info "Open a new terminal to apply changes"
+}
+
+cmd_update() {
+    print_header "Updating dotfiles"
+
+    if [[ -d "${DOTFILES_DIR}/.jj" ]] && command_exists jj; then
+        print_info "Updating via jj"
+        jj git fetch -R "$DOTFILES_DIR"
+        jj -R "$DOTFILES_DIR" rebase -d 'trunk()'
+    else
+        git -C "$DOTFILES_DIR" pull
+    fi
+    print_success "Repository updated"
+
+    print_info "Updating Homebrew packages"
+    brew update && brew upgrade
+    print_success "Packages updated"
+
+    stow_dotfiles
+    link_tmux_submodule
+}
+
+cmd_doctor() {
+    print_header "Running diagnostics"
+    local issues=0
+
+    command_exists brew && print_success "Homebrew" || { print_error "Homebrew not found"; ((++issues)); }
+    command_exists stow && print_success "GNU Stow" || { print_error "Stow not found"; ((++issues)); }
+    command_exists git && print_success "Git" || { print_error "Git not found"; ((++issues)); }
+    command_exists nvim && print_success "Neovim" || { print_error "Neovim not found"; ((++issues)); }
+    command_exists tmux && print_success "Tmux" || { print_error "Tmux not found"; ((++issues)); }
+    command_exists node && print_success "Node.js" || print_info "Node.js not found"
+    command_exists bun && print_success "Bun" || print_info "Bun not found"
+    command_exists rustc && print_success "Rust" || print_info "Rust not found"
+    command_exists opencode && print_success "OpenCode" || print_info "OpenCode not found"
+
+    [[ -f "$HOME/.ssh/id_ed25519" ]] && print_success "SSH key exists" || print_info "No SSH key"
+    grep -q 'ZDOTDIR' "$HOME/.zshenv" 2>/dev/null && print_success "ZDOTDIR configured" || print_error "ZDOTDIR not set in .zshenv"
+
+    if [[ $issues -eq 0 ]]; then
+        print_header "All checks passed! ✨"
+    else
+        print_header "Found $issues issues"
+    fi
+}
+
+cmd_stow() {
+    stow_dotfiles
+    link_tmux_submodule
+    ensure_zdotdir
+}
+
+cmd_brew() {
+    print_header "Installing from Brewfile"
+    install_packages
+}
+
+cmd_edit() {
+    ${EDITOR:-nvim} "$DOTFILES_DIR"
+}
+
+cmd_help() {
+    cat << EOF
+${BOLD}dot${RESET} - dotfiles management CLI (v${VERSION})
+
+${BOLD}USAGE:${RESET}
+    dot <command> [options]
+
+${BOLD}COMMANDS:${RESET}
+    init [--skip-font] [--skip-ssh]   Full setup
+    update                             Pull + brew upgrade + restow
+    doctor                             Run health checks
+    stow                               Re-symlink dotfiles
+    brew                               Install from Brewfile
+    edit                               Open dotfiles in editor
+    help                               Show this help
+
+${BOLD}EXAMPLES:${RESET}
+    dot init                           # Full installation
+    dot init --skip-font --skip-ssh    # Skip optional steps
+    dot update                         # Update everything
+    dot stow                           # Re-create symlinks
+
+EOF
+}
+
+case "${1:-help}" in
+    init) shift; cmd_init "$@" ;;
+    update) cmd_update ;;
+    doctor) cmd_doctor ;;
+    stow) cmd_stow ;;
+    brew) cmd_brew ;;
+    edit) cmd_edit ;;
+    help|--help|-h) cmd_help ;;
+    *) print_error "Unknown command: $1"; cmd_help; exit 1 ;;
+esac

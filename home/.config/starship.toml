@@ -1,0 +1,95 @@
+format = "$directory${custom.jj}$all"
+
+[character]
+error_symbol = "[](bold red) "
+
+[cmd_duration]
+format = "  took ${duration}"
+
+[directory]
+truncate_to_repo = false
+
+[git_branch]
+disabled = true
+symbol = " "
+truncation_length = 18
+
+[git_status]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[custom.jj]
+when = "jj-starship detect"
+shell = ["jj-starship", "--strip-bookmark-prefix", "dmmulroy/", "--truncate-name", "20", "--bookmarks-display-limit", "1"]
+format = "$output "
+
+[gcloud]
+disabled = true
+
+[aws]
+symbol = "󰅟  "
+
+[bun]
+symbol = " "
+style = "#f9f1e1"
+
+[c]
+symbol = " "
+
+[docker_context]
+symbol = "  "
+
+[elixir]
+symbol = " "
+
+[gleam]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[deno]
+symbol = " "
+style = "#b5a2d1"
+
+[swift]
+symbol = " "
+
+[ocaml]
+symbol = " "
+style = "#ed6b0d"
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+style = "#3f7dae"
+
+[rust]
+symbol = " "
+style = "#ff812d"
+
+[zig]
+symbol = " "
+style = "#f7a41c"

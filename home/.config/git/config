@@ -1,0 +1,52 @@
+[alias]
+	fomo = "!fish -c 'git fetch origin $(__git.default_branch) && git rebase origin/$(__git.default_branch) --autostash'"
+	lg = "!fish -c 'git_log_n $argv'"
+	nuke = "!git add --all && git stash && git stash clear"
+
+[branch]
+	sort = "-committerdate"
+
+[column]
+	ui = "auto"
+
+[commit]
+	gpgSign = true
+
+[core]
+	editor = "nvim"
+	fsmonitor = true
+
+[diff]
+	external = difft
+
+[fetch]
+	prune = true
+	writeCommitGraph = true
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[gpg]
+	format = "ssh"
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = true
+
+[rebase]
+	updateRefs = true
+
+[rerere]
+	enabled = true
+
+[tag]
+	gpgSign = true
+
+[user]
+	email = "wycejared@gmail.com"
+	name = "Jared Wyce"

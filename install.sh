@@ -1,34 +1,25 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
-
-if ! sudo -v; then
-  echo "Superuser not granted, aborting installation"
-  exit 1
-fi
-
-function eval_brew() {
-    eval "$(/opt/homebrew/bin/brew shellenv 2>&1)" > /dev/null
-}
 
 REPO_URL=https://github.com/jwyce/.dotfiles.git
 INSTALL_PATH=$HOME/.dotfiles
 
-if ! eval "$(which xcode-select)" -v > /dev/null; then
-  xcode-select --install
-fi
+xcode-select --install 2>/dev/null || true
 
-if ! eval_brew; then
+if ! command -v brew >/dev/null 2>&1; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    eval_brew
-fi
-brew install git &> /dev/null
-
-if ! test -e "$HOME/.dotfiles/"; then
-    git clone $REPO_URL $INSTALL_PATH --recurse-submodules > /dev/null
-else
-    git --git-dir $INSTALL_PATH/.git pull > /dev/null
+    if [[ "$(uname -m)" == "arm64" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
 fi
 
-$INSTALL_PATH/setup.sh
+brew install git stow
+
+if [[ ! -d "$INSTALL_PATH" ]]; then
+    git clone "$REPO_URL" "$INSTALL_PATH" --recurse-submodules
+fi
+
+"$INSTALL_PATH/dot" init "$@"

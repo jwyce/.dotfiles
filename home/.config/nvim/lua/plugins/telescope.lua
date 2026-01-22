@@ -28,8 +28,6 @@ return {
 			},
 		})
 
-		require("telescope").load_extension("git_worktree")
-
 		local search_dotfiles = function()
 			require("telescope.builtin").find_files({
 				prompt_title = "< VimRC >",
@@ -73,8 +71,7 @@ return {
 		vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 		vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
 
-		vim.keymap.set("n", "<leader>gw", telescope.extensions.git_worktree.git_worktrees, {})
-		vim.keymap.set("n", "<leader>gm", telescope.extensions.git_worktree.create_git_worktree, {})
+
 		vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>vb", builtin.buffers, {})
 		vim.keymap.set("n", "<leader>vre", builtin.registers, {})

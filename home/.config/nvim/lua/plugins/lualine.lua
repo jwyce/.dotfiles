@@ -1,67 +1,136 @@
 return {
-	"nvim-lualine/lualine.nvim",
-	config = function()
-		-- Bubbles config for lualine
-		-- Author: lokesh-krishna
-		-- MIT license, see LICENSE for more details.
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		dependencies = { "theprimeagen/harpoon" },
+		config = function()
+			local harpoon = require("harpoon")
 
-		-- stylua: ignore
-		local colors = {
-			blue   = '#80a0ff',
-			cyan   = '#79dac8',
-			black  = '#080808',
-			orange = '#ff9e64',
-			white  = '#c6c6c6',
-			red    = '#ff5189',
-			violet = '#d183e8',
-			grey   = '#303030',
-		}
+			local function truncate_branch_name(branch)
+				if not branch or branch == "" then
+					return ""
+				end
 
-		local bubbles_theme = {
-			normal = {
-				a = { fg = colors.black, bg = colors.violet },
-				b = { fg = colors.white, bg = colors.grey },
-				c = { fg = colors.black, bg = colors.black },
-			},
-			command = { a = { fg = colors.black, bg = colors.red } },
-			insert = { a = { fg = colors.black, bg = colors.blue } },
-			visual = { a = { fg = colors.black, bg = colors.cyan } },
-			replace = { a = { fg = colors.black, bg = colors.orange } },
-			inactive = {
-				a = { fg = colors.white, bg = colors.black },
-				b = { fg = colors.white, bg = colors.black },
-				c = { fg = colors.black, bg = colors.black },
-			},
-		}
+				-- Match the branch name to the specified format
+				local user, team, ticket_number = string.match(branch, "^(%w+)/(%w+)%-(%d+)")
 
-		require("lualine").setup({
-			options = {
-				theme = bubbles_theme,
-				component_separators = "|",
-				section_separators = { left = "", right = "" },
-			},
-			sections = {
-				lualine_a = {
-					{ "mode", separator = { left = "" }, right_padding = 2 },
+				-- If the branch name matches the format, display {user}/{team}-{ticket_number}, otherwise display the full branch name
+				if ticket_number then
+					return user .. "/" .. team .. "-" .. ticket_number
+				else
+					return branch
+				end
+			end
+
+			local vcs_cache = { result = nil, cwd = nil }
+
+			local function get_vcs_info()
+				local cwd = vim.fn.getcwd()
+				if vcs_cache.cwd == cwd and vcs_cache.result then
+					return vcs_cache.result
+				end
+
+				-- Check jj first (priority over git for colocated repos)
+				vim.fn.system("jj root 2>/dev/null")
+				if vim.v.shell_error == 0 then
+					local bookmark = vim.fn.system("jj log -r @ --no-graph -T 'bookmarks'"):gsub("%s+$", "")
+					if bookmark == "" then
+						local change_id =
+							vim.fn.system("jj log -r @ --no-graph -T 'change_id.shortest(8)'"):gsub("%s+$", "")
+						vcs_cache = { result = change_id, cwd = cwd }
+					else
+						local first = bookmark:match("^(%S+)") or bookmark
+						vcs_cache = { result = truncate_branch_name(first), cwd = cwd }
+					end
+					return vcs_cache.result
+				end
+
+				-- Fallback: git branch
+				local branch = vim.fn.system("git branch --show-current 2>/dev/null"):gsub("%s+$", "")
+				if vim.v.shell_error == 0 and branch ~= "" then
+					vcs_cache = { result = truncate_branch_name(branch), cwd = cwd }
+					return vcs_cache.result
+				end
+
+				vcs_cache = { result = "", cwd = cwd }
+				return ""
+			end
+
+			vim.api.nvim_create_autocmd({ "DirChanged", "BufEnter", "FocusGained" }, {
+				callback = function()
+					vcs_cache = { result = nil, cwd = nil }
+				end,
+			})
+
+			local function harpoon_component()
+				local list = harpoon:list()
+				local total_marks = list:length()
+
+				if total_marks == 0 then
+					return ""
+				end
+
+				local current_mark = "—"
+				local current_file = vim.fn.expand("%:p:.")
+
+				for idx, item in ipairs(list.items) do
+					if item.value == current_file then
+						current_mark = tostring(idx)
+						break
+					end
+				end
+
+				return string.format("󱡅 %s/%d", current_mark, total_marks)
+			end
+
+			-- vcsigns diff stats component
+			local function vcsigns_diff()
+				local bufnr = vim.api.nvim_get_current_buf()
+				local ok, stats = pcall(function()
+					return vim.b[bufnr].vcsigns_status
+				end)
+				if not ok or not stats then
+					return ""
+				end
+				return stats
+			end
+
+			require("lualine").setup({
+				options = {
+					theme = "catppuccin",
+					globalstatus = true,
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "█", right = "█" },
 				},
-				lualine_b = { "branch", { "filename", path = 0 } },
-				lualine_c = { "fileformat" },
-				lualine_x = {},
-				lualine_y = { "filetype", "progress" },
-				lualine_z = {
-					{ "location", separator = { right = "" }, left_padding = 2 },
+				sections = {
+					lualine_b = {
+						{ get_vcs_info, icon = "" },
+						harpoon_component,
+						{
+							"diff",
+							source = function()
+								local bufnr = vim.api.nvim_get_current_buf()
+								local summary = vim.b[bufnr].vcsigns_summary
+								if summary then
+									return {
+										added = summary.added or 0,
+										modified = summary.modified or 0,
+										removed = summary.removed or 0,
+									}
+								end
+								return nil
+							end,
+						},
+						"diagnostics",
+					},
+					lualine_c = {
+						{ "filename", path = 1 },
+					},
+					lualine_x = {
+						"filetype",
+					},
 				},
-			},
-			inactive_sections = {
-				lualine_a = { "filename" },
-				lualine_b = {},
-				lualine_c = {},
-				lualine_x = {},
-				lualine_y = {},
-				lualine_z = { "location" },
-			},
-			tabline = {},
-			extensions = {},
-		})
-	end,
+			})
+		end,
+	},
 }

@@ -60,3 +60,4 @@ Run `dot stow` to re-create symlinks after changes.
 | nvim | `~/.config/nvim/` |
 | aerospace | `~/.config/aerospace/aerospace.toml` |
 | starship | `~/.config/starship.toml` |
+| ripgrep | `~/.config/ripgrep/config` |

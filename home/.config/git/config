@@ -50,3 +50,4 @@
 [user]
 	email = "wycejared@gmail.com"
 	name = "Jared Wyce"
+	signingkey = /Users/jwyce/.ssh/id_ed25519.pub

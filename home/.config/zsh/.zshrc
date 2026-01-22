@@ -13,6 +13,7 @@ export ZSHRC=$ZDOTDIR/.zshrc
 export BREWFILE=$DOT/packages/Brewfile
 export BUN_INSTALL="$HOME/.bun"
 export BIN=$LOCAL/bin/scripts
+export RIPGREP_CONFIG_PATH=$CONFIG/ripgrep/config
 export PATH="$BIN:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"

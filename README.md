@@ -5,9 +5,7 @@ A comprehensive, automated dotfiles management system for macOS development envi
 ## Quick Start
 
 ```bash
-git clone https://github.com/jwyce/.dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./dot init
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/jwyce/.dotfiles/HEAD/install.sh)"
 ```
 
 Options: `--skip-font`, `--skip-ssh`

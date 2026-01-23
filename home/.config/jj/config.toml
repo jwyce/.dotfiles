@@ -15,6 +15,10 @@ default-command = "log"
 # instead of creating new working copy children
 edit = true
 
+[colors]
+# do not underline lines in hunks (since 0.19)
+"diff removed token" = { underline = false }
+"diff added token" = { underline = false }
 
 [git]
 sign-on-push = true

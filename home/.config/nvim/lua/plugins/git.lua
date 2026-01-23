@@ -27,8 +27,8 @@ return {
 					style = "minimal",
 					border = "rounded",
 				})
-				vim.api.nvim_set_hl(0, "LazyJJBorder", { fg = "#7aa2f7" })
-				vim.wo[win].winhighlight = "FloatBorder:LazyJJBorder"
+			vim.api.nvim_set_hl(0, "LazyJJBorder", { fg = "#7aa2f7" })
+			vim.wo[win].winhighlight = "FloatBorder:LazyJJBorder"
 				vim.bo[buf].filetype = "lazyjj"
 				vim.cmd("setlocal bufhidden=hide")
 				vim.api.nvim_create_autocmd("WinLeave", {

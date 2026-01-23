@@ -20,6 +20,13 @@ edit = true
 "diff removed token" = { underline = false }
 "diff added token" = { underline = false }
 
+[signing]
+# Only sign commits authored by you
+behavior = "own"
+# Use SSH keys for commit signing
+backend = "ssh"
+key = "~/.ssh/key.pub"
+
 [git]
 sign-on-push = true
 
@@ -87,7 +94,7 @@ stack = ["log", "-r", "stack()"]
 # within the mutable() set (excludes immutable trunk/tags)
 'stack()' = 'reachable(@, mutable())'
 
-# Work-specific overrides for repos in ~/Code/work
+# Work-specific overrides for repos in ~/dev/work
 [[--scope]]
 --when.repositories = ["~/dev/work"]
 

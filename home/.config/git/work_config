@@ -1,0 +1,4 @@
+[user]
+	email = "j.wyce@fetchrewards.com"
+	name = "Jared Wyce"
+	signingkey = "~/.ssh/key.pub"

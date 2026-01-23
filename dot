@@ -136,7 +136,7 @@ install_fonts() {
 
 generate_ssh_key() {
     print_header "Generating SSH key"
-    local key_path="$HOME/.ssh/id_ed25519"
+    local key_path="$HOME/.ssh/key"
     if [[ -f "$key_path" ]]; then
         print_success "SSH key already exists"
         return 0
@@ -288,7 +288,7 @@ cmd_doctor() {
     command_exists rustc && print_success "Rust" || print_info "Rust not found"
     command_exists opencode && print_success "OpenCode" || print_info "OpenCode not found"
 
-    [[ -f "$HOME/.ssh/id_ed25519" ]] && print_success "SSH key exists" || print_info "No SSH key"
+    [[ -f "$HOME/.ssh/key" ]] && print_success "SSH key exists" || print_info "No SSH key"
     grep -q 'ZDOTDIR' "$HOME/.zshenv" 2>/dev/null && print_success "ZDOTDIR configured" || print_error "ZDOTDIR not set in .zshenv"
 
     if [[ $issues -eq 0 ]]; then

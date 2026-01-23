@@ -313,6 +313,25 @@ cmd_edit() {
     ${EDITOR:-nvim} "$DOTFILES_DIR"
 }
 
+cmd_skills() {
+    print_header "Syncing agent skills"
+    local src="$HOME/.agents"
+    local dest="$DOTFILES_DIR/home/.agents"
+
+    if [[ ! -d "$src/skills" ]]; then
+        print_error "No skills found at $src/skills"
+        return 1
+    fi
+
+    rm -rf "$dest/skills"
+    mkdir -p "$dest/skills"
+    cp -r "$src/skills/"* "$dest/skills/"
+    [[ -f "$src/.skill-lock.json" ]] && cp "$src/.skill-lock.json" "$dest/.skill-lock.json"
+
+    print_success "Skills synced to dotfiles"
+    print_info "Run 'dot stow' if needed"
+}
+
 cmd_help() {
     cat << EOF
 ${BOLD}dot${RESET} - dotfiles management CLI (v${VERSION})
@@ -327,6 +346,7 @@ ${BOLD}COMMANDS:${RESET}
     stow                               Re-symlink dotfiles
     brew                               Install from Brewfile
     edit                               Open dotfiles in editor
+    skills                             Sync agent skills to dotfiles
     help                               Show this help
 
 ${BOLD}EXAMPLES:${RESET}
@@ -345,6 +365,7 @@ case "${1:-help}" in
     stow) cmd_stow ;;
     brew) cmd_brew ;;
     edit) cmd_edit ;;
+    skills) cmd_skills ;;
     help|--help|-h) cmd_help ;;
     *) print_error "Unknown command: $1"; cmd_help; exit 1 ;;
 esac

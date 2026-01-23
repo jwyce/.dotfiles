@@ -16,7 +16,7 @@ return {
 				"mason-org/mason-lspconfig.nvim",
 				opts = {
 					ensure_installed = {
-						"ts_ls",
+						"vtsls",
 						"eslint",
 						"lua_ls",
 						"rust_analyzer",
@@ -31,9 +31,6 @@ return {
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function()
-					vim.keymap.set("i", "<c-e>", function()
-						vim.lsp.completion.get()
-					end)
 					vim.keymap.set("n", "gd", function()
 						vim.lsp.buf.definition()
 					end)

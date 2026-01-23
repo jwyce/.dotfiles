@@ -1,5 +1,5 @@
 return {
-	cmd = { "typescript-language-server", "--stdio" },
+	cmd = { "vtsls", "--stdio" },
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 	root_dir = function(_, callback)
 		local deno_dir = vim.fs.root(0, { "deno.json", "deno.jsonc" })
@@ -9,6 +9,17 @@ return {
 			callback(root_dir)
 		end
 	end,
+	single_file_support = true,
+	settings = {
+		vtsls = {
+			autoUseWorkspaceTsdk = true,
+		},
+		typescript = {
+			preferences = {
+				importModuleSpecifier = "non-relative",
+			},
+		},
+	},
 	init_options = {
 		plugins = {
 			{

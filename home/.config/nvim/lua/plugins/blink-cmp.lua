@@ -7,6 +7,7 @@ return {
 			keymap = {
 				["<C-p>"] = { "select_prev", "show_signature", "hide_signature", "fallback" },
 				["<C-n>"] = { "select_next", "fallback" },
+				["<C-e>"] = { "show", "fallback" },
 				["<C-c>"] = { "cancel", "fallback" },
 				["<CR>"] = { "select_and_accept", "fallback" },
 				["<C-u>"] = { "scroll_documentation_up", "fallback" },

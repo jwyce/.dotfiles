@@ -9,6 +9,24 @@
       "skillFolderHash": "9ae16bcc4cfeff0a9da6f8891667bbc983e3b392",
       "installedAt": "2026-01-23T19:34:22.345Z",
       "updatedAt": "2026-01-23T19:34:22.345Z"
+    },
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/agent-browser/SKILL.md",
+      "skillFolderHash": "5f29940c0380af6c22e7078ab0cd54f4baa0fdba",
+      "installedAt": "2026-01-23T20:00:30.612Z",
+      "updatedAt": "2026-01-23T20:00:30.612Z"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
+      "installedAt": "2026-01-23T20:00:40.315Z",
+      "updatedAt": "2026-01-23T20:00:40.315Z"
     }
   }
 }

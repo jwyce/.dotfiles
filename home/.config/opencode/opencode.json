@@ -14,8 +14,7 @@
 	},
 	"plugin": [
 		"oh-my-opencode",
-		"opencode-antigravity-auth",
-		"opencode-openai-codex-auth",
+		"opencode-antigravity-auth@1.3.2-beta.1",
 		"opencode-anthropic-auth@0.0.8",
 		"opencode-supermemory"
 	],
@@ -90,7 +89,6 @@
 		},
 		"openai": {
 			"name": "OpenAI",
-			"api": "codex",
 			"models": {
 				"gpt-5.2": {
 					"name": "GPT-5.2"

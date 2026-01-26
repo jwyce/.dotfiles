@@ -2,6 +2,9 @@ source "$HOME/antigen.zsh"
 
 antigen init "$ZDOTDIR/.antigenrc"
 
+fpath=($ZDOTDIR/functions $fpath)
+autoload -Uz $fpath[1]/*(.:t)
+
 [ -s "/Users/jwyce/.bun/_bun" ] && source "/Users/jwyce/.bun/_bun"
 
 export DOT=$HOME/.dotfiles
@@ -42,7 +45,6 @@ alias ps='procs'
 alias lg='lazygit'
 alias ljj='lazyjj'
 alias vim='nvim'
-alias oc='opencode'
 alias python='python3'
 alias pip='pip3'
 alias yolo="git push origin master --force --no-verify"

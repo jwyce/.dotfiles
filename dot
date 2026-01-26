@@ -218,6 +218,16 @@ install_bun() {
     print_success "Bun installed"
 }
 
+install_gh_extensions() {
+    print_header "Installing GitHub CLI extensions"
+    if ! command_exists gh; then
+        print_warning "gh not found, skipping extensions"
+        return 0
+    fi
+    gh extension install dlvhdr/gh-dash 2>/dev/null || true
+    print_success "gh extensions installed"
+}
+
 cmd_init() {
     local skip_font=false
     local skip_ssh=false
@@ -249,6 +259,7 @@ cmd_init() {
     install_ocaml
     install_node
     install_bun
+    install_gh_extensions
 
     print_header "Initialization complete! 🎉"
     print_info "Open a new terminal to apply changes"

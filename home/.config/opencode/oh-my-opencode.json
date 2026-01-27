@@ -45,5 +45,16 @@
     "atlas": {
       "model": "anthropic/claude-sonnet-4-5"
     }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "google/antigravity-gemini-3-pro-high"
+    },
+    "artistry": {
+      "model": "google/antigravity-gemini-3-pro-high"
+    },
+    "writing": {
+      "model": "google/antigravity-gemini-3-flash"
+    }
   }
 }

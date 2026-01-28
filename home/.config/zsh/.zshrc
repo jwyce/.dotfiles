@@ -17,6 +17,7 @@ export BREWFILE=$DOT/packages/Brewfile
 export BUN_INSTALL="$HOME/.bun"
 export BIN=$LOCAL/bin/scripts
 export RIPGREP_CONFIG_PATH=$CONFIG/ripgrep/config
+export PATH="$LOCAL/bin:$PATH"
 export PATH="$BIN:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
@@ -75,4 +76,4 @@ zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'exter
 source <(carapace _carapace)
 compdef _tmux tmux
 
-. "$HOME/.local/bin/env"
+[[ -f "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env"

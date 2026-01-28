@@ -81,7 +81,11 @@ stow_dotfiles() {
         "$HOME/.config/git/config"
         "$HOME/.config/opencode/opencode.json"
         "$HOME/.config/opencode/oh-my-opencode.json"
+        "$HOME/.config/opencode/command/rmslop.md"
+        "$HOME/.config/opencode/command/supermemory-init.md"
+        "$HOME/.config/opencode/themes/tokyonight-transparent.json"
         "$HOME/.config/starship.toml"
+        "$HOME/.local/bin/scripts"
         "$HOME/.gitconfig"
         "$HOME/.zshrc"
         "$HOME/.zprofile"
@@ -186,8 +190,14 @@ install_ocaml() {
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://opam.ocaml.org/install.sh)"
         opam init -y
     fi
-    if ! opam switch list 2>/dev/null | grep -q "5.4.0"; then
-        opam switch create 5.4.0 -y
+    opam update -y
+    if opam switch list -s --all >/dev/null 2>&1; then
+        opam_switches=$(opam switch list -s --all 2>/dev/null)
+    else
+        opam_switches=$(opam switch list --short 2>/dev/null)
+    fi
+    if ! echo "$opam_switches" | grep -Fxq "5.4.0"; then
+        opam switch create 5.4.0 ocaml-base-compiler.5.4.0 -y
         opam install -y ocaml-lsp-server odoc ocamlformat utop core core_bench
         print_success "OCaml 5.4.0 installed"
     else
@@ -246,9 +256,9 @@ cmd_init() {
     eval_brew
     install_packages
     link_dot_cli
+    ensure_zdotdir
     stow_dotfiles
     link_tmux_submodule
-    ensure_zdotdir
 
     [[ "$skip_font" == false ]] && install_fonts
     [[ "$skip_ssh" == false ]] && generate_ssh_key

@@ -28,7 +28,7 @@
       "model": "anthropic/claude-haiku-4-5"
     },
     "multimodal-looker": {
-      "model": "glm/glm-4.6v"
+      "model": "zai-coding-plan/glm-4.6v"
     },
     "sisyphus": {
       "model": "anthropic/claude-opus-4-5",
@@ -47,7 +47,7 @@
       "variant": "medium"
     },
     "atlas": {
-      "model": "opencode/kimi-k2.5-free"
+      "model": "kimi-for-coding/k2p5"
     }
   },
   "categories": {

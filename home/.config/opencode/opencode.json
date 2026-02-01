@@ -108,7 +108,7 @@
 		},
 		"kimi-for-coding": {
 			"name": "Kimi",
-			"api": "https://api.moonshot.cn/v1",
+			"api": "https://api.moonshot.ai/v1",
 			"models": {
 				"kimi-k2.5": {
 					"name": "Kimi K2.5",

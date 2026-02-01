@@ -105,6 +105,44 @@
 					"name": "Codex-1"
 				}
 			}
+		},
+		"kimi-for-coding": {
+			"name": "Kimi",
+			"api": "https://api.moonshot.cn/v1",
+			"models": {
+				"k2p5": {
+					"name": "Kimi K2.5",
+					"limit": {
+						"context": 131072,
+						"output": 8192
+					}
+				}
+			}
+		},
+		"zai-coding-plan": {
+			"name": "Zhipu AI",
+			"api": "https://open.bigmodel.cn/api/paas/v4",
+			"models": {
+				"glm-4.7": {
+					"name": "GLM-4.7",
+					"limit": {
+						"context": 128000,
+						"output": 8192
+					}
+				},
+				"glm-4.6v": {
+					"name": "GLM-4.6V",
+					"attachment": true,
+					"limit": {
+						"context": 128000,
+						"output": 8192
+					},
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				}
+			}
 		}
 	}
 }

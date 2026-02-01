@@ -121,7 +121,7 @@
 		},
 		"zai-coding-plan": {
 			"name": "Zhipu AI",
-			"api": "https://api.z.ai/api/paas/v4/",
+			"api": "https://api.z.ai/api/coding/paas/v4/",
 			"models": {
 				"glm-4.7": {
 					"name": "GLM-4.7",

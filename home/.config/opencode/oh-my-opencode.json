@@ -47,7 +47,7 @@
       "variant": "medium"
     },
     "atlas": {
-      "model": "kimi-for-coding/k2p5"
+      "model": "kimi-for-coding/kimi-k2.5"
     }
   },
   "categories": {

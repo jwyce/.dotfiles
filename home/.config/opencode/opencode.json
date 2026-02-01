@@ -110,7 +110,7 @@
 			"name": "Kimi",
 			"api": "https://api.moonshot.cn/v1",
 			"models": {
-				"k2p5": {
+				"kimi-k2.5": {
 					"name": "Kimi K2.5",
 					"limit": {
 						"context": 131072,

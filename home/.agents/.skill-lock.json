@@ -36,6 +36,15 @@
       "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
       "installedAt": "2026-02-19T02:19:31.103Z",
       "updatedAt": "2026-02-19T02:19:36.268Z"
+    },
+    "beautiful-mermaid": {
+      "source": "intellectronica/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/intellectronica/agent-skills.git",
+      "skillPath": "skills/beautiful-mermaid/SKILL.md",
+      "skillFolderHash": "88651e5cc10e4b028798dcfa45b1c1004e93f8b2",
+      "installedAt": "2026-03-17T14:53:39.588Z",
+      "updatedAt": "2026-03-17T14:53:39.588Z"
     }
   },
   "lastSelectedAgents": [

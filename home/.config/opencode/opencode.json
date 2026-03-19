@@ -22,8 +22,8 @@
   "plugin": [
     "oh-my-opencode",
     "opencode-anthropic-auth",
+    "opencode-supermemory",
     "@plannotator/opencode",
-    "file:///tmp/opencode-supermemory",
   ],
   "provider": {
     "openai": {

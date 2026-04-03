@@ -77,3 +77,9 @@ source <(carapace _carapace)
 compdef _tmux tmux
 
 [[ -f "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jwyce/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jwyce/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jwyce/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jwyce/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

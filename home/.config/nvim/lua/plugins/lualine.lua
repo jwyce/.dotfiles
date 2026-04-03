@@ -95,12 +95,12 @@ return {
 				return stats
 			end
 
-			require("lualine").setup({
-				options = {
-					theme = "catppuccin",
-					globalstatus = true,
-					component_separators = { left = "", right = "" },
-					section_separators = { left = "█", right = "█" },
+				require("lualine").setup({
+					options = {
+						theme = "auto",
+						globalstatus = true,
+						component_separators = { left = "", right = "" },
+						section_separators = { left = "█", right = "█" },
 				},
 				sections = {
 					lualine_b = {

@@ -6,18 +6,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion/SKILL.md",
-      "skillFolderHash": "67cfb7f3156587ae65650d76b3ccf3ff8cf70471",
+      "skillFolderHash": "d0bc7b74666ce228ba1e37156520d5ada5bbc889",
       "installedAt": "2026-01-23T19:34:22.345Z",
-      "updatedAt": "2026-02-19T02:21:06.744Z"
+      "updatedAt": "2026-04-07T19:59:31.870Z"
     },
     "agent-browser": {
       "source": "vercel-labs/agent-browser",
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "ce32ad3e89bb7289a6bea81b05c77609f2fff2f8",
+      "skillFolderHash": "b6f762bf402cdfaf6a06514e9ce4142ce3e4fb4c",
       "installedAt": "2026-01-23T20:00:30.612Z",
-      "updatedAt": "2026-02-19T02:21:08.739Z"
+      "updatedAt": "2026-04-07T19:59:32.855Z"
     },
     "frontend-design": {
       "source": "anthropics/skills",
@@ -33,9 +33,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
-      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
       "installedAt": "2026-02-19T02:19:31.103Z",
-      "updatedAt": "2026-02-19T02:19:36.268Z"
+      "updatedAt": "2026-04-07T19:59:33.819Z"
     },
     "beautiful-mermaid": {
       "source": "intellectronica/agent-skills",
@@ -45,15 +45,30 @@
       "skillFolderHash": "88651e5cc10e4b028798dcfa45b1c1004e93f8b2",
       "installedAt": "2026-03-17T14:53:39.588Z",
       "updatedAt": "2026-03-17T14:53:39.588Z"
+    },
+    "excalidraw-diagram": {
+      "source": "coleam00/excalidraw-diagram-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coleam00/excalidraw-diagram-skill.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "8646fcc9f74f38539c6cdb4c969723336a96ddcd",
+      "installedAt": "2026-04-10T13:04:20.625Z",
+      "updatedAt": "2026-04-10T13:04:20.625Z"
     }
   },
   "lastSelectedAgents": [
     "amp",
+    "antigravity",
+    "cline",
     "codex",
+    "cursor",
+    "deepagents",
+    "firebender",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
-    "opencode"
+    "opencode",
+    "warp"
   ],
   "dismissed": {
     "findSkillsPrompt": true

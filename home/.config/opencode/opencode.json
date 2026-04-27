@@ -25,30 +25,10 @@
     }
   },
   "plugin": [
-    "oh-my-opencode",
+    "oh-my-openagent",
     "opencode-anthropic-auth",
     "opencode-supermemory",
-    "@plannotator/opencode",
-  ],
-  "provider": {
-    "openai": {
-      "name": "OpenAI",
-      "models": {
-        "gpt-5.2": {
-          "name": "GPT-5.2"
-        },
-        "o3": {
-          "name": "o3",
-          "reasoning": true
-        },
-        "o4-mini": {
-          "name": "o4-mini",
-          "reasoning": true
-        },
-        "codex-1": {
-          "name": "Codex-1"
-        }
-      }
-    }
-  }
+    "@ishaksebsib/opencode-tree",
+    "@plannotator/opencode"
+  ]
 }

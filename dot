@@ -81,6 +81,7 @@ stow_dotfiles() {
         "$HOME/.config/git/config"
         "$HOME/.config/opencode/opencode.json"
         "$HOME/.config/opencode/oh-my-opencode.json"
+        "$HOME/.config/opencode/oh-my-openagent.json"
         "$HOME/.config/opencode/command/rmslop.md"
         "$HOME/.config/opencode/command/supermemory-init.md"
         "$HOME/.config/opencode/themes/tokyonight-transparent.json"

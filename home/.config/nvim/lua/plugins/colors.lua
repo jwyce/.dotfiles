@@ -105,9 +105,31 @@ return {
 	},
 	{
 		"brenoprata10/nvim-highlight-colors",
+		ft = {
+			"astro",
+			"css",
+			"html",
+			"javascript",
+			"javascriptreact",
+			"less",
+			"lua",
+			"scss",
+			"svelte",
+			"typescript",
+			"typescriptreact",
+		},
 		opts = {
 			render = "virtual",
 			virtual_symbol = "■",
+			exclude_buftypes = {
+				"nofile",
+				"prompt",
+				"quickfix",
+				"terminal",
+			},
+			exclude_filetypes = {
+				"oil",
+			},
 		},
 		config = function(_, opts)
 			local hi = require("nvim-highlight-colors")

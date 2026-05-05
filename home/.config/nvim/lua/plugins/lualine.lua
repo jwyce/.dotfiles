@@ -22,7 +22,53 @@ return {
 				end
 			end
 
-			local vcs_cache = { result = nil, cwd = nil }
+			local vcs_cache = { result = nil, cwd = nil, pending = false }
+
+			local function set_vcs_cache(cwd, result)
+				vim.schedule(function()
+					if vcs_cache.cwd ~= cwd then
+						return
+					end
+
+					vcs_cache = { result = result, cwd = cwd, pending = false }
+					vim.cmd.redrawstatus()
+				end)
+			end
+
+			local function refresh_vcs_info(cwd)
+				if vcs_cache.pending then
+					return
+				end
+
+				vcs_cache = { result = vcs_cache.result, cwd = cwd, pending = true }
+
+				vim.system({ "jj", "root" }, { text = true }, function(root_result)
+					if root_result.code == 0 then
+						vim.system({ "jj", "log", "-r", "@", "--no-graph", "-T", "bookmarks" }, { text = true }, function(bookmark_result)
+							local bookmark = (bookmark_result.stdout or ""):gsub("%s+$", "")
+							if bookmark ~= "" then
+								local first = bookmark:match("^(%S+)") or bookmark
+								set_vcs_cache(cwd, truncate_branch_name(first))
+								return
+							end
+
+							vim.system({ "jj", "log", "-r", "@", "--no-graph", "-T", "change_id.shortest(8)" }, { text = true }, function(change_result)
+								set_vcs_cache(cwd, (change_result.stdout or ""):gsub("%s+$", ""))
+							end)
+						end)
+						return
+					end
+
+					vim.system({ "git", "branch", "--show-current" }, { text = true }, function(branch_result)
+						local branch = (branch_result.stdout or ""):gsub("%s+$", "")
+						if branch_result.code == 0 and branch ~= "" then
+							set_vcs_cache(cwd, truncate_branch_name(branch))
+						else
+							set_vcs_cache(cwd, "")
+						end
+					end)
+				end)
+			end
 
 			local function get_vcs_info()
 				local cwd = vim.fn.getcwd()
@@ -30,35 +76,13 @@ return {
 					return vcs_cache.result
 				end
 
-				-- Check jj first (priority over git for colocated repos)
-				vim.fn.system("jj root 2>/dev/null")
-				if vim.v.shell_error == 0 then
-					local bookmark = vim.fn.system("jj log -r @ --no-graph -T 'bookmarks'"):gsub("%s+$", "")
-					if bookmark == "" then
-						local change_id =
-							vim.fn.system("jj log -r @ --no-graph -T 'change_id.shortest(8)'"):gsub("%s+$", "")
-						vcs_cache = { result = change_id, cwd = cwd }
-					else
-						local first = bookmark:match("^(%S+)") or bookmark
-						vcs_cache = { result = truncate_branch_name(first), cwd = cwd }
-					end
-					return vcs_cache.result
-				end
-
-				-- Fallback: git branch
-				local branch = vim.fn.system("git branch --show-current 2>/dev/null"):gsub("%s+$", "")
-				if vim.v.shell_error == 0 and branch ~= "" then
-					vcs_cache = { result = truncate_branch_name(branch), cwd = cwd }
-					return vcs_cache.result
-				end
-
-				vcs_cache = { result = "", cwd = cwd }
-				return ""
+				refresh_vcs_info(cwd)
+				return vcs_cache.result or ""
 			end
 
-			vim.api.nvim_create_autocmd({ "DirChanged", "BufEnter", "FocusGained" }, {
+			vim.api.nvim_create_autocmd({ "DirChanged", "FocusGained" }, {
 				callback = function()
-					vcs_cache = { result = nil, cwd = nil }
+					vcs_cache = { result = nil, cwd = nil, pending = false }
 				end,
 			})
 
@@ -83,24 +107,12 @@ return {
 				return string.format("󱡅 %s/%d", current_mark, total_marks)
 			end
 
-			-- vcsigns diff stats component
-			local function vcsigns_diff()
-				local bufnr = vim.api.nvim_get_current_buf()
-				local ok, stats = pcall(function()
-					return vim.b[bufnr].vcsigns_status
-				end)
-				if not ok or not stats then
-					return ""
-				end
-				return stats
-			end
-
-				require("lualine").setup({
-					options = {
-						theme = "auto",
-						globalstatus = true,
-						component_separators = { left = "", right = "" },
-						section_separators = { left = "█", right = "█" },
+			require("lualine").setup({
+				options = {
+					theme = "auto",
+					globalstatus = true,
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "█", right = "█" },
 				},
 				sections = {
 					lualine_b = {

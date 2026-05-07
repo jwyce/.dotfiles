@@ -9,6 +9,10 @@
     "layout": "main-vertical",
     "main_pane_size": 60
   },
+  "team_mode": {
+    "enabled": true,
+    "tmux_visualization": true
+  },
   "browser_automation_engine": {
     "provider": "agent-browser"
   },

@@ -82,6 +82,7 @@ stow_dotfiles() {
         "$HOME/.config/opencode/opencode.json"
         "$HOME/.config/opencode/oh-my-opencode.json"
         "$HOME/.config/opencode/oh-my-openagent.json"
+        "$HOME/.config/opencode/tui.json"
         "$HOME/.config/opencode/command/rmslop.md"
         "$HOME/.config/opencode/command/supermemory-init.md"
         "$HOME/.config/opencode/themes/tokyonight-transparent.json"
@@ -98,6 +99,18 @@ stow_dotfiles() {
 
     for link in "${old_symlinks[@]}"; do
         [[ -L "$link" ]] && rm -f "$link"
+    done
+
+    local generated_files=(
+        "$HOME/.config/opencode/tui.json"
+    )
+
+    for file in "${generated_files[@]}"; do
+        if [[ -e "$file" && ! -L "$file" ]]; then
+            local backup="${file}.backup-$(date +%Y%m%d%H%M%S)"
+            mv "$file" "$backup"
+            print_info "Backed up existing ${file#$HOME/} to ${backup#$HOME/}"
+        fi
     done
 
     stow -R -v -d "${DOTFILES_DIR}" -t "${HOME}" home

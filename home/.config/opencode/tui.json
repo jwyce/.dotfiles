@@ -1,0 +1,11 @@
+{
+  "plugin": [
+    "oh-my-openagent/tui",
+    [
+      "@ishaksebsib/opencode-tree",
+      {
+        "storageScope": "global"
+      }
+    ]
+  ]
+}

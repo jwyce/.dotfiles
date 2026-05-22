@@ -26,10 +26,9 @@
     }
   },
   "plugin": [
-    "oh-my-openagent",
-    "opencode-anthropic-auth",
+    "oh-my-openagent@latest",
     "opencode-supermemory",
     "@ishaksebsib/opencode-tree",
-    "@plannotator/opencode"
+    "@plannotator/opencode@latest"
   ]
 }

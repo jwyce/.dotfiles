@@ -2,7 +2,7 @@
   "plugin": [
     "oh-my-openagent/tui",
     [
-      "@ishaksebsib/opencode-tree",
+      "@ishaksebsib/opencode-tree@latest",
       {
         "storageScope": "global"
       }

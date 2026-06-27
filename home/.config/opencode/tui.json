@@ -1,11 +1,6 @@
 {
   "plugin": [
-    [
-      "@ishaksebsib/opencode-tree@latest",
-      {
-        "storageScope": "global"
-      }
-    ],
+    "@ishaksebsib/opencode-tree@latest",
     "oh-my-openagent@latest"
   ]
 }

@@ -158,6 +158,54 @@
       "skillFolderHash": "e6dc24ca1ff1e70c9677df9a1d2d1c80415cbb3c",
       "installedAt": "2026-07-01T17:01:52.085Z",
       "updatedAt": "2026-07-01T17:01:52.085Z"
+    },
+    "to-spec": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/engineering/to-spec/SKILL.md",
+      "skillFolderHash": "b2f449aa3da9578b08dcea74afd9adee20285586",
+      "pluginName": "mattpocock-skills",
+      "installedAt": "2026-07-09T20:51:05.885Z",
+      "updatedAt": "2026-07-09T20:51:05.885Z"
+    },
+    "to-tickets": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/engineering/to-tickets/SKILL.md",
+      "skillFolderHash": "b62245172caa8bcc75b490c665566e9ec999cda8",
+      "pluginName": "mattpocock-skills",
+      "installedAt": "2026-07-09T20:51:09.754Z",
+      "updatedAt": "2026-07-09T20:51:09.754Z"
+    },
+    "wayfinder": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/engineering/wayfinder/SKILL.md",
+      "skillFolderHash": "83a96a4454c069148d8648fd21ca62a58ac15db2",
+      "pluginName": "mattpocock-skills",
+      "installedAt": "2026-07-09T20:52:03.782Z",
+      "updatedAt": "2026-07-09T20:52:03.782Z"
+    },
+    "improve": {
+      "source": "shadcn/improve",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/improve.git",
+      "skillPath": "skills/improve/SKILL.md",
+      "skillFolderHash": "7d77d76815e6deb704427f17f6e393f55e3cb6da",
+      "installedAt": "2026-07-12T12:05:23.553Z",
+      "updatedAt": "2026-07-12T12:05:23.553Z"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/ui.git",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "skillFolderHash": "962eb7ef77f17e0bce530153d4fec2136c5fa061",
+      "installedAt": "2026-07-12T12:05:42.690Z",
+      "updatedAt": "2026-07-12T12:05:42.690Z"
     }
   },
   "lastSelectedAgents": [

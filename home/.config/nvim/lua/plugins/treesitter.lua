@@ -3,9 +3,16 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		build = ":TSUpdate",
+		dependencies = {
+			{
+				"themixednuts/nvim-treesitter-svelte",
+				main = "nvim-treesitter-svelte",
+				opts = {},
+			},
+		},
 		config = function()
 			local treesitter = require("nvim-treesitter")
-			local parsers = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" }
+			local parsers = { "vimdoc", "javascript", "typescript", "tsx", "jsx", "ecma", "svelte5", "html_tags", "css", "scss", "json", "regex", "comment", "c", "lua", "rust" }
 			local available = {}
 			local pending = {}
 			local waiting = {}

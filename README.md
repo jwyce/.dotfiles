@@ -17,6 +17,7 @@ Options: `--skip-font`, `--skip-ssh`
 ├── dot                   # CLI tool
 ├── home/                 # Stowed to ~ (symlinks)
 │   ├── .agents/          # AI agent skills
+│   ├── .omo/             # Unified OMO configuration
 │   ├── .config/
 │   │   ├── zsh/          # Shell (via ZDOTDIR)
 │   │   ├── nvim/         # Neovim (lazy.nvim, native LSP)
@@ -64,6 +65,7 @@ Options: `--skip-font`, `--skip-ssh`
 - **Jujutsu** — SSH signing, work scope, custom aliases and revsets
 - **Tmux** — gpakosz/.tmux base, custom local overrides
 - **Agent Skills** — Managed in `~/.agents/`, synced via `dot skills`
+- **OMO** — Unified multi-harness configuration in `~/.omo/omo.jsonc`
 
 ## How Stow Works
 
@@ -72,6 +74,7 @@ Files in `home/` mirror the home directory structure:
 ```
 home/.config/nvim/ → ~/.config/nvim/
 home/.agents/      → ~/.agents/
+home/.omo/         → ~/.omo/
 ```
 
 Run `dot stow` after making changes.

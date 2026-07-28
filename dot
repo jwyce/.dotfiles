@@ -86,6 +86,7 @@ stow_dotfiles() {
         "$HOME/.config/opencode/command/rmslop.md"
         "$HOME/.config/opencode/command/supermemory-init.md"
         "$HOME/.config/opencode/themes/tokyonight-transparent.json"
+        "$HOME/.omo/omo.jsonc"
         "$HOME/.config/starship.toml"
         "$HOME/.local/bin/scripts"
         "$HOME/.gitconfig"
@@ -103,6 +104,7 @@ stow_dotfiles() {
 
     local generated_files=(
         "$HOME/.config/opencode/tui.json"
+        "$HOME/.omo/omo.jsonc"
     )
 
     for file in "${generated_files[@]}"; do

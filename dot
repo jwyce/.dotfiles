@@ -100,7 +100,7 @@ stow_dotfiles() {
     done
 
     local generated_files=(
-        "$HOME/.config/opencode/tui.json"
+        "$HOME/.config/opencode/cli.json"
     )
 
     for file in "${generated_files[@]}"; do

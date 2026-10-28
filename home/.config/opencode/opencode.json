@@ -33,7 +33,6 @@
   },
   "plugin": [
     "opencode-supermemory",
-    "@ishaksebsib/opencode-tree@latest",
     "@plannotator/opencode@latest"
   ]
 }

@@ -1,6 +1,5 @@
 {
   "plugin": [
-    "@ishaksebsib/opencode-tree@latest",
-    "oh-my-openagent@latest"
+    "@ishaksebsib/opencode-tree@latest"
   ]
 }
